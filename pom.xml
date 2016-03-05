@@ -27,6 +27,8 @@
         </repository>
 
     </repositories>
+    
+    <url>https://github.com/martijn-heil/NinCore-API</url>
 
 
     <dependencies>
@@ -180,27 +182,25 @@
                 <!-- Deploy the web site -->
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
-                <version>0.9</version>
+                <version>0.12</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>site</goal>
                         </goals>
                         <!-- select the Maven phase in which the plugin will be executed -->
-                        <phase>site-deploy</phase>
+                        <phase>site</phase>
                         <configuration>
                             <!-- Plugin configuration goes here -->
                             <url>https://github.com/martijn-heil/NinCore-API</url>
-
-
                             <server>github</server>
 
                             <!-- The commit message -->
                             <message>Update javadoc</message>
                             <!-- The location where the site is uploaded -->
-                            <path>${site.path}</path>
+                            <path>javadocs/${project.version}</path>
                             <!-- Use merge or override the content -->
-                            <merge>true</merge>
+                            <merge>false</merge>
                         </configuration>
                     </execution>
                 </executions>
@@ -235,6 +235,12 @@
             <id>local-repository</id>
             <url>${local.maven.repository}</url>
         </repository>
+        
+        <site>
+            <id>github</id>
+            <url>https://github.com/martijn-heil/NinCore-API</url>
+        </site>
+    
     </distributionManagement>
 
 </project>
