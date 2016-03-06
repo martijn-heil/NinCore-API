@@ -1,0 +1,8 @@
+me.ninjoh.nincore.api
+me.ninjoh.nincore.api.command
+me.ninjoh.nincore.api.command.builders
+me.ninjoh.nincore.api.command.executors
+me.ninjoh.nincore.api.entity
+me.ninjoh.nincore.api.exceptions
+me.ninjoh.nincore.api.playerexceptions
+me.ninjoh.nincore.api.util
