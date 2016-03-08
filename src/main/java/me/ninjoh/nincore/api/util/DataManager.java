@@ -45,7 +45,16 @@ public class DataManager
         }
         catch (IOException e)
         {
-            plugin.getLogger().warning("A" + e.getClass().getName() + "occurred while creating data file;");
+            // Vowels, A or An
+            String s = "A ";
+            if(e.getClass().getName().startsWith("a") || e.getClass().getName().startsWith("e") ||
+                    e.getClass().getName().startsWith("i") || e.getClass().getName().startsWith("o") ||
+                    e.getClass().getName().startsWith("u"))
+            {
+                s = "An ";
+            }
+
+            plugin.getLogger().warning(s + e.getClass().getName() + "occurred while creating data file;");
             e.printStackTrace();
         }
     }
@@ -77,7 +86,16 @@ public class DataManager
         }
         catch(IOException e)
         {
-            plugin.getLogger().warning("A" + e.getClass().getName() + "occurred while saving data file;");
+            // Vowels, A or An
+            String s = "A ";
+            if(e.getClass().getName().startsWith("a") || e.getClass().getName().startsWith("e") ||
+                    e.getClass().getName().startsWith("i") || e.getClass().getName().startsWith("o") ||
+                    e.getClass().getName().startsWith("u"))
+            {
+                s = "An ";
+            }
+
+            plugin.getLogger().warning(s + e.getClass().getName() + " occurred while saving data file;");
             e.printStackTrace();
         }
     }

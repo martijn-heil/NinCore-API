@@ -47,7 +47,7 @@ public interface NinCommand
     /**
      * Get this command's usage syntax.
      * NOTE: This excludes the command itself
-     * e.g; "<\player=you> <\world>"
+     * e.g; (player=you) (world)
      *
      * @return This command's usage syntax. Can be null.
      */

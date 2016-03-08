@@ -19,7 +19,7 @@ public class MessageUtil
 {
     /**
      * Send a error message to the sender.
-     * Error format: &cError: &4%error%.
+     * Error format: (light red) Error: (dark red) (error).
      *
      * @param sender CommandSender to send the error.
      * @param error  The error string to send.

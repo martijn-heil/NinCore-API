@@ -15,11 +15,17 @@
 
     <repositories>
 
+    <!--
         <repository>
             <id>local-repo</id>
             <url>${local.maven.repository}</url>
         </repository>
-
+    -->
+        
+        <repository>
+            <id>nincore-api-repo</id>
+            <url>https://raw.github.com/martijn-heil/NinCore-API/mvn-repo/</url>
+        </repository>
 
         <repository>
             <id>spigot-repo</id>
@@ -129,6 +135,7 @@
                         <includes>
                             <include>joda-time:joda-time</include>
                             <include>org.jetbrains:annotations-java5</include>
+                            <include>me.ninjoh.nincore.api</include>
                         </includes>
 
                     </artifactSet>
@@ -187,8 +194,9 @@
                 
                 <executions>
                   <execution>
+                    <id>generate-javadocs</id>
                     <goals>
-                      <goal>generate-javadoc</goal>
+                      <goal>javadoc</goal>
                     </goals>
                     <phase>package</phase>
                   </execution>
@@ -201,16 +209,20 @@
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.12</version>
                 <executions>
-                
+
+                    <!-- Deploy the javadocs -->
                     <execution>
+                        <id>deploy-javadocs</id>
                         <goals>
-                            <goal>deploy-javadocs</goal>
+                            <goal>site</goal>
                         </goals>
                         <!-- select the Maven phase in which the plugin will be executed -->
                         <phase>deploy</phase>
+
+
                         <configuration>
                             <!-- Plugin configuration goes here -->
-                            <url>https://github.com/martijn-heil/NinCore-API</url>
+
                             <server>github</server>
 
                             <!-- The commit message -->
@@ -221,17 +233,41 @@
                             <merge>true</merge>
                         </configuration>
                     </execution>
+
+                    <!-- Update the latest javadocs -->
+                    <execution>
+                        <id>deploy-latest-javadocs</id>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <!-- select the Maven phase in which the plugin will be executed -->
+                        <phase>deploy</phase>
+
+
+                        <configuration>
+                            <!-- Plugin configuration goes here -->
+
+                            <server>github</server>
+
+                            <!-- The commit message -->
+                            <message>Update latest javadocs</message>
+                            <!-- The location where the site is uploaded -->
+                            <path>javadocs/latest</path>
+                            <!-- Use merge or override the content -->
+                            <merge>true</merge>
+                        </configuration>
+                    </execution>
                     
                     <!-- Deploy the maven repository -->
                     <execution>
+                        <id>deploy-maven-artifacts</id>
                         <goals>
-                            <goal>deploy-maven-artifacts</goal>
+                            <goal>site</goal>
                         </goals>
                         <!-- select the Maven phase in which the plugin will be executed -->
                         <phase>deploy</phase>
                         <configuration>
                             <!-- Plugin configuration goes here -->
-                            <url>https://github.com/martijn-heil/NinCore-API</url>
                             <server>github</server>
                             
                             <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
@@ -272,10 +308,12 @@
 
     <distributionManagement>
         
+        <!--
         <repository>
             <id>local-repository</id>
             <url>${local.maven.repository}</url>
         </repository>
+        -->
         
         <repository>
             <id>internal-repo</id>

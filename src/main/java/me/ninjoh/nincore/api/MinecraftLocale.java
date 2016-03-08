@@ -95,19 +95,26 @@ public enum MinecraftLocale
 
     public String getName()
     {
-        return name;
+        return this.name;
+    }
+
+
+    @Override
+    public String toString()
+    {
+        return this.name;
     }
 
 
     public String getCode()
     {
-        return code;
+        return this.code;
     }
 
 
     public Locale toLocale()
     {
-        return locale;
+        return this.locale;
     }
 
     /**
