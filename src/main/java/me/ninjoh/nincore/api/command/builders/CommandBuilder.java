@@ -8,28 +8,24 @@ import me.ninjoh.nincore.api.command.executors.NinCommandExecutor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CommandBuilder
 {
     private String name; // Required
-    private String description; // Automatic
-    private String usage; // Automatic
-    private String permission; // Automatic
-    private List<String> aliases; // Automatic
-    private List<NinSubCommand> subCommands; // Optional
+    private List<NinSubCommand> subCommands = new ArrayList<>(); // Optional
     private NinCommandExecutor executor; // Required
-    private boolean useArgumentValidation; // Required
+    private String descriptionKey;
     private JavaPlugin plugin;
 
 
-    // Case sensitive
-
     /**
-     * Set this command's name.
+     * Set this command's name. This is case sensitive and must
+     * mirror a command defined in your plugin.yml.
      *
      * @param name The name for this command. Case sensitive
-     * @return {@link SubCommandBuilder}, for method chaining.
+     * @return {@link CommandBuilder}, for method chaining.
      */
     public CommandBuilder setName(String name, JavaPlugin plugin)
     {
@@ -39,11 +35,18 @@ public class CommandBuilder
     }
 
 
+    public CommandBuilder setDescription(String descriptionKey)
+    {
+        this.descriptionKey = descriptionKey;
+        return this;
+    }
+
+
     /**
      * Add a sub command to this command.
      *
      * @param subCommand The {@link NinSubCommand} to add.
-     * @return {@link SubCommandBuilder}, for method chaining.
+     * @return {@link CommandBuilder}, for method chaining.
      */
     public CommandBuilder addSubCommand(NinSubCommand subCommand)
     {
@@ -56,18 +59,11 @@ public class CommandBuilder
      * Set this command's executor.
      *
      * @param executor This command's {@link CommandExecutor}
-     * @return {@link SubCommandBuilder}, for method chaining
+     * @return {@link CommandBuilder}, for method chaining.
      */
     public CommandBuilder setExecutor(NinCommandExecutor executor)
     {
         this.executor = executor;
-        return this;
-    }
-
-
-    public CommandBuilder setUseArgumentValidation(boolean value)
-    {
-        this.useArgumentValidation = value;
         return this;
     }
 
@@ -79,7 +75,7 @@ public class CommandBuilder
      */
     public NinCommand construct()
     {
-        return NinCore.getImplementation().constructCommand(this.name, this.subCommands, null, this.executor,
-                this.useArgumentValidation, this.plugin);
+        return NinCore.getImplementation().constructCommand(this.name, this.descriptionKey, this.subCommands,
+                this.executor, this.plugin);
     }
 }

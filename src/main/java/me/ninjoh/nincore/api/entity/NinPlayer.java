@@ -23,7 +23,11 @@ public interface NinPlayer extends NinOfflinePlayer, CanReceiveChatMessage
      */
     MinecraftLocale getMinecraftLocale();
 
-
+    /**
+     * Very unstable still!
+     *
+     * @return true if the player is flying using an elytra.
+     */
     boolean isFlyingUsingElytra();
 
 }

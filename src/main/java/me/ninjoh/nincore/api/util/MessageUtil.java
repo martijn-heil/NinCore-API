@@ -301,11 +301,12 @@ public class MessageUtil
      * Send command help to a commandSender.
      *
      * @param sender The commandSender to send the command help to.
-     * @param cmd    The parent command of the sub command.
      * @param subCmd The sub command to send help about.
      */
-    public static void sendCommandHelp(@NotNull CommandSender sender, @NotNull NinCommand cmd, @NotNull NinSubCommand subCmd)
+    public static void sendCommandHelp(@NotNull CommandSender sender, @NotNull NinSubCommand subCmd)
     {
+        NinCommand cmd = subCmd.getParentCommand();
+
         Locale locale = null;
         if (sender instanceof Player)
         {

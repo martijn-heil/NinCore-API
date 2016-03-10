@@ -16,8 +16,18 @@ public interface NinOfflinePlayer
     UUID getUuid();
 
 
+    /**
+     * Get the related {@link OfflinePlayer}
+     *
+     * @return The related {@link OfflinePlayer}
+     */
     OfflinePlayer getOfflinePlayer();
 
 
-    NinPlayer getNinOnlinePlayer();
+    /**
+     * Get the related {@link NinPlayer}
+     *
+     * @return The related {@link NinPlayer}
+     */
+    NinPlayer getNinPlayer();
 }

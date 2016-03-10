@@ -5,6 +5,7 @@ import me.ninjoh.nincore.api.command.executors.SubCommandExecutor;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 public interface NinSubCommand
 {
@@ -69,6 +70,9 @@ public interface NinSubCommand
     String getUsage();
 
 
+    void setUsage(String value);
+
+
     /**
      * Get this sub command's description.
      *
@@ -83,7 +87,7 @@ public interface NinSubCommand
      *
      * @return This sub command's description.
      */
-    String getDescription();
+    String getDescription(ResourceBundle bundle);
 
     /**
      * Check if this sub command has a description.
@@ -91,37 +95,6 @@ public interface NinSubCommand
      * @return True/False, does this sub command have a description?
      */
     boolean hasDescription();
-
-
-    /**
-     * Check if this sub command has any {@link NinArgument}s.
-     *
-     * @return True if it has any NCArguments, else false.
-     */
-    boolean hasArguments();
-
-
-    /**
-     * Get this sub command's {@link NinArgument}s.
-     *
-     * @return A list of all NCArguments for this sub command.
-     */
-    List<NinArgument> getArguments();
-
-
-    /**
-     * Get an argument by index.
-     *
-     * @param i the index to query.
-     * @return The argument found, can be null.
-     */
-    NinArgument getArgumentByIndex(int i);
-
-
-    List<NinArgument> getRequiredArguments();
-
-
-    boolean hasRequiredArguments();
 
 
     /**
@@ -133,10 +106,4 @@ public interface NinSubCommand
 
 
     NinCommand getParentCommand();
-
-
-    void setUseArgumentValidation(boolean value);
-
-
-    boolean useArgumentValidation();
 }

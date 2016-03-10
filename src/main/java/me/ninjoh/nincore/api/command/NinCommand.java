@@ -2,10 +2,11 @@ package me.ninjoh.nincore.api.command;
 
 
 import me.ninjoh.nincore.api.command.executors.NinCommandExecutor;
-import me.ninjoh.nincore.api.exceptions.SubCommandAliasAlreadyRegistered;
-import me.ninjoh.nincore.api.exceptions.SubCommandAlreadyExistsException;
+import me.ninjoh.nincore.api.exceptions.technicalexceptions.SubCommandAliasAlreadyRegisteredException;
+import me.ninjoh.nincore.api.exceptions.technicalexceptions.SubCommandAlreadyExistsException;
 
 import java.util.List;
+import java.util.ResourceBundle;
 
 public interface NinCommand
 {
@@ -33,7 +34,7 @@ public interface NinCommand
      *
      * @return Get this command's description. Can be null.
      */
-    String getDescription();
+    String getDescription(ResourceBundle bundle);
 
 
     /**
@@ -52,6 +53,9 @@ public interface NinCommand
      * @return This command's usage syntax. Can be null.
      */
     String getUsage();
+
+
+    void setUsage(String value);
 
 
     /**
@@ -100,10 +104,10 @@ public interface NinCommand
      *
      * @param NinSubCommand The NinSubCommand to add.
      * @throws SubCommandAlreadyExistsException
-     * @throws SubCommandAliasAlreadyRegistered
+     * @throws SubCommandAliasAlreadyRegisteredException
      */
     void addSubCommand(NinSubCommand NinSubCommand)
-            throws SubCommandAlreadyExistsException, SubCommandAliasAlreadyRegistered;
+            throws SubCommandAlreadyExistsException, SubCommandAliasAlreadyRegisteredException;
 
 
     void setSubCommands(List<NinSubCommand> ninSubCommands);
@@ -161,9 +165,4 @@ public interface NinCommand
     boolean subCommandExistsByAlias(String alias);
 
     void addDefaultHelpSubCmd();
-
-
-    void setUseArgumentValidation(boolean value);
-
-    boolean useArgumentValidation();
 }

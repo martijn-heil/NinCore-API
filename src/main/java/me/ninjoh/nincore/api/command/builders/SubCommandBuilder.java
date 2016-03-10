@@ -2,7 +2,6 @@ package me.ninjoh.nincore.api.command.builders;
 
 
 import me.ninjoh.nincore.api.NinCore;
-import me.ninjoh.nincore.api.command.NinArgument;
 import me.ninjoh.nincore.api.command.NinCommand;
 import me.ninjoh.nincore.api.command.NinSubCommand;
 import me.ninjoh.nincore.api.command.executors.SubCommandExecutor;
@@ -16,17 +15,12 @@ public class SubCommandBuilder
     private String Name; // Required && Always lowercase.
     private List<String> aliases = new ArrayList<>(); // Optional && All entries always lowercase.
     private String[] description; // Optional
-    private List<NinArgument> arguments = new ArrayList<>();
     private String requiredPermission; // Optional.
     private SubCommandExecutor executor; // Required
     private NinCommand parentCommand;
-    private boolean useArgumentValidation;
+    private String usage;
 
 
-    public SubCommandBuilder()
-    {
-
-    }
 
     /**
      * Set this sub command's name
@@ -50,7 +44,7 @@ public class SubCommandBuilder
     @NotNull
     public SubCommandBuilder addAlias(@NotNull String alias) // Optional
     {
-        aliases.add(alias.toLowerCase());
+        aliases.add(alias.toLowerCase()); // aliases are always stored lower case.
         return this;
     }
 
@@ -95,13 +89,6 @@ public class SubCommandBuilder
         return this;
     }
 
-    @NotNull
-    public SubCommandBuilder addArgument(NinArgument arg)
-    {
-        this.arguments.add(arg);
-        return this;
-    }
-
 
     @NotNull
     public SubCommandBuilder setParentCommand(NinCommand cmd)
@@ -111,9 +98,10 @@ public class SubCommandBuilder
     }
 
 
-    public SubCommandBuilder setUseArgumentValidation(boolean value)
+    @NotNull
+    public SubCommandBuilder setUsage(String value)
     {
-        this.useArgumentValidation = value;
+        this.usage = value;
         return this;
     }
 
@@ -127,7 +115,6 @@ public class SubCommandBuilder
     public NinSubCommand construct()
     {
         return NinCore.getImplementation().constructSubCommand(this.Name, this.aliases,
-                this.description, this.requiredPermission,this.arguments, this.executor, this.parentCommand,
-                this.useArgumentValidation);
+                this.description, this.requiredPermission, this.usage, this.executor, this.parentCommand);
     }
 }
