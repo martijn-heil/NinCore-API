@@ -17,6 +17,7 @@ public class CommandBuilder
     private List<NinSubCommand> subCommands = new ArrayList<>(); // Optional
     private NinCommandExecutor executor; // Required
     private String descriptionKey;
+    private String descriptionBundleBaseName;
     private JavaPlugin plugin;
 
 
@@ -38,6 +39,13 @@ public class CommandBuilder
     public CommandBuilder setDescription(String descriptionKey)
     {
         this.descriptionKey = descriptionKey;
+        return this;
+    }
+
+
+    public CommandBuilder setDescriptionBundleBaseName(String baseName)
+    {
+        this.descriptionBundleBaseName = baseName;
         return this;
     }
 
@@ -75,7 +83,7 @@ public class CommandBuilder
      */
     public NinCommand construct()
     {
-        return NinCore.getImplementation().constructCommand(this.name, this.descriptionKey, this.subCommands,
+        return NinCore.getImplementation().constructCommand(this.name, this.descriptionKey, this.descriptionBundleBaseName, this.subCommands,
                 this.executor, this.plugin);
     }
 }

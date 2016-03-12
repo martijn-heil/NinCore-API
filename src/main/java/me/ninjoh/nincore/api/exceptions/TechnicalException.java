@@ -1,6 +1,8 @@
 package me.ninjoh.nincore.api.exceptions;
 
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.logging.Level;
 
 public class TechnicalException extends Exception
@@ -23,6 +25,7 @@ public class TechnicalException extends Exception
     public TechnicalException() {}
 
 
+    @Nullable
     public Level getLogLevel()
     {
         return this.logLevel;

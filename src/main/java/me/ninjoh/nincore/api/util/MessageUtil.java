@@ -15,7 +15,7 @@ import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class MessageUtil
+public class MessageUtil // TODO: Use TranslationUtils to make this more readable.
 {
     /**
      * Send a error message to the sender.

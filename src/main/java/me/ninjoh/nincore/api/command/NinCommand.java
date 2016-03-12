@@ -6,7 +6,7 @@ import me.ninjoh.nincore.api.exceptions.technicalexceptions.SubCommandAliasAlrea
 import me.ninjoh.nincore.api.exceptions.technicalexceptions.SubCommandAlreadyExistsException;
 
 import java.util.List;
-import java.util.ResourceBundle;
+import java.util.Locale;
 
 public interface NinCommand
 {
@@ -34,7 +34,11 @@ public interface NinCommand
      *
      * @return Get this command's description. Can be null.
      */
-    String getDescription(ResourceBundle bundle);
+    String getDescription();
+
+
+
+    String getDescription(Locale inLocale);
 
 
     /**

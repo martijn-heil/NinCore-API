@@ -5,7 +5,6 @@ import me.ninjoh.nincore.api.command.executors.SubCommandExecutor;
 
 import java.util.List;
 import java.util.Locale;
-import java.util.ResourceBundle;
 
 public interface NinSubCommand
 {
@@ -76,18 +75,13 @@ public interface NinSubCommand
     /**
      * Get this sub command's description.
      *
-     * @param locale The locale to return the description in.
      * @return This sub command's description.
      */
-    String getDescription(Locale locale);
+    String getDescription();
 
 
-    /**
-     * Get this sub command's description.
-     *
-     * @return This sub command's description.
-     */
-    String getDescription(ResourceBundle bundle);
+    String getDescription(Locale inLocale);
+
 
     /**
      * Check if this sub command has a description.

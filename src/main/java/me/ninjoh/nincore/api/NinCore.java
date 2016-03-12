@@ -1,11 +1,11 @@
 package me.ninjoh.nincore.api;
 
 
-import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public final class NinCore
 {
-    private static NinCoreImplementation implementation;
+    private static NinCoreImplementation implementation = null;
 
 
     /**
@@ -13,7 +13,7 @@ public final class NinCore
      *
      * @return The plugin which implements the NinCore API.
      */
-    public static Plugin getImplementingPlugin()
+    public static JavaPlugin getImplementingPlugin()
     {
         return implementation.getImplementingPlugin();
     }
