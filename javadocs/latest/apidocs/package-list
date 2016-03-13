@@ -3,6 +3,7 @@ me.ninjoh.nincore.api.command
 me.ninjoh.nincore.api.command.builders
 me.ninjoh.nincore.api.command.executors
 me.ninjoh.nincore.api.entity
+me.ninjoh.nincore.api.events
 me.ninjoh.nincore.api.exceptions
 me.ninjoh.nincore.api.exceptions.technicalexceptions
 me.ninjoh.nincore.api.exceptions.validationexceptions
