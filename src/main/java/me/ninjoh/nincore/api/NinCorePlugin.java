@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class NinCorePlugin extends JavaPlugin
 {
     @Override
-    public void onEnable()
+    public final void onEnable()
     {
         this.getLogger().info("");
         this.getLogger().info("===== ENABLING " + this.getName() + " v" + this.getDescription().getVersion() + " =====");
@@ -34,7 +34,7 @@ public class NinCorePlugin extends JavaPlugin
 
 
     @Override
-    public void onDisable()
+    public final void onDisable()
     {
         this.onDisableInner();
 
@@ -54,7 +54,7 @@ public class NinCorePlugin extends JavaPlugin
     }
 
 
-    public void endEnable()
+    public final void endEnable()
     {
         this.getLogger().info("");
         this.getLogger().warning("===== COULD NOT ENABLE " + this.getName() + " v" +
