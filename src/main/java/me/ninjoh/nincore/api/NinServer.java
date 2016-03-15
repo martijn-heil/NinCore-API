@@ -3,6 +3,7 @@ package me.ninjoh.nincore.api;
 
 import me.ninjoh.nincore.api.entity.NinPlayer;
 import org.bukkit.Server;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -36,4 +37,20 @@ public interface NinServer
      */
     @NotNull
     Server getServer();
+
+    /**
+     * Dispatch a command from console.
+     *
+     * @param command The command string to send.
+     */
+    void dispatchCommand(String command);
+
+    /**
+     * Get an entity by it's entity ID.
+     *
+     * @param id The entity ID to search the related entity for.
+     * @return The entity, if no entity was found, null will be returned.
+     */
+    @Nullable
+    Entity getEntityById(int id);
 }

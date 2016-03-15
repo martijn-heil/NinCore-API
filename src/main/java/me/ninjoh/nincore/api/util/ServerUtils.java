@@ -4,7 +4,12 @@ package me.ninjoh.nincore.api.util;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
+import org.jetbrains.annotations.Nullable;
 
+/**
+ * @deprecated Use {@link me.ninjoh.nincore.api.NinServer} instead.
+ */
+@Deprecated
 public class ServerUtils
 {
     /**
@@ -18,6 +23,13 @@ public class ServerUtils
     }
 
 
+    /**
+     * Get an entity by it's entity ID.
+     *
+     * @param id The entity ID to search the related entity for.
+     * @return The entity, if no entity was found, null will be returned.
+     */
+    @Nullable
     public static Entity getEntityById(int id)
     {
         Entity e = null;

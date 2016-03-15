@@ -13,9 +13,6 @@ public class NinCorePlugin extends JavaPlugin
         this.getLogger().info("");
 
 
-
-
-
         this.onEnableInner();
 
 
