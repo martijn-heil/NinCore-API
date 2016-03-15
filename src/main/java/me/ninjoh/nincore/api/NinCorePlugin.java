@@ -36,9 +36,15 @@ public class NinCorePlugin extends JavaPlugin
     @Override
     public final void onDisable()
     {
+        this.getLogger().info("");
+        this.getLogger().info("===== DISABLING " + this.getName() + " v" + this.getDescription().getVersion() + " =====");
+        this.getLogger().info("");
+
         this.onDisableInner();
 
-        //AnsiConsole.systemUninstall();
+        this.getLogger().info("");
+        this.getLogger().info("===== DISABLED " + this.getName() + " v" + this.getDescription().getVersion() + " =====");
+        this.getLogger().info("");
     }
 
 
