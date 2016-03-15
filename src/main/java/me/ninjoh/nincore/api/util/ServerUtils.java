@@ -2,7 +2,6 @@ package me.ninjoh.nincore.api.util;
 
 
 import org.bukkit.Bukkit;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
@@ -16,12 +15,6 @@ public class ServerUtils
     public static void dispatchCommand(String command)
     {
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
-    }
-
-
-    public static OfflinePlayer[] getAllKnownPlayers()
-    {
-        return Bukkit.getOfflinePlayers();
     }
 
 

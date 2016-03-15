@@ -36,6 +36,7 @@ public enum ArmorType
 			case IRON_CHESTPLATE:
 			case CHAINMAIL_CHESTPLATE:
 			case LEATHER_CHESTPLATE:
+			case ELYTRA:
 				return CHESTPLATE;
 			case DIAMOND_LEGGINGS:
 			case GOLD_LEGGINGS:
