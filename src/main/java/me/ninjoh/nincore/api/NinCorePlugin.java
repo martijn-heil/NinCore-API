@@ -1,16 +1,21 @@
 package me.ninjoh.nincore.api;
 
 
+import me.ninjoh.nincore.api.logging.NinLogger;
+import me.ninjoh.nincore.api.logging.LogColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class NinCorePlugin extends JavaPlugin
 {
+    private NinLogger logger = new NinLogger(this);
+    private boolean silentDisable = false;
+
     @Override
     public final void onEnable()
     {
-        this.getLogger().info("");
-        this.getLogger().info("===== ENABLING " + this.getName() + " v" + this.getDescription().getVersion() + " =====");
-        this.getLogger().info("");
+        this.getNinLogger().info("");
+        this.getNinLogger().info("===== ENABLING " + LogColor.HIGHLIGHT + this.getName() + " v" + this.getDescription().getVersion() + LogColor.RESET + " =====");
+        this.getNinLogger().info("");
 
 
         this.onEnableInner();
@@ -18,14 +23,10 @@ public class NinCorePlugin extends JavaPlugin
 
         if(this.isEnabled())
         {
-            this.getLogger().info("");
-            this.getLogger().info("===== SUCCESSFULLY ENABLED " + this.getName() + " v" +
-                    this.getDescription().getVersion() + " =====");
-            this.getLogger().info("");
-        }
-        else
-        {
-            this.endEnable();
+            this.getNinLogger().info("");
+            this.getNinLogger().info("===== " + LogColor.GOOD + "SUCCESSFULLY " + LogColor.RESET + "ENABLED " + LogColor.HIGHLIGHT + this.getName() + " v" +
+                    this.getDescription().getVersion() + LogColor.RESET + " =====");
+            this.getNinLogger().info("");
         }
     }
 
@@ -33,15 +34,18 @@ public class NinCorePlugin extends JavaPlugin
     @Override
     public final void onDisable()
     {
-        this.getLogger().info("");
-        this.getLogger().info("===== DISABLING " + this.getName() + " v" + this.getDescription().getVersion() + " =====");
-        this.getLogger().info("");
+        if(!silentDisable)
+        {
+            this.getNinLogger().info("");
+            this.getNinLogger().info("===== DISABLING " + LogColor.HIGHLIGHT + this.getName() + " v" + this.getDescription().getVersion() + LogColor.RESET + " =====");
+            this.getNinLogger().info("");
 
-        this.onDisableInner();
+            this.onDisableInner();
 
-        this.getLogger().info("");
-        this.getLogger().info("===== DISABLED " + this.getName() + " v" + this.getDescription().getVersion() + " =====");
-        this.getLogger().info("");
+            this.getNinLogger().info("");
+            this.getNinLogger().info("===== DISABLED " + LogColor.HIGHLIGHT + this.getName() + " v" + this.getDescription().getVersion() + LogColor.RESET + " =====");
+            this.getNinLogger().info("");
+        }
     }
 
 
@@ -59,9 +63,17 @@ public class NinCorePlugin extends JavaPlugin
 
     public final void endEnable()
     {
-        this.getLogger().info("");
-        this.getLogger().warning("===== COULD NOT ENABLE " + this.getName() + " v" +
-                this.getDescription().getVersion() + " =====");
-        this.getLogger().info("");
+        this.getNinLogger().info("");
+        this.getNinLogger().severe("===== COULD NOT ENABLE " + LogColor.HIGHLIGHT + this.getName() + " v" +
+                this.getDescription().getVersion() + LogColor.RESET + " =====");
+        this.getNinLogger().info("");
+        this.silentDisable = true;
+        this.setEnabled(false);
+    }
+
+
+    public NinLogger getNinLogger()
+    {
+        return logger;
     }
 }

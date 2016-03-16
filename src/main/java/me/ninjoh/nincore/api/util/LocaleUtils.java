@@ -5,6 +5,11 @@ import me.ninjoh.nincore.api.NinCore;
 
 import java.util.Locale;
 
+/**
+ * @deprecated Use {@link me.ninjoh.nincore.api.MinecraftLocale} and
+ * {@link me.ninjoh.nincore.api.NinCoreImplementation} methods instead.
+ */
+@Deprecated
 public class LocaleUtils
 {
     public static void setDefaultLocale(Locale locale)

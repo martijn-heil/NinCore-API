@@ -15,6 +15,10 @@ import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * {@link me.ninjoh.nincore.api.NinCommandSender} methods are preferred over this class.
+ * This class is mainly for internal usage, but may be used by extern developers.
+ */
 public class MessageUtil // TODO: Use TranslationUtils to make this more readable.
 {
     /**

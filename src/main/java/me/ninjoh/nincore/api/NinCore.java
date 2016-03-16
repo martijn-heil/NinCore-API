@@ -1,11 +1,13 @@
 package me.ninjoh.nincore.api;
 
 
+import me.ninjoh.nincore.api.logging.LogColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class NinCore
 {
     private static NinCoreImplementation implementation = null;
+    private static NinCoreAPILogger logger = new NinCoreAPILogger();
 
 
     /**
@@ -29,17 +31,16 @@ public final class NinCore
     {
         if(NinCore.implementation != null)
         {
-            NinCore.getImplementation().getImplementingPlugin().getLogger().warning(
-                    implementation.getImplementingPlugin().getName() +
+            getLogger().warning(LogColor.HIGHLIGHT + implementation.getImplementingPlugin().getName() + LogColor.RESET +
                             " tried to update the current NinCore implementation, but was prevented from doing so.");
-
-            return;
         }
-
-        NinCore.implementation = implementation;
-        NinCore.getImplementation().getImplementingPlugin().getLogger().info("NinCore implementation set to: " +
-        NinCore.getImplementation().getImplementingPlugin().getName() + " v" +
-                NinCore.getImplementation().getImplementingPlugin().getDescription().getVersion());
+        else
+        {
+            NinCore.implementation = implementation;
+            getLogger().info("NinCore implementation set to: " + LogColor.HIGHLIGHT +
+                    NinCore.getImplementation().getImplementingPlugin().getName() + " v" +
+                    NinCore.getImplementation().getImplementingPlugin().getDescription().getVersion());
+        }
     }
 
 
@@ -51,5 +52,11 @@ public final class NinCore
     public static NinCoreImplementation getImplementation()
     {
         return implementation;
+    }
+
+
+    protected static NinCoreAPILogger getLogger()
+    {
+        return logger;
     }
 }

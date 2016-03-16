@@ -51,4 +51,8 @@ public interface NinCoreImplementation
     boolean useLocalization();
 
     JavaPlugin getImplementingPlugin();
+
+    void reloadExternalPlugin(JavaPlugin plugin);
+
+    boolean useColoredLogging();
 }
