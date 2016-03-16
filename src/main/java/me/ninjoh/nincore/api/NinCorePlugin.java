@@ -5,7 +5,7 @@ import me.ninjoh.nincore.api.logging.NinLogger;
 import me.ninjoh.nincore.api.logging.LogColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class NinCorePlugin extends JavaPlugin
+public abstract class NinCorePlugin extends JavaPlugin
 {
     private NinLogger logger = new NinLogger(this);
     private boolean silentDisable = false;
@@ -49,16 +49,9 @@ public class NinCorePlugin extends JavaPlugin
     }
 
 
-    public void onEnableInner()
-    {
+    public abstract void onEnableInner();
 
-    }
-
-
-    public void onDisableInner()
-    {
-
-    }
+    public abstract void onDisableInner();
 
 
     public final void endEnable()
