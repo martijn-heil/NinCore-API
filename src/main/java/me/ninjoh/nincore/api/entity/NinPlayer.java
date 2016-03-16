@@ -6,6 +6,8 @@ import me.ninjoh.nincore.api.MinecraftLocale;
 import me.ninjoh.nincore.api.NinOfflinePlayer;
 import org.bukkit.entity.Player;
 
+import java.util.Locale;
+
 public interface NinPlayer extends NinOfflinePlayer, CanReceiveChatMessage
 {
     /**
@@ -22,4 +24,7 @@ public interface NinPlayer extends NinOfflinePlayer, CanReceiveChatMessage
      * @return The player's lang.
      */
     MinecraftLocale getMinecraftLocale();
+
+
+    Locale getLocale();
 }

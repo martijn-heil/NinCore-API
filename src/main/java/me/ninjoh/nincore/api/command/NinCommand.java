@@ -6,9 +6,8 @@ import me.ninjoh.nincore.api.exceptions.technicalexceptions.SubCommandAliasAlrea
 import me.ninjoh.nincore.api.exceptions.technicalexceptions.SubCommandAlreadyExistsException;
 
 import java.util.List;
-import java.util.Locale;
 
-public interface NinCommand
+public interface NinCommand extends CommandBase
 {
     /**
      * Set this command's CommandExecutor.
@@ -19,80 +18,6 @@ public interface NinCommand
 
 
     NinCommandExecutor getExecutor();
-
-
-    /**
-     * Get this command's name.
-     *
-     * @return This command's name.
-     */
-    String getName();
-
-
-    /**
-     * Get this command's description.
-     *
-     * @return Get this command's description. Can be null.
-     */
-    String getDescription();
-
-
-
-    String getDescription(Locale inLocale);
-
-
-    /**
-     * Check if this command has a description.
-     *
-     * @return True/False, does this command have a description set?
-     */
-    boolean hasDescription();
-
-
-    /**
-     * Get this command's usage syntax.
-     * NOTE: This excludes the command itself
-     * e.g; (player=you) (world)
-     *
-     * @return This command's usage syntax. Can be null.
-     */
-    String getUsage();
-
-
-    void setUsage(String value);
-
-
-    /**
-     * Check if this command requires the CommandSender to have a permission.
-     *
-     * @return True/False, does this command require the CommandSender to have a certain permission?
-     */
-    boolean requiresPermission();
-
-
-    /**
-     * Get this command's required permission.
-     *
-     * @return This command's required permission.
-     */
-    String getRequiredPermission();
-
-
-    /**
-     * Get this command's aliases.
-     * NOTE: This does not include the main command alias/name.
-     *
-     * @return This command's aliases. Can be an empty ArrayList.
-     */
-    List<String> getAliases();
-
-
-    /**
-     * Get this command's aliases, including the main command/alias
-     *
-     * @return This command's aliases, including the main command/alias.
-     */
-    List<String> getAliasesWithMainCmd();
 
 
     /**

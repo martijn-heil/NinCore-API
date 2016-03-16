@@ -198,7 +198,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         {
             for (NinSubCommand subCmd : cmd.getSubCommands())
             {
-                final String finalSubCmdAliases = StringUtils.join(subCmd.getAliasesWithMainSubCmd(), ",");
+                final String finalSubCmdAliases = StringUtils.join(subCmd.getAliases(true), ",");
                 final String description = subCmd.getDescription(locale);
                 final String usage = subCmd.getUsage();
 
@@ -332,7 +332,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         formatter.applyPattern(messages.getString("commandHelp.commandHelpFor"));
         final String commandHelpFor = formatter.format(messageArguments);
 
-        final String finalSubCmdAliases = StringUtils.join(subCmd.getAliasesWithMainSubCmd(), ",");
+        final String finalSubCmdAliases = StringUtils.join(subCmd.getAliases(true), ",");
         final String finalCmdAliases = StringUtils.join(cmd.getAliasesWithMainCmd(), ",");
 
         Object[] messageArguments2 =
