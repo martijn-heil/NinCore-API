@@ -18,7 +18,8 @@ public class CommandBuilder
     private NinCommandExecutor executor; // Required
     private String descriptionKey;
     private String descriptionBundleBaseName;
-    private String staticDescription;
+    private String requiredPermission;
+    boolean useStaticDescription = false;
     private JavaPlugin plugin;
 
 
@@ -44,13 +45,6 @@ public class CommandBuilder
     public CommandBuilder setDescription(String descriptionKey)
     {
         this.descriptionKey = descriptionKey;
-        return this;
-    }
-
-
-    public CommandBuilder setStaticDescription(String description)
-    {
-        this.staticDescription = description;
         return this;
     }
 
@@ -88,6 +82,20 @@ public class CommandBuilder
     }
 
 
+    public CommandBuilder setUseStaticDescription(boolean value)
+    {
+        this.useStaticDescription = value;
+        return this;
+    }
+
+
+    public CommandBuilder setRequiredPermission(String requiredPermission)
+    {
+        this.requiredPermission = requiredPermission;
+        return this;
+    }
+
+
     /**
      * Construct the command.
      *
@@ -95,7 +103,6 @@ public class CommandBuilder
      */
     public NinCommand construct()
     {
-        return NinCore.getImplementation().constructCommand(this.name, this.descriptionKey, this.descriptionBundleBaseName,
-                this.staticDescription, this.subCommands, this.executor, this.plugin);
+        return NinCore.get().constructCommand(this.name, this.useStaticDescription, this.descriptionKey, this.descriptionBundleBaseName, this.requiredPermission, this.executor, this.subCommands, this.plugin);
     }
 }

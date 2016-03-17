@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SubCommandBuilder
 {
-    private String Name; // Required && Always lowercase.
+    private String name; // Required && Always lowercase.
     private List<String> aliases = new ArrayList<>(); // Optional && All entries always lowercase.
     private String descriptionKey; // Optional
     private String descriptionBundleBaseName; // Optional
@@ -21,6 +21,7 @@ public class SubCommandBuilder
     private SubCommandExecutor executor; // Required
     private NinCommand parentCommand;
     private String usage;
+    boolean useStaticDescription = false;
 
 
 
@@ -33,7 +34,7 @@ public class SubCommandBuilder
     @NotNull
     public SubCommandBuilder setName(@NotNull String name) // Required
     {
-        this.Name = name.toLowerCase();
+        this.name = name.toLowerCase();
         return this;
     }
 
@@ -132,8 +133,6 @@ public class SubCommandBuilder
     @NotNull
     public NinSubCommand construct()
     {
-        return NinCore.getImplementation().constructSubCommand(this.Name, this.aliases, this.descriptionKey,
-                this.descriptionBundleBaseName, this.staticDescription, this.requiredPermission, this.usage,
-                this.executor, this.parentCommand);
+        return NinCore.get().constructSubCommand(this.name, this.useStaticDescription, this.staticDescription, this.descriptionKey, this.descriptionBundleBaseName, this.requiredPermission, this.usage, this.aliases, this.executor, this.parentCommand);
     }
 }
