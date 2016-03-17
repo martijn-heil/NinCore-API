@@ -22,6 +22,11 @@ public class CommandBuilder
     private JavaPlugin plugin;
 
 
+    public CommandBuilder(JavaPlugin plugin)
+    {
+        this.plugin = plugin;
+    }
+
     /**
      * Set this command's name. This is case sensitive and must
      * mirror a command defined in your plugin.yml.
@@ -29,10 +34,9 @@ public class CommandBuilder
      * @param name The name for this command. Case sensitive
      * @return {@link CommandBuilder}, for method chaining.
      */
-    public CommandBuilder setName(String name, JavaPlugin plugin)
+    public CommandBuilder setName(String name)
     {
         this.name = name;
-        this.plugin = plugin;
         return this;
     }
 

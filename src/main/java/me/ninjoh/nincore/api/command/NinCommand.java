@@ -94,4 +94,6 @@ public interface NinCommand extends CommandBase
     boolean subCommandExistsByAlias(String alias);
 
     void addDefaultHelpSubCmd();
+
+    void addDefaultInfoSubCmd();
 }

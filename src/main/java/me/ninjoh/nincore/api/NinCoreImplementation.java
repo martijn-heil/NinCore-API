@@ -11,9 +11,8 @@ import me.ninjoh.nincore.api.exceptions.technicalexceptions.SubCommandAlreadyExi
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -27,11 +26,11 @@ public interface NinCoreImplementation
             throws SubCommandAliasAlreadyRegisteredException, SubCommandAlreadyExistsException;
 
     // NinCommand constructCommand(@NotNull String name, @Nullable List<NinSubCommand> subCommands, @Nullable List<NinArgument> arguments, @NotNull NinCommandExecutor executor, boolean useArgumentValidation, JavaPlugin plugin);
-    NinCommand constructCommand(@NotNull String name, @Nullable String descriptionKey, @Nullable  String descriptionBundleBaseName, @Nullable String staticDescription, @Nullable  List<NinSubCommand> subCommands, @NotNull NinCommandExecutor executor, JavaPlugin plugin);
+    NinCommand constructCommand(String name, boolean useStaticDescription, String descriptionKey, String descriptionBundleBaseName, String requiredPermission, NinCommandExecutor executor, List<NinSubCommand> subCommands, JavaPlugin plugin);
 
 
     // NinSubCommand constructSubCommand(@NotNull String name, @Nullable List<String> aliases, @Nullable String[] description, @Nullable String permission, @Nullable List<NinArgument> arguments, @NotNull SubCommandExecutor executor, @NotNull NinCommand parentCommand, boolean useArgumentValidation);
-    NinSubCommand constructSubCommand(@NotNull String name, @Nullable List<String> aliases, @Nullable String descriptionKey, @Nullable String descriptionBundleBaseName, @Nullable String staticDescription, @Nullable String permission, @Nullable String usage, @NotNull SubCommandExecutor executor, @NotNull NinCommand parentCommand);
+    NinSubCommand constructSubCommand(String name, boolean useStaticDescription, String staticDescription, String descriptionKey, String descriptionBundleBaseName, String requiredPermission, String usage, List<String> aliases, SubCommandExecutor executor, NinCommand parentCommand);
 
 
     //NinArgument constructArgument();
@@ -52,7 +51,7 @@ public interface NinCoreImplementation
 
     JavaPlugin getImplementingPlugin();
 
-    void reloadExternalPlugin(JavaPlugin plugin);
+    void reloadExternalPlugin(Plugin plugin);
 
     boolean useColoredLogging();
 }
