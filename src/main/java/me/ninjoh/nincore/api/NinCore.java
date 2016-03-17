@@ -55,6 +55,12 @@ public final class NinCore
     }
 
 
+    public static NinCoreImplementation get()
+    {
+        return implementation;
+    }
+
+
     protected static NinCoreAPILogger getLogger()
     {
         return logger;

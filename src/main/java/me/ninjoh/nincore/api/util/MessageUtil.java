@@ -192,7 +192,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         sender.sendMessage("§8-§b=§8-§b=§8<[ §6" + commandHelpFor + " §8]>§b=§8-§b=§8-");
         sender.sendMessage("");
 
-        final String finalCmdAliases = StringUtils.join(cmd.getAliasesWithMainCmd(), ",");
+        final String finalCmdAliases = StringUtils.join(cmd.getAliases(true), ",");
 
         if (cmd.hasSubCommands())
         {
@@ -333,7 +333,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         final String commandHelpFor = formatter.format(messageArguments);
 
         final String finalSubCmdAliases = StringUtils.join(subCmd.getAliases(true), ",");
-        final String finalCmdAliases = StringUtils.join(cmd.getAliasesWithMainCmd(), ",");
+        final String finalCmdAliases = StringUtils.join(cmd.getAliases(true), ",");
 
         Object[] messageArguments2 =
                 {

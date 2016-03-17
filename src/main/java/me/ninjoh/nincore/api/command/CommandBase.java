@@ -25,4 +25,6 @@ public interface CommandBase
     String getUsage();
 
     void setUsage(String value);
+
+    boolean descriptionIsStatic();
 }

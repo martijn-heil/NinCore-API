@@ -27,11 +27,11 @@ public interface NinCoreImplementation
             throws SubCommandAliasAlreadyRegisteredException, SubCommandAlreadyExistsException;
 
     // NinCommand constructCommand(@NotNull String name, @Nullable List<NinSubCommand> subCommands, @Nullable List<NinArgument> arguments, @NotNull NinCommandExecutor executor, boolean useArgumentValidation, JavaPlugin plugin);
-    NinCommand constructCommand(@NotNull String name, String descriptionKey, @Nullable String descriptionBundleBaseName, @Nullable List<NinSubCommand> subCommands, @NotNull NinCommandExecutor executor, JavaPlugin plugin);
+    NinCommand constructCommand(@NotNull String name, @Nullable String descriptionKey, @Nullable  String descriptionBundleBaseName, @Nullable String staticDescription, @Nullable  List<NinSubCommand> subCommands, @NotNull NinCommandExecutor executor, JavaPlugin plugin);
 
 
     // NinSubCommand constructSubCommand(@NotNull String name, @Nullable List<String> aliases, @Nullable String[] description, @Nullable String permission, @Nullable List<NinArgument> arguments, @NotNull SubCommandExecutor executor, @NotNull NinCommand parentCommand, boolean useArgumentValidation);
-    NinSubCommand constructSubCommand(@NotNull String name, @Nullable List<String> aliases, @Nullable String descriptionKey, @Nullable String descriptionBundleBaseName, @Nullable String permission, @Nullable String usage, @NotNull SubCommandExecutor executor, @NotNull NinCommand parentCommand);
+    NinSubCommand constructSubCommand(@NotNull String name, @Nullable List<String> aliases, @Nullable String descriptionKey, @Nullable String descriptionBundleBaseName, @Nullable String staticDescription, @Nullable String permission, @Nullable String usage, @NotNull SubCommandExecutor executor, @NotNull NinCommand parentCommand);
 
 
     //NinArgument constructArgument();

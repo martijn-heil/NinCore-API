@@ -3,6 +3,7 @@ package me.ninjoh.nincore.api;
 
 import me.ninjoh.nincore.api.entity.NinPlayer;
 import org.bukkit.Server;
+import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -53,4 +54,6 @@ public interface NinServer
      */
     @Nullable
     Entity getEntityById(int id);
+
+    World getDefaultWorld();
 }

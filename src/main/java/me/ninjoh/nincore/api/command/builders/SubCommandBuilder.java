@@ -16,6 +16,7 @@ public class SubCommandBuilder
     private List<String> aliases = new ArrayList<>(); // Optional && All entries always lowercase.
     private String descriptionKey; // Optional
     private String descriptionBundleBaseName; // Optional
+    private String staticDescription;
     private String requiredPermission; // Optional.
     private SubCommandExecutor executor; // Required
     private NinCommand parentCommand;
@@ -72,6 +73,13 @@ public class SubCommandBuilder
     }
 
 
+    public SubCommandBuilder setStaticDescription(String description)
+    {
+        this.staticDescription = description;
+        return this;
+    }
+
+
     /**
      * Set this sub command's required permission.
      *
@@ -124,7 +132,8 @@ public class SubCommandBuilder
     @NotNull
     public NinSubCommand construct()
     {
-        return NinCore.getImplementation().constructSubCommand(this.Name, this.aliases,
-                this.descriptionKey, this.descriptionBundleBaseName, this.requiredPermission, this.usage, this.executor, this.parentCommand);
+        return NinCore.getImplementation().constructSubCommand(this.Name, this.aliases, this.descriptionKey,
+                this.descriptionBundleBaseName, this.staticDescription, this.requiredPermission, this.usage,
+                this.executor, this.parentCommand);
     }
 }
