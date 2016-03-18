@@ -66,6 +66,13 @@ public class SubCommandBuilder
     }
 
 
+    public SubCommandBuilder setUseStaticDescription(boolean value)
+    {
+        this.useStaticDescription = value;
+        return this;
+    }
+
+
     @NotNull
     public SubCommandBuilder setDescriptionBundleBaseName(String baseName)
     {
