@@ -3,11 +3,13 @@ package me.ninjoh.nincore.api;
 
 import me.ninjoh.nincore.api.logging.NinLogger;
 import me.ninjoh.nincore.api.logging.LogColor;
+import me.ninjoh.nincore.api.util.DataManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public abstract class NinCorePlugin extends JavaPlugin
 {
     private NinLogger logger = new NinLogger(this);
+    private DataManager dataManager = new DataManager(this);
     private boolean silentDisable = false;
 
     @Override
@@ -68,5 +70,11 @@ public abstract class NinCorePlugin extends JavaPlugin
     public NinLogger getNinLogger()
     {
         return logger;
+    }
+
+
+    public DataManager getDataManager()
+    {
+        return dataManager;
     }
 }

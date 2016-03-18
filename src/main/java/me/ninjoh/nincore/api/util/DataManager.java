@@ -147,12 +147,15 @@ public class DataManager
 
     /**
      * Load the data file
-     *
-     * @return FileConfiguration of the data file
      */
-    public FileConfiguration loadDataFile()
+    public void loadDataFile()
     {
         data = YamlConfiguration.loadConfiguration(dataF);
-        return data;
+    }
+
+
+    public FileConfiguration getData()
+    {
+        return this.data;
     }
 }

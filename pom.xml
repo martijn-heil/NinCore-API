@@ -86,6 +86,14 @@
             <!--<scope>provided</scope>-->
         <!--</dependency>-->
 
+        <!-- Jbcrypt -->
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.3m</version>
+            <scope>compile</scope>
+        </dependency>
+
         <!-- Jetbrains annotations -->
         <dependency>
             <groupId>org.jetbrains</groupId>
@@ -151,10 +159,10 @@
                             <shadedPattern>me.ninjoh.nincore.api.common.org.jetbrains.annotations</shadedPattern>
                         </relocation>
 
-                        <!--<relocation>-->
-                            <!--<pattern>org.mindrot</pattern>-->
-                            <!--<shadedPattern>me.ninjoh.nincore.api.common.org.mindrot</shadedPattern>-->
-                        <!--</relocation>-->
+                        <relocation>
+                            <pattern>org.mindrot</pattern>
+                            <shadedPattern>me.ninjoh.nincore.api.common.org.mindrot</shadedPattern>
+                        </relocation>
 
                     </relocations>
                     <filters>
