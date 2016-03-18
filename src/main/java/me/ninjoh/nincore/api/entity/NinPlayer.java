@@ -1,30 +1,16 @@
 package me.ninjoh.nincore.api.entity;
 
 
-import me.ninjoh.nincore.api.CanReceiveChatMessage;
-import me.ninjoh.nincore.api.MinecraftLocale;
+import me.ninjoh.nincore.api.NinCommandSender;
 import me.ninjoh.nincore.api.NinOfflinePlayer;
 import org.bukkit.entity.Player;
 
-import java.util.Locale;
-
-public interface NinPlayer extends NinOfflinePlayer, CanReceiveChatMessage
+public interface NinPlayer extends NinOfflinePlayer, NinCommandSender
 {
     /**
      * Get the bukkit player.
      *
      * @return bukkit player.
      */
-    Player getPlayer();
-
-
-    /**
-     * Get a player's client lang.
-     *
-     * @return The player's lang.
-     */
-    MinecraftLocale getMinecraftLocale();
-
-
-    Locale getLocale();
+    Player toPlayer();
 }
