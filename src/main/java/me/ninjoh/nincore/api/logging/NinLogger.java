@@ -149,8 +149,9 @@ public class NinLogger
             for (ChatColor color : ChatColor.values())
             {
                 result = result.replaceAll(color.toString(), "");
-                plugin.getLogger().log(level, result);
             }
+
+            plugin.getLogger().log(level, result);
         }
     }
 }

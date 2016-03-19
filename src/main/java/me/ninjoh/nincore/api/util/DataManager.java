@@ -1,11 +1,11 @@
 package me.ninjoh.nincore.api.util;
 
 
+import me.ninjoh.nincore.api.NinCorePlugin;
 import me.ninjoh.nincore.api.Tick;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.jetbrains.annotations.NotNull;
 
@@ -14,14 +14,14 @@ import java.io.IOException;
 
 public class DataManager
 {
-    private JavaPlugin plugin;
+    private NinCorePlugin plugin;
     private FileConfiguration data;
 
     private File dataF;
 
 
 
-    public DataManager(@NotNull JavaPlugin plugin)
+    public DataManager(@NotNull NinCorePlugin plugin)
     {
         this.plugin = plugin;
         dataF = new File(plugin.getDataFolder(), "data.yml");
@@ -37,11 +37,11 @@ public class DataManager
 
         try
         {
-            plugin.getLogger().info("Attempting to create data file..");
+            plugin.getNinLogger().info("Attempting to create data file..");
 
             dataFile.save(dataF);
 
-            plugin.getLogger().info("Successfully created data file");
+            plugin.getNinLogger().info("Successfully created data file.");
         }
         catch (IOException e)
         {
@@ -54,7 +54,7 @@ public class DataManager
                 s = "An ";
             }
 
-            plugin.getLogger().warning(s + e.getClass().getName() + "occurred while creating data file;");
+            plugin.getNinLogger().warning(s + e.getClass().getName() + "occurred while creating data file;");
             e.printStackTrace();
         }
     }
@@ -78,11 +78,11 @@ public class DataManager
     {
         try
         {
-            plugin.getLogger().info("Attempting to save data file..");
+            plugin.getNinLogger().info("Attempting to save data file..");
 
             data.save(dataF);
 
-            plugin.getLogger().info("Successfully saved data file");
+            plugin.getNinLogger().info("Successfully saved data file.");
         }
         catch(IOException e)
         {
@@ -95,7 +95,7 @@ public class DataManager
                 s = "An ";
             }
 
-            plugin.getLogger().warning(s + e.getClass().getName() + " occurred while saving data file;");
+            plugin.getNinLogger().warning(s + e.getClass().getName() + " occurred while saving data file;");
             e.printStackTrace();
         }
     }
@@ -119,7 +119,7 @@ public class DataManager
             }
         }, interval, interval);
 
-        plugin.getLogger().info("Scheduled data saving interval is set to " + interval + " ticks(s).");
+        plugin.getNinLogger().info("Scheduled data saving interval is set to " + interval + " ticks(s).");
     }
 
 
@@ -141,7 +141,7 @@ public class DataManager
             }
         }, interval.toLong(), interval.toLong());
 
-        plugin.getLogger().info("Scheduled data saving interval is set to " + interval + " tick(s).");
+        plugin.getNinLogger().info("Scheduled data saving interval is set to " + interval + " tick(s).");
     }
 
 

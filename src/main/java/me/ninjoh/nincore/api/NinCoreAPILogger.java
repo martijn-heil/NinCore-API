@@ -136,8 +136,9 @@ public class NinCoreAPILogger
             for (ChatColor color : ChatColor.values())
             {
                 result = result.replaceAll(color.toString(), "");
-                Bukkit.getLogger().log(level, plainPrefix + " " + result);
             }
+
+            Bukkit.getLogger().log(level, plainPrefix + " " + result);
         }
     }
 }
