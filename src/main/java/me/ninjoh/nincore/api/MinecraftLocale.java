@@ -4,6 +4,9 @@ import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.Set;
 
+/**
+ * This enum represents all the available languages in the Minecraft client.
+ */
 public enum MinecraftLocale
 {
     AFRIKAANS("Afrikaans", new Locale("af", "ZA")), // Official language in South Africa.
