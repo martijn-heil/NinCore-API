@@ -85,7 +85,7 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable
 	}
 
 	/**
-	 * Returns the last equipped armor piece, could be a piece of armor, an AIR material, or null.
+	 * @return the last equipped armor piece, could be a piece of armor, an AIR material, or null.
 	 */
 	public final ItemStack getOldArmorPiece()
 	{
@@ -93,7 +93,7 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable
 	}
 
 	/**
-	 * Returns the newly equipped armor, could be a piece of armor, an AIR material, or null.
+	 * @return the newly equipped armor, could be a piece of armor, an AIR material, or null.
 	 */
 	public final ItemStack getNewArmorPiece()
 	{
@@ -106,7 +106,9 @@ public final class ArmorEquipEvent extends PlayerEvent implements Cancellable
 	}
 
 	/**
-	 * Gets the method used to either equip or uneqiip an armor piece.
+	 * Gets the method used to either equip or un-equip an armor piece.
+	 *
+	 * @return The equip type.
 	 */
 	public EquipMethod getMethod()
 	{
