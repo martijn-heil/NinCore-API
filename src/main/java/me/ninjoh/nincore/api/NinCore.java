@@ -47,7 +47,7 @@ public final class NinCore
     /**
      * Get the current NinCore implementation
      *
-     * @return The current NinCore implementation
+     * @return The current {@link NinCoreImplementation}
      */
     public static NinCoreImplementation getImplementation()
     {
@@ -55,6 +55,11 @@ public final class NinCore
     }
 
 
+    /**
+     * An alias for {@link NinCore#getImplementation()}
+     *
+     * @return The current {@link NinCoreImplementation}
+     */
     public static NinCoreImplementation get()
     {
         return implementation;

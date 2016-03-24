@@ -5,7 +5,7 @@ import org.jetbrains.annotations.Nullable;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
- * Author: Ian Gallagher igallagher@securityinnovation.com
+ * @author Ian Gallagher igallagher@securityinnovation.com
  *
  * This code utilizes jBCrypt, which you need installed to use.
  * jBCrypt: http://www.mindrot.org/projects/jBCrypt/

@@ -5,6 +5,7 @@ import me.ninjoh.nincore.api.command.NinCommand;
 import me.ninjoh.nincore.api.command.NinSubCommand;
 import me.ninjoh.nincore.api.util.MessageUtil;
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
@@ -25,8 +26,9 @@ public class NinConsoleCommandSender implements CanReceiveChatMessage
 
 
     /**
-     * Send plugin info to the player.
+     * Send plugin info to this using {@link MessageUtil#sendPluginInfo(CommandSender, JavaPlugin)}
      *
+     * @param plugin The {@link JavaPlugin} to send information about.
      */
     @Override
     public void sendPluginInfo(@NotNull JavaPlugin plugin)
@@ -36,9 +38,9 @@ public class NinConsoleCommandSender implements CanReceiveChatMessage
 
 
     /**
-     * Send error.
+     * Sends an error to this using {@link MessageUtil#sendError(CommandSender, String)}
      *
-     * @param error error string to send.
+     * @param error the error string to send.
      */
     @Override
     public void sendError(@NotNull String error)

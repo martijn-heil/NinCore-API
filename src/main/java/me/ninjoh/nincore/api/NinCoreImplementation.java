@@ -24,15 +24,9 @@ public interface NinCoreImplementation
     void registerNinSubCommand(NinSubCommand subCommand, JavaPlugin plugin)
             throws SubCommandAliasAlreadyRegisteredException, SubCommandAlreadyExistsException;
 
-    // NinCommand constructCommand(@NotNull String name, @Nullable List<NinSubCommand> subCommands, @Nullable List<NinArgument> arguments, @NotNull NinCommandExecutor executor, boolean useArgumentValidation, JavaPlugin plugin);
     NinCommand constructCommand(String name, boolean useStaticDescription, String descriptionKey, String descriptionBundleBaseName, String requiredPermission, NinCommandExecutor executor, List<NinSubCommand> subCommands, JavaPlugin plugin);
 
-
-    // NinSubCommand constructSubCommand(@NotNull String name, @Nullable List<String> aliases, @Nullable String[] description, @Nullable String permission, @Nullable List<NinArgument> arguments, @NotNull SubCommandExecutor executor, @NotNull NinCommand parentCommand, boolean useArgumentValidation);
     NinSubCommand constructSubCommand(String name, boolean useStaticDescription, String staticDescription, String descriptionKey, String descriptionBundleBaseName, String requiredPermission, String usage, List<String> aliases, SubCommandExecutor executor, NinCommand parentCommand);
-
-
-    //NinArgument constructArgument();
 
     NinCommandSender getNinCommandSender(CommandSender commandSender);
 
@@ -42,6 +36,12 @@ public interface NinCoreImplementation
 
     MinecraftLocale getDefaultMinecraftLocale();
 
+
+    /**
+     * The standard default {@link MinecraftLocale} is {@link MinecraftLocale#BRITISH_ENGLISH}
+     *
+     * @param minecraftLocale The {@link MinecraftLocale} to set default.
+     */
     void setDefaultMinecraftLocale(MinecraftLocale minecraftLocale);
 
     void setUseLocalization(boolean value);
@@ -50,5 +50,12 @@ public interface NinCoreImplementation
 
     JavaPlugin getImplementingPlugin();
 
+
+    /**
+     * If colored logging is enabled and the console is ANSI supported, the {@link me.ninjoh.nincore.api.logging.NinLogger}
+     * sends messages in color.
+     *
+     * @return Is colored logging enabled?
+     */
     boolean useColoredLogging();
 }

@@ -11,6 +11,10 @@ import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
+
+/**
+ * Only meant for internal usage by the NinCore API.
+ */
 public class NinCoreAPILogger
 {
     private static final Terminal terminal;
@@ -128,7 +132,6 @@ public class NinCoreAPILogger
                 }
             }
 
-            // plugin.getLogger().log(level, result + Ansi.ansi().reset().toString());
             Bukkit.getLogger().log(level, result + Ansi.ansi().reset().toString());
         }
         else

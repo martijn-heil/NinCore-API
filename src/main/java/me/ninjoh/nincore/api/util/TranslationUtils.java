@@ -17,7 +17,7 @@ public class TranslationUtils
      * @return the formatted message.
      */
     public static String transWithArgs(ResourceBundle bundle, Object[] args, String msg)
-    {;
+    {
         MessageFormat formatter = new MessageFormat("");
         formatter.setLocale(bundle.getLocale());
 
