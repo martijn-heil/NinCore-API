@@ -450,6 +450,12 @@ public enum MinecraftLocale
     }
 
 
+    public String getDisplayName(MinecraftLocale inLocale)
+    {
+        return locale.getDisplayName(inLocale.toLocale());
+    }
+
+
     /**
      * Returns a well-formed IETF BCP 47 language tag representing
      * this locale.

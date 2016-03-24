@@ -44,9 +44,9 @@ public interface NinCoreImplementation
      */
     void setDefaultMinecraftLocale(MinecraftLocale minecraftLocale);
 
-    void setUseLocalization(boolean value);
+    void setLocalized(boolean value);
 
-    boolean useLocalization();
+    boolean isLocalized();
 
     JavaPlugin getImplementingPlugin();
 

@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
  * WARNING: Ticks to time calculations are based on 20 ticks per second.
  * Ideally Minecraft has 20 ticks per seconds. But with lag it CAN be less than 20 ticks per second
  * and thus these calculations will not be accurate when Minecraft does not have 20 ticks per second.
- *
  */
 public class Tick
 {

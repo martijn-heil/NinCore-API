@@ -40,14 +40,14 @@ public interface NinServer
     Server getServer();
 
     /**
-     * Dispatch a command from console.
+     * Dispatch a command from console. A pre command slash should NOT be included.
      *
      * @param command The command string to send.
      */
     void dispatchCommand(String command);
 
     /**
-     * Get an entity by it's entity ID.
+     * Get an entity by it's entity ID. Searches in all worlds.
      *
      * @param id The entity ID to search the related entity for.
      * @return The entity, if no entity was found, null will be returned.

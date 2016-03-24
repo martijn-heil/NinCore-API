@@ -25,7 +25,7 @@ public class LocaleUtils
      */
     public static void setUseLocalization(boolean value)
     {
-        NinCore.getImplementation().setUseLocalization(value);
+        NinCore.getImplementation().setLocalized(value);
     }
 
 
@@ -36,6 +36,6 @@ public class LocaleUtils
      */
     public static boolean useLocalization()
     {
-        return NinCore.getImplementation().useLocalization();
+        return NinCore.getImplementation().isLocalized();
     }
 }
