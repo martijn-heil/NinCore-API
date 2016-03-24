@@ -21,7 +21,7 @@ public class SubCommandBuilder
     private SubCommandExecutor executor; // Required
     private NinCommand parentCommand;
     private String usage;
-    boolean useStaticDescription = false;
+    boolean useStaticDescription = true;
 
 
 

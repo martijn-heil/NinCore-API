@@ -116,11 +116,15 @@ public class NinLogger
 
     public void log(Level level, String msg)
     {
+        if(msg == null) return;
+
         String result = msg;
 
-        if(!result.equals("")) result = levelColors.get(level) + result;
-
-        result = result.replace(ChatColor.RESET.toString(), levelColors.get(level).toString());
+        if(!result.equals("") && levelColors.get(level) != null)
+        {
+            result = levelColors.get(level) + result;
+            result = result.replace(ChatColor.RESET.toString(), levelColors.get(level).toString());
+        }
 
 
         // The NinCore implementation may not be initialized yet at this point in execution.
