@@ -11,7 +11,6 @@ import me.ninjoh.nincore.api.exceptions.technicalexceptions.SubCommandAlreadyExi
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
@@ -50,8 +49,6 @@ public interface NinCoreImplementation
     boolean useLocalization();
 
     JavaPlugin getImplementingPlugin();
-
-    void reloadExternalPlugin(Plugin plugin);
 
     boolean useColoredLogging();
 }
