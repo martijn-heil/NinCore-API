@@ -5,7 +5,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.logging.Level;
 
-public class TechnicalException extends Exception
+public class TechnicalException extends RuntimeException
 {
     private Level logLevel;
 
