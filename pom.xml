@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <local.maven.repository>${user.home}/.m2/</local.maven.repository>
+        <local.maven.repository>${user.home}/.m2/repository</local.maven.repository>
     </properties>
 
     <repositories>

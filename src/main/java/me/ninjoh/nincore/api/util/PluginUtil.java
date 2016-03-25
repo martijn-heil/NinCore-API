@@ -50,6 +50,7 @@ import java.util.logging.Logger;
  *
  * @author rylinaux
  */
+@SuppressWarnings("unchecked")
 public class PluginUtil
 {
 
