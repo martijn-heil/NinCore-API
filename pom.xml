@@ -8,6 +8,8 @@
     <artifactId>nincore-api</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>NinCore-API</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <local.maven.repository>${user.home}/.m2/</local.maven.repository>
