@@ -25,15 +25,16 @@ public enum CardinalDirection
     NORTH_WEST(309.38, 315, 320.62, BlockFace.NORTH_WEST);
 
 
-
     private float min;
     private float max;
     private BlockFace blockFace;
+
 
     CardinalDirection(double min, double middle, double max, BlockFace blockFace)
     {
 
     }
+
 
     public static CardinalDirection fromCompassDegrees(double degrees)
     {
@@ -56,7 +57,7 @@ public enum CardinalDirection
                         NORTH_WEST
                 };
 
-        return directions[ (int)Math.round((  (degrees % 360) / 22.5)) ];
+        return directions[(int) Math.round(((degrees % 360) / 22.5))];
     }
 
 
@@ -70,6 +71,7 @@ public enum CardinalDirection
     {
         return this.min;
     }
+
 
     public double getMax()
     {

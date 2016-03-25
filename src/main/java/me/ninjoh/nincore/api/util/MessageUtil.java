@@ -143,13 +143,22 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         sender.sendMessage(" " + version); // Plugin version
 
         if (plugin.getDescription().getAuthors() != null)
-        {sender.sendMessage(""); sender.sendMessage(" " + authors);} // Plugin authors
+        {
+            sender.sendMessage("");
+            sender.sendMessage(" " + authors);
+        } // Plugin authors
 
         if (plugin.getDescription().getDescription() != null)
-        {sender.sendMessage(""); sender.sendMessage(" " + description);} // Plugin description
+        {
+            sender.sendMessage("");
+            sender.sendMessage(" " + description);
+        } // Plugin description
 
         if (plugin.getDescription().getWebsite() != null)
-        {sender.sendMessage(""); sender.sendMessage(" " + website);} // Plugin website
+        {
+            sender.sendMessage("");
+            sender.sendMessage(" " + website);
+        } // Plugin website
 
 
         sender.sendMessage("");
@@ -203,7 +212,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
                 final String usage = subCmd.getUsage();
 
 
-                if(sender instanceof Player) // Use JSON messages for players.
+                if (sender instanceof Player) // Use JSON messages for players.
                 {
                     Player p = (Player) sender;
 
@@ -226,14 +235,14 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
 
                     TextComponent message = new TextComponent(TextComponent.fromLegacyText(" §e/" + finalCmdAliases +
                             ((subCmd.requiresPermission() && !sender.hasPermission(subCmd.getRequiredPermission()))
-                            ? " §c" + finalSubCmdAliases : " " + finalSubCmdAliases) +
+                                    ? " §c" + finalSubCmdAliases : " " + finalSubCmdAliases) +
                             ((description == null) ? "" : " §f- §7" + description)));
 
-                    BaseComponent[] baseComponents = new ComponentBuilder(syntax + "\n\n" + finalSubCmdDescription ).create();
+                    BaseComponent[] baseComponents = new ComponentBuilder(syntax + "\n\n" + finalSubCmdDescription).create();
 
-                    message.setHoverEvent( new HoverEvent( HoverEvent.Action.SHOW_TEXT, baseComponents) );
-                    message.setClickEvent( new ClickEvent( ClickEvent.Action.SUGGEST_COMMAND, "/" +
-                            cmd.getName().toLowerCase() + " " + subCmd.getName() ) );
+                    message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, baseComponents));
+                    message.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/" +
+                            cmd.getName().toLowerCase() + " " + subCmd.getName()));
 
                     // Send message.
                     p.spigot().sendMessage(message);
@@ -263,7 +272,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
 
 
             String description = null;
-            if(cmd.hasDescription())
+            if (cmd.hasDescription())
             {
                 Object[] messageArguments2 = {cmd.getDescription()};
                 formatter.applyPattern(messages.getString("commandHelp.description"));
@@ -271,12 +280,12 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
             }
 
 
-            if(sender instanceof Player) // Use JSON messages if the sender is a player.
+            if (sender instanceof Player) // Use JSON messages if the sender is a player.
             {
                 Player p = (Player) sender;
 
                 TextComponent message = new TextComponent(TextComponent.fromLegacyText(syntax));
-                message.setClickEvent( new ClickEvent( ClickEvent.Action.SUGGEST_COMMAND, "/" + cmd.getName()));
+                message.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/" + cmd.getName()));
 
                 // Send message.
                 p.spigot().sendMessage(message);
@@ -352,12 +361,12 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         sender.sendMessage("");
 
 
-        if(sender instanceof Player)
+        if (sender instanceof Player)
         {
             Player p = (Player) sender;
 
             TextComponent message = new TextComponent(TextComponent.fromLegacyText(syntax));
-            message.setClickEvent( new ClickEvent( ClickEvent.Action.SUGGEST_COMMAND, "/" + cmd.getName().toLowerCase() + " " + subCmd.getName()));
+            message.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/" + cmd.getName().toLowerCase() + " " + subCmd.getName()));
 
             // Send message.
             p.spigot().sendMessage(message);
@@ -367,8 +376,6 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
             // Send sub command syntax message.
             sender.sendMessage(syntax);
         }
-
-
 
 
         // Send description if the sub command has one.

@@ -20,7 +20,6 @@ public class DataManager
     private File dataF;
 
 
-
     public DataManager(@NotNull NinCorePlugin plugin)
     {
         this.plugin = plugin;
@@ -47,7 +46,7 @@ public class DataManager
         {
             // Vowels, A or An
             String s = "A ";
-            if(e.getClass().getName().startsWith("a") || e.getClass().getName().startsWith("e") ||
+            if (e.getClass().getName().startsWith("a") || e.getClass().getName().startsWith("e") ||
                     e.getClass().getName().startsWith("i") || e.getClass().getName().startsWith("o") ||
                     e.getClass().getName().startsWith("u"))
             {
@@ -84,11 +83,11 @@ public class DataManager
 
             plugin.getNinLogger().info("Successfully saved data file.");
         }
-        catch(IOException e)
+        catch (IOException e)
         {
             // Vowels, A or An
             String s = "A ";
-            if(e.getClass().getName().startsWith("a") || e.getClass().getName().startsWith("e") ||
+            if (e.getClass().getName().startsWith("a") || e.getClass().getName().startsWith("e") ||
                     e.getClass().getName().startsWith("i") || e.getClass().getName().startsWith("o") ||
                     e.getClass().getName().startsWith("u"))
             {

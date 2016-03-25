@@ -14,6 +14,7 @@ public enum LogColor
 
     ChatColor relatedChatColor;
 
+
     LogColor(ChatColor relatedChatColor)
     {
         this.relatedChatColor = relatedChatColor;

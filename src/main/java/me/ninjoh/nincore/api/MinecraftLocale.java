@@ -34,7 +34,7 @@ public enum MinecraftLocale
     ESTONIAN("Eesti", new Locale("et", "EE")),
     BASQUE("Euskara", new Locale("eu", "ES")), // Spain (Basque Country) & France
     PERSIAN("فارسی", new Locale("fa", "IR")),
-    FINNISH("Suomi",  new Locale("fi", "FI")),
+    FINNISH("Suomi", new Locale("fi", "FI")),
     FRENCH("Français (Fr)", new Locale("fr", "FR")),
     CANADIAN_FRENCH("Français (Ca)", new Locale("fr", "CA")),
     IRISH("Gaeilge", new Locale("ga", "IE")),
@@ -47,7 +47,7 @@ public enum MinecraftLocale
     ARMENIAN("Armenian", new Locale("hy", "AM")), // Armenian country name doesn't work with UTF-8 I think?
     INDONESIAN("Bahasa Indonesia", new Locale("id", "ID")),
     ICELANDIC("Íslenska", new Locale("is", "IS")),
-    ITALIAN("Italiano",new Locale("it", "IT")),
+    ITALIAN("Italiano", new Locale("it", "IT")),
     JAPANESE("日本語", new Locale("ja", "JP")),
     GEORGIAN("ქართული", new Locale("ka", "GE")),
     KOREAN("한국어", new Locale("ko", "KR")), // North Korea and South Korea
@@ -91,7 +91,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @param name The name of the language in it's own language. (e.g Français)
+     * @param name   The name of the language in it's own language. (e.g Français)
      * @param locale The related {@link Locale}
      */
     MinecraftLocale(String name, Locale locale)
@@ -108,27 +108,27 @@ public enum MinecraftLocale
      * <blockquote>
      * language + "_" + country + "_" + (variant + "_#" | "#") + script + "-" + extensions
      * </blockquote>
-     *
+     * <p>
      * Language is always lower case, country is always upper case, script is always title
      * case, and extensions are always lower case.  Extensions and private use subtags
      * will be in canonical order as explained in {@link #toLanguageTag}.
-     *
+     * <p>
      * <p>When the locale has neither script nor extensions, the result is the same as in
      * Java 6 and prior.
-     *
+     * <p>
      * <p>If both the language and country fields are missing, this function will return
      * the empty string, even if the variant, script, or extensions field is present (you
      * can't have a locale with just a variant, the variant must accompany a well-formed
      * language or country code).
-     *
+     * <p>
      * <p>If script or extensions are present and variant is missing, no underscore is
      * added before the "#".
-     *
+     * <p>
      * <p>This behavior is designed to support debugging and to be compatible with
      * previous uses of <code>toString</code> that expected language, country, and variant
      * fields only.  To represent a Locale as a String for interchange purposes, use
      * {@link #toLanguageTag}.
-     *
+     * <p>
      * <p>Examples: <ul>
      * <li><tt>en</tt></li>
      * <li><tt>de_DE</tt></li>
@@ -182,7 +182,7 @@ public enum MinecraftLocale
      *
      * @param inLocale The locale for which to retrieve the display country.
      * @return The name of the country appropriate to the given locale.
-     * @exception NullPointerException if <code>inLocale</code> is <code>null</code>
+     * @throws NullPointerException if <code>inLocale</code> is <code>null</code>
      */
     public String getDisplayCountry(Locale inLocale)
     {
@@ -192,7 +192,7 @@ public enum MinecraftLocale
 
     /**
      * Returns the language code of this Locale.
-     *
+     * <p>
      * <p><b>Note:</b> ISO 639 is not a stable standard&mdash; some languages' codes have changed.
      * Locale's constructor recognizes both the new and the old codes for the languages
      * whose codes have changed, but this function always returns the old code.  If you
@@ -206,6 +206,7 @@ public enum MinecraftLocale
      * if (locale.getLanguage().equals(new Locale("he").getLanguage()))
      *    ...
      * </pre>
+     *
      * @return The language code, or the empty string if none is defined.
      * @see #getDisplayLanguage
      */
@@ -235,12 +236,12 @@ public enum MinecraftLocale
      * corresponding ISO 3166-1 alpha-3 uppercase code is returned.
      * If the locale doesn't specify a country, this will be the empty
      * string.
-     *
+     * <p>
      * <p>The ISO 3166-1 codes can be found on-line.
      *
      * @return A three-letter abbreviation of this locale's country.
-     * @exception MissingResourceException Throws MissingResourceException if the
-     * three-letter country abbreviation is not available for this locale.
+     * @throws MissingResourceException Throws MissingResourceException if the
+     *                                  three-letter country abbreviation is not available for this locale.
      */
     public String getISO3Country() throws MissingResourceException
     {
@@ -329,8 +330,8 @@ public enum MinecraftLocale
      * not specify a language the empty string is returned.
      *
      * @return A three-letter abbreviation of this locale's language.
-     * @exception MissingResourceException Throws MissingResourceException if
-     * three-letter language abbreviation is not available for this locale.
+     * @throws MissingResourceException Throws MissingResourceException if
+     *                                  three-letter language abbreviation is not available for this locale.
      */
     public String getISO3Language() throws MissingResourceException
     {
@@ -349,7 +350,7 @@ public enum MinecraftLocale
      * @return The Unicode locale type associated with the key, or null if the
      * locale does not define the key.
      * @throws IllegalArgumentException if the key is not well-formed
-     * @throws NullPointerException if <code>key</code> is null
+     * @throws NullPointerException     if <code>key</code> is null
      * @since 1.7
      */
     public String getUnicodeLocaleType(String key)
@@ -382,7 +383,7 @@ public enum MinecraftLocale
      * is returned.
      *
      * @return a copy of this {@code Locale} with no extensions, or {@code this}
-     *         if {@code this} has no extensions
+     * if {@code this} has no extensions
      * @since 1.8
      */
     public Locale stripExtensions()
@@ -459,25 +460,25 @@ public enum MinecraftLocale
     /**
      * Returns a well-formed IETF BCP 47 language tag representing
      * this locale.
-     *
+     * <p>
      * <p>If this <code>Locale</code> has a language, country, or
      * variant that does not satisfy the IETF BCP 47 language tag
      * syntax requirements, this method handles these fields as
      * described below:
-     *
+     * <p>
      * <p><b>Language:</b> If language is empty, or not <a
      * href="#def_language" >well-formed</a> (for example "a" or
      * "e2"), it will be emitted as "und" (Undetermined).
-     *
+     * <p>
      * <p><b>Country:</b> If country is not <a
      * href="#def_region">well-formed</a> (for example "12" or "USA"),
      * it will be omitted.
-     *
+     * <p>
      * <p><b>Variant:</b> If variant <b>is</b> <a
      * href="#def_variant">well-formed</a>, each sub-segment
      * (delimited by '-' or '_') is emitted as a subtag.  Otherwise:
      * <ul>
-     *
+     * <p>
      * <li>if all sub-segments match <code>[0-9a-zA-Z]{1,8}</code>
      * (for example "WIN" or "Oracle_JDK_Standard_Edition"), the first
      * ill-formed sub-segment and all following will be appended to
@@ -485,7 +486,7 @@ public enum MinecraftLocale
      * "lvariant", followed by the sub-segments in order, separated by
      * hyphen. For example, "x-lvariant-WIN",
      * "Oracle-x-lvariant-JDK-Standard-Edition".
-     *
+     * <p>
      * <li>if any sub-segment does not match
      * <code>[0-9a-zA-Z]{1,8}</code>, the variant will be truncated
      * and the problematic sub-segment and all following sub-segments
@@ -494,27 +495,27 @@ public enum MinecraftLocale
      * turns out to be well-formed).  For example,
      * "Solaris_isjustthecoolestthing" is emitted as
      * "x-lvariant-Solaris", not as "solaris".</li></ul>
-     *
+     * <p>
      * <p><b>Special Conversions:</b> Java supports some old locale
      * representations, including deprecated ISO language codes,
      * for compatibility. This method performs the following
      * conversions:
      * <ul>
-     *
+     * <p>
      * <li>Deprecated ISO language codes "iw", "ji", and "in" are
      * converted to "he", "yi", and "id", respectively.
-     *
+     * <p>
      * <li>A locale with language "no", country "NO", and variant
      * "NY", representing Norwegian Nynorsk (Norway), is converted
      * to a language tag "nn-NO".</li></ul>
-     *
+     * <p>
      * <p><b>Note:</b> Although the language tag created by this
      * method is well-formed (satisfies the syntax requirements
      * defined by the IETF BCP 47 specification), it is not
      * necessarily a valid BCP 47 language tag.  For example,
      * <pre>
      *   new Locale("xx", "YY").toLanguageTag();</pre>
-     *
+     * <p>
      * will return "xx-YY", but the language subtag "xx" and the
      * region subtag "YY" are invalid because they are not registered
      * in the IANA Language Subtag Registry.
@@ -535,7 +536,7 @@ public enum MinecraftLocale
      * the empty string if this locale doesn't specify a script code.
      *
      * @return the display name of the script code for the current default
-     *     {@link Locale.Category#DISPLAY DISPLAY} locale
+     * {@link Locale.Category#DISPLAY DISPLAY} locale
      * @since 1.7
      */
     public String getDisplayScript()
@@ -581,7 +582,7 @@ public enum MinecraftLocale
      *
      * @param inLocale The locale for which to retrieve the display language.
      * @return The name of the display language appropriate to the given locale.
-     * @exception NullPointerException if <code>inLocale</code> is <code>null</code>
+     * @throws NullPointerException if <code>inLocale</code> is <code>null</code>
      */
     public String getDisplayLanguage(Locale inLocale)
     {
@@ -661,7 +662,7 @@ public enum MinecraftLocale
      *
      * @param inLocale The locale for which to retrieve the display variant code.
      * @return The name of the display variant code appropriate to the given locale.
-     * @exception NullPointerException if <code>inLocale</code> is <code>null</code>
+     * @throws NullPointerException if <code>inLocale</code> is <code>null</code>
      */
     public String getDisplayVariant(Locale inLocale)
     {
@@ -716,7 +717,7 @@ public enum MinecraftLocale
     {
         for (MinecraftLocale minecraftLocale : MinecraftLocale.values())
         {
-            if(minecraftLocale.toLanguageTag().equals(languageTag)) return minecraftLocale;
+            if (minecraftLocale.toLanguageTag().equals(languageTag)) return minecraftLocale;
         }
 
         return null;
@@ -727,7 +728,7 @@ public enum MinecraftLocale
     {
         for (MinecraftLocale minecraftLocale : MinecraftLocale.values())
         {
-            if(minecraftLocale.toLocale().equals(locale)) return minecraftLocale;
+            if (minecraftLocale.toLocale().equals(locale)) return minecraftLocale;
         }
 
         return null;

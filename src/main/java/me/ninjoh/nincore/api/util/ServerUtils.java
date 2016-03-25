@@ -38,7 +38,7 @@ public class ServerUtils
         {
             for (Entity entity : w.getEntities())
             {
-                if(entity.getEntityId() == id) // Found the entity!
+                if (entity.getEntityId() == id) // Found the entity!
                 {
                     e = entity;
                     break; // Stop searching any further
@@ -46,7 +46,7 @@ public class ServerUtils
             }
 
             // We found the entity!
-            if(e != null)
+            if (e != null)
             {
                 break; // Stop searching any further
             }

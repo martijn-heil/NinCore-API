@@ -25,7 +25,8 @@ package me.ninjoh.nincore.api.util;
 
 /**
  * A nanosecond stop watch used to measure code execution times
- * @author  bergerkiller
+ *
+ * @author bergerkiller
  */
 public class StopWatch
 {

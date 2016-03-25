@@ -29,10 +29,10 @@ public final class NinCore
      */
     public static void setImplementation(NinCoreImplementation implementation)
     {
-        if(NinCore.implementation != null)
+        if (NinCore.implementation != null)
         {
             getLogger().warning(LogColor.HIGHLIGHT + implementation.getImplementingPlugin().getName() + LogColor.RESET +
-                            " tried to update the current NinCore implementation, but was prevented from doing so.");
+                    " tried to update the current NinCore implementation, but was prevented from doing so.");
         }
         else
         {

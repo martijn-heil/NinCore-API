@@ -42,7 +42,7 @@ public class Tick
     @NotNull
     public Tick toMilliseconds()
     {
-        value = value/20/1000;
+        value = value / 20 / 1000;
         return this;
     }
 
@@ -50,7 +50,7 @@ public class Tick
     @NotNull
     public Tick toSeconds()
     {
-        value = value/20;
+        value = value / 20;
         return this;
     }
 
@@ -58,7 +58,7 @@ public class Tick
     @NotNull
     public Tick toMinutes()
     {
-        value = value/20/60;
+        value = value / 20 / 60;
         return this;
     }
 
@@ -66,7 +66,7 @@ public class Tick
     @NotNull
     public Tick toHours()
     {
-        value = value/20/60/60;
+        value = value / 20 / 60 / 60;
         return this;
     }
 
@@ -74,7 +74,7 @@ public class Tick
     @NotNull
     public Tick toDays()
     {
-        value = value/20/60/60/24;
+        value = value / 20 / 60 / 60 / 24;
         return this;
     }
 
@@ -85,6 +85,7 @@ public class Tick
         this.value += value.toLong();
         return this;
     }
+
 
     @NotNull
     public Tick subtract(@NotNull Tick value)

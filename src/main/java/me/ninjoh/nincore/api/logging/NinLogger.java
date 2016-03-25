@@ -116,11 +116,11 @@ public class NinLogger
 
     public void log(Level level, String msg)
     {
-        if(msg == null) return;
+        if (msg == null) return;
 
         String result = msg;
 
-        if(!result.equals("") && levelColors.get(level) != null)
+        if (!result.equals("") && levelColors.get(level) != null)
         {
             result = levelColors.get(level) + result;
             result = result.replace(ChatColor.RESET.toString(), levelColors.get(level).toString());

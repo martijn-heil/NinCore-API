@@ -7,11 +7,13 @@ import org.jetbrains.annotations.Nullable;
 
 public class ValidationException extends Exception
 {
-    @Nullable  private String logMessage;
+    @Nullable
+    private String logMessage;
     private String playerMessage;
     private CommandSender target;
 
-    public ValidationException(@NotNull CommandSender target,@NotNull String playerMessage, @Nullable String logMessage)
+
+    public ValidationException(@NotNull CommandSender target, @NotNull String playerMessage, @Nullable String logMessage)
     {
         super(logMessage); // The technical internal log message will be sent up the chain.
         this.logMessage = logMessage;

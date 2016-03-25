@@ -67,6 +67,7 @@ public class NinCoreAPILogger
         coloredPrefix = coloredPrefix.replace("]", ChatColor.DARK_AQUA + "]" + ChatColor.RESET);
     }
 
+
     protected void info(String msg)
     {
         this.log(Level.INFO, msg);
@@ -113,7 +114,7 @@ public class NinCoreAPILogger
     {
         String result = msg;
 
-        if(!result.equals("")) result = levelColors.get(level) + result;
+        if (!result.equals("")) result = levelColors.get(level) + result;
 
         result = result.replace(ChatColor.RESET.toString(), levelColors.get(level).toString());
 

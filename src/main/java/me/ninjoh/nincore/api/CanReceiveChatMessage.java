@@ -25,6 +25,7 @@ public interface CanReceiveChatMessage
 
     /**
      * Send command help for a {@link NinSubCommand}
+     *
      * @param subCmd The {@link NinSubCommand} to send command help about.
      */
     void sendCommandHelp(NinSubCommand subCmd);

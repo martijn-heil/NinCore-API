@@ -24,7 +24,6 @@ public class SubCommandBuilder
     boolean useStaticDescription = true;
 
 
-
     /**
      * Set this sub command's name
      *
@@ -37,6 +36,7 @@ public class SubCommandBuilder
         this.name = name.toLowerCase();
         return this;
     }
+
 
     /**
      * Add an alias for this sub command.

@@ -1,8 +1,8 @@
 package me.ninjoh.nincore.api;
 
 
-import me.ninjoh.nincore.api.logging.NinLogger;
 import me.ninjoh.nincore.api.logging.LogColor;
+import me.ninjoh.nincore.api.logging.NinLogger;
 import me.ninjoh.nincore.api.util.DataManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -12,22 +12,24 @@ public abstract class NinCorePlugin extends JavaPlugin
     private DataManager dataManager = new DataManager(this);
     private boolean silentDisable = false;
 
+
     @Override
     public final void onEnable()
     {
         this.getNinLogger().info("");
-        this.getNinLogger().info("===== ENABLING " + LogColor.HIGHLIGHT + this.getName() + " v" + this.getDescription().getVersion() + LogColor.RESET + " =====");
+        this.getNinLogger().info("===== ENABLING " + LogColor.HIGHLIGHT + this.getName() + " v" +
+                this.getDescription().getVersion() + LogColor.RESET + " =====");
         this.getNinLogger().info("");
 
 
         this.onEnableInner();
 
 
-        if(this.isEnabled())
+        if (this.isEnabled())
         {
             this.getNinLogger().info("");
-            this.getNinLogger().info("===== " + LogColor.GOOD + "SUCCESSFULLY " + LogColor.RESET + "ENABLED " + LogColor.HIGHLIGHT + this.getName() + " v" +
-                    this.getDescription().getVersion() + LogColor.RESET + " =====");
+            this.getNinLogger().info("===== " + LogColor.GOOD + "SUCCESSFULLY " + LogColor.RESET + "ENABLED " +
+                    LogColor.HIGHLIGHT + this.getName() + " v" + this.getDescription().getVersion() + LogColor.RESET + " =====");
             this.getNinLogger().info("");
         }
     }
@@ -36,7 +38,7 @@ public abstract class NinCorePlugin extends JavaPlugin
     @Override
     public final void onDisable()
     {
-        if(!silentDisable)
+        if (!silentDisable)
         {
             this.getNinLogger().info("");
             this.getNinLogger().info("===== DISABLING " + LogColor.HIGHLIGHT + this.getName() + " v" + this.getDescription().getVersion() + LogColor.RESET + " =====");

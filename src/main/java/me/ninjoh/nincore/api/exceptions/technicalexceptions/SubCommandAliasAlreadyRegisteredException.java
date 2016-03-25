@@ -7,6 +7,7 @@ public class SubCommandAliasAlreadyRegisteredException extends TechnicalExceptio
 {
     String alias;
 
+
     public SubCommandAliasAlreadyRegisteredException(String alias)
     {
         this.alias = alias;

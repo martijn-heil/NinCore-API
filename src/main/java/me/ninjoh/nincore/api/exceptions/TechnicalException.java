@@ -9,6 +9,7 @@ public class TechnicalException extends RuntimeException
 {
     private Level logLevel;
 
+
     public TechnicalException(String message)
     {
         super(message);
@@ -22,7 +23,9 @@ public class TechnicalException extends RuntimeException
     }
 
 
-    public TechnicalException() {}
+    public TechnicalException()
+    {
+    }
 
 
     @Nullable
