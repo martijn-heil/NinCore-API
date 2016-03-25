@@ -52,6 +52,7 @@ public class NinLogger
         replacements.put(ChatColor.RESET, Ansi.ansi().a(Attribute.RESET).toString());
 
         levelColors.put(Level.INFO, LogColor.INFO.toChatColor());
+        levelColors.put(Level.CONFIG, LogColor.INFO.toChatColor());
         levelColors.put(Level.WARNING, LogColor.BAD.toChatColor());
         levelColors.put(Level.SEVERE, LogColor.VERY_BAD.toChatColor());
         levelColors.put(Level.FINE, null);
