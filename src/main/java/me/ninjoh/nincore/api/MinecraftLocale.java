@@ -112,23 +112,23 @@ public enum MinecraftLocale
      * Language is always lower case, country is always upper case, script is always title
      * case, and extensions are always lower case.  Extensions and private use subtags
      * will be in canonical order as explained in {@link #toLanguageTag}.
-     * <p>
+     * </p>
      * <p>When the locale has neither script nor extensions, the result is the same as in
      * Java 6 and prior.
-     * <p>
+     * </p>
      * <p>If both the language and country fields are missing, this function will return
      * the empty string, even if the variant, script, or extensions field is present (you
      * can't have a locale with just a variant, the variant must accompany a well-formed
      * language or country code).
-     * <p>
+     * </p>
      * <p>If script or extensions are present and variant is missing, no underscore is
      * added before the "#".
-     * <p>
+     * </p>
      * <p>This behavior is designed to support debugging and to be compatible with
      * previous uses of <code>toString</code> that expected language, country, and variant
      * fields only.  To represent a Locale as a String for interchange purposes, use
      * {@link #toLanguageTag}.
-     * <p>
+     * </p>
      * <p>Examples: <ul>
      * <li><tt>en</tt></li>
      * <li><tt>de_DE</tt></li>
@@ -158,7 +158,7 @@ public enum MinecraftLocale
      * country (region), such as 3-letter numeric UN M.49 area codes.
      * Therefore, the list returned by this method does not contain ALL valid
      * codes that can be used to create Locales.
-     *
+     * </p>
      * @return An array of ISO 3166 two-letter country codes.
      */
     public static String[] getISOCountries()
@@ -192,11 +192,12 @@ public enum MinecraftLocale
 
     /**
      * Returns the language code of this Locale.
-     * <p>
+     * <br />
      * <p><b>Note:</b> ISO 639 is not a stable standard&mdash; some languages' codes have changed.
      * Locale's constructor recognizes both the new and the old codes for the languages
      * whose codes have changed, but this function always returns the old code.  If you
      * want to check for a specific language whose code has changed, don't do
+     * </p>
      * <pre>
      * if (locale.getLanguage().equals("he")) // BAD!
      *    ...
@@ -236,8 +237,7 @@ public enum MinecraftLocale
      * corresponding ISO 3166-1 alpha-3 uppercase code is returned.
      * If the locale doesn't specify a country, this will be the empty
      * string.
-     * <p>
-     * <p>The ISO 3166-1 codes can be found on-line.
+     * <p>The ISO 3166-1 codes can be found on-line.</p>
      *
      * @return A three-letter abbreviation of this locale's country.
      * @throws MissingResourceException Throws MissingResourceException if the
@@ -246,19 +246,6 @@ public enum MinecraftLocale
     public String getISO3Country() throws MissingResourceException
     {
         return locale.getISO3Country();
-    }
-
-
-    /**
-     * Returns {@code true} if this {@code Locale} has any <a href="#def_extensions">
-     * extensions</a>.
-     *
-     * @return {@code true} if this {@code Locale} has any extensions
-     * @since 1.8
-     */
-    public boolean hasExtensions()
-    {
-        return locale.hasExtensions();
     }
 
 
@@ -378,21 +365,6 @@ public enum MinecraftLocale
 
 
     /**
-     * Returns a copy of this {@code Locale} with no <a href="#def_extensions">
-     * extensions</a>. If this {@code Locale} has no extensions, this {@code Locale}
-     * is returned.
-     *
-     * @return a copy of this {@code Locale} with no extensions, or {@code this}
-     * if {@code this} has no extensions
-     * @since 1.8
-     */
-    public Locale stripExtensions()
-    {
-        return locale.stripExtensions();
-    }
-
-
-    /**
      * Returns the script for this locale, which should
      * either be the empty string or an ISO 15924 4-letter script
      * code. The first letter is uppercase and the rest are
@@ -473,7 +445,7 @@ public enum MinecraftLocale
      * <p><b>Country:</b> If country is not <a
      * href="#def_region">well-formed</a> (for example "12" or "USA"),
      * it will be omitted.
-     * <p>
+     * </p>
      * <p><b>Variant:</b> If variant <b>is</b> <a
      * href="#def_variant">well-formed</a>, each sub-segment
      * (delimited by '-' or '_') is emitted as a subtag.  Otherwise:
@@ -486,7 +458,7 @@ public enum MinecraftLocale
      * "lvariant", followed by the sub-segments in order, separated by
      * hyphen. For example, "x-lvariant-WIN",
      * "Oracle-x-lvariant-JDK-Standard-Edition".
-     * <p>
+     * </p>
      * <li>if any sub-segment does not match
      * <code>[0-9a-zA-Z]{1,8}</code>, the variant will be truncated
      * and the problematic sub-segment and all following sub-segments
@@ -500,11 +472,11 @@ public enum MinecraftLocale
      * representations, including deprecated ISO language codes,
      * for compatibility. This method performs the following
      * conversions:
-     * <ul>
+     * </ul>
      * <p>
      * <li>Deprecated ISO language codes "iw", "ji", and "in" are
      * converted to "he", "yi", and "id", respectively.
-     * <p>
+     * <br />
      * <li>A locale with language "no", country "NO", and variant
      * "NY", representing Norwegian Nynorsk (Norway), is converted
      * to a language tag "nn-NO".</li></ul>

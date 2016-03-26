@@ -44,7 +44,7 @@ public class DataManager
         }
         catch (IOException e)
         {
-            // Vowels, A or An
+            // Vowels, A or An (Grammar)
             String s = "A ";
             if (e.getClass().getName().startsWith("a") || e.getClass().getName().startsWith("e") ||
                     e.getClass().getName().startsWith("i") || e.getClass().getName().startsWith("o") ||
@@ -85,7 +85,7 @@ public class DataManager
         }
         catch (IOException e)
         {
-            // Vowels, A or An
+            // Vowels, A or An (Grammar)
             String s = "A ";
             if (e.getClass().getName().startsWith("a") || e.getClass().getName().startsWith("e") ||
                     e.getClass().getName().startsWith("i") || e.getClass().getName().startsWith("o") ||

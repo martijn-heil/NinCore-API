@@ -30,6 +30,8 @@ public interface NinCoreImplementation
 
     NinCommandSender getNinCommandSender(CommandSender commandSender);
 
+    NinConsoleCommandSender getNinConsoleCommandSender();
+
     NinPlayer getNinPlayer(Player player);
 
     NinOfflinePlayer getNinOfflinePlayer(OfflinePlayer offlinePlayer);
