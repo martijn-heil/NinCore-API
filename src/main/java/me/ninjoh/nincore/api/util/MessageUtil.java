@@ -42,8 +42,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
             locale = NinCore.getImplementation().getDefaultMinecraftLocale().toLocale();
         }
 
-
-        final ResourceBundle messages = ResourceBundle.getBundle("lang.messages", locale);
+        final ResourceBundle messages = ResourceBundle.getBundle("me.ninjoh.nincore.api.res.messages", locale);
 
         final MessageFormat formatter = new MessageFormat("");
         formatter.setLocale(locale);
@@ -78,7 +77,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         }
 
 
-        ResourceBundle messages = ResourceBundle.getBundle("lang.messages", locale);
+        ResourceBundle messages = ResourceBundle.getBundle("me.ninjoh.nincore.api.res.messages", locale);
 
         final MessageFormat formatter = new MessageFormat("");
         formatter.setLocale(locale);
@@ -187,7 +186,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         }
 
 
-        ResourceBundle messages = ResourceBundle.getBundle("lang.messages", locale);
+        ResourceBundle messages = ResourceBundle.getBundle("me.ninjoh.nincore.api.res.messages", locale);
 
         MessageFormat formatter = new MessageFormat("");
         formatter.setLocale(locale);
@@ -205,6 +204,14 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
 
         if (cmd.hasSubCommands())
         {
+            if(sender instanceof Player)
+            {
+                sender.sendMessage(TranslationUtils.getStaticMsg(ResourceBundle.getBundle("me.ninjoh.nincore.api.res.messages"), "hoverOverCommandsForMore"));
+                sender.sendMessage("");
+            }
+
+
+
             for (NinSubCommand subCmd : cmd.getSubCommands())
             {
                 final String finalSubCmdAliases = StringUtils.join(subCmd.getAliases(true), ",");
@@ -332,7 +339,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         }
 
 
-        ResourceBundle messages = ResourceBundle.getBundle("lang.messages", locale);
+        ResourceBundle messages = ResourceBundle.getBundle("me.ninjoh.nincore.api.res.messages", locale);
         MessageFormat formatter = new MessageFormat("");
         formatter.setLocale(locale);
 

@@ -11,7 +11,7 @@ public class PlayerNotFoundException extends ValidationException
 {
     public PlayerNotFoundException(CommandSender commandSender)
     {
-        super(commandSender, TranslationUtils.getStaticMsg(ResourceBundle.getBundle("lang.messages",
+        super(commandSender, TranslationUtils.getStaticMsg(ResourceBundle.getBundle("me.ninjoh.nincore.api.res.messages",
                 NinCore.getImplementation().getNinCommandSender(commandSender).getMinecraftLocale().
                         toLocale()), "error.PlayerNotFound"), null);
     }
