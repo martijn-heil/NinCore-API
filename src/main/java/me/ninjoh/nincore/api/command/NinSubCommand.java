@@ -1,7 +1,7 @@
 package me.ninjoh.nincore.api.command;
 
 
-import me.ninjoh.nincore.api.command.executors.SubCommandExecutor;
+import me.ninjoh.nincore.api.command.executors.NinSubCommandExecutor;
 
 public interface NinSubCommand extends CommandBase
 {
@@ -10,7 +10,7 @@ public interface NinSubCommand extends CommandBase
      *
      * @return The executor for this sub command.
      */
-    SubCommandExecutor getExecutor();
+    NinSubCommandExecutor getExecutor();
 
 
     NinCommand getParentCommand();

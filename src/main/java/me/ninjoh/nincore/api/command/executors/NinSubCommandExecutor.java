@@ -1,26 +1,26 @@
 package me.ninjoh.nincore.api.command.executors;
 
 
-import me.ninjoh.nincore.api.command.NinCommand;
+import me.ninjoh.nincore.api.command.NinSubCommand;
 import me.ninjoh.nincore.api.exceptions.TechnicalException;
 import me.ninjoh.nincore.api.exceptions.ValidationException;
 import org.bukkit.command.CommandSender;
 
-public abstract class NinCommandExecutor implements NinCommandExecutorBase
+public abstract class NinSubCommandExecutor implements NinCommandExecutorBase
 {
-    private NinCommand ninCommand;
+    private NinSubCommand ninSubCommand;
 
 
-    public final NinCommandExecutor init(NinCommand ninCommand)
+    public final NinSubCommandExecutor init(NinSubCommand ninSubCommand)
     {
-        this.ninCommand = ninCommand;
+        this.ninSubCommand = ninSubCommand;
         return this;
     }
 
 
-    public NinCommand getNinCommand()
+    public NinSubCommand getNinSubCommand()
     {
-        return this.ninCommand;
+        return this.ninSubCommand;
     }
 
 

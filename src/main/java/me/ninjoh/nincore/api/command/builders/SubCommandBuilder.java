@@ -4,7 +4,7 @@ package me.ninjoh.nincore.api.command.builders;
 import me.ninjoh.nincore.api.NinCore;
 import me.ninjoh.nincore.api.command.NinCommand;
 import me.ninjoh.nincore.api.command.NinSubCommand;
-import me.ninjoh.nincore.api.command.executors.SubCommandExecutor;
+import me.ninjoh.nincore.api.command.executors.NinSubCommandExecutor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class SubCommandBuilder
     private String descriptionBundleBaseName; // Optional
     private String staticDescription;
     private String requiredPermission; // Optional.
-    private SubCommandExecutor executor; // Required
+    private NinSubCommandExecutor executor; // Required
     private NinCommand parentCommand;
     private String usage;
     boolean useStaticDescription = true;
@@ -103,13 +103,13 @@ public class SubCommandBuilder
 
 
     /**
-     * Set this sub command's {@link SubCommandExecutor}.
+     * Set this sub command's {@link NinSubCommandExecutor}.
      *
-     * @param executor the {@link SubCommandExecutor} to set.
+     * @param executor the {@link NinSubCommandExecutor} to set.
      * @return {@link SubCommandBuilder}, for method chaining.
      */
     @NotNull
-    public SubCommandBuilder setExecutor(SubCommandExecutor executor) // Required
+    public SubCommandBuilder setExecutor(NinSubCommandExecutor executor) // Required
     {
         this.executor = executor;
         return this;
