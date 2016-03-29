@@ -68,49 +68,49 @@ public class NinCoreAPILogger
     }
 
 
-    protected void info(String msg)
+    public void info(String msg)
     {
         this.log(Level.INFO, msg);
     }
 
 
-    protected void warning(String msg)
+    public void warning(String msg)
     {
         this.log(Level.WARNING, msg);
     }
 
 
-    protected void severe(String msg)
+    public void severe(String msg)
     {
         this.log(Level.SEVERE, msg);
     }
 
 
-    protected void fine(String msg)
+    public void fine(String msg)
     {
         this.log(Level.FINE, msg);
     }
 
 
-    protected void finer(String msg)
+    public void finer(String msg)
     {
         this.log(Level.FINER, msg);
     }
 
 
-    protected void finest(String msg)
+    public void finest(String msg)
     {
         this.log(Level.FINEST, msg);
     }
 
 
-    protected void config(String msg)
+    public void config(String msg)
     {
         this.log(Level.CONFIG, msg);
     }
 
 
-    protected void log(Level level, String msg)
+    public void log(Level level, String msg)
     {
         String result = msg;
 

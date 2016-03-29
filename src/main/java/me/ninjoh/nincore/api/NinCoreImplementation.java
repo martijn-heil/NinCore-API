@@ -60,4 +60,7 @@ public interface NinCoreImplementation
      * @return Is colored logging enabled?
      */
     boolean useColoredLogging();
+
+
+    boolean consoleIsAnsiSupported();
 }

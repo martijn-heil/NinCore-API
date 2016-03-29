@@ -31,13 +31,13 @@ public final class NinCore
     {
         if (NinCore.implementation != null)
         {
-            getLogger().warning(LogColor.HIGHLIGHT + implementation.getImplementingPlugin().getName() + LogColor.RESET +
+            getApiLogger().warning(LogColor.HIGHLIGHT + implementation.getImplementingPlugin().getName() + LogColor.RESET +
                     " tried to update the current NinCore implementation, but was prevented from doing so.");
         }
         else
         {
             NinCore.implementation = implementation;
-            getLogger().info("NinCore implementation set to: " + LogColor.HIGHLIGHT +
+            getApiLogger().info("NinCore implementation set to: " + LogColor.HIGHLIGHT +
                     NinCore.getImplementation().getImplementingPlugin().getName() + " v" +
                     NinCore.getImplementation().getImplementingPlugin().getDescription().getVersion());
         }
@@ -66,7 +66,11 @@ public final class NinCore
     }
 
 
-    protected static NinCoreAPILogger getLogger()
+    /**
+     * <bold>Only for internal usage! Do NOT use!</bold>
+     */
+    @Deprecated
+    public static NinCoreAPILogger getApiLogger()
     {
         return logger;
     }

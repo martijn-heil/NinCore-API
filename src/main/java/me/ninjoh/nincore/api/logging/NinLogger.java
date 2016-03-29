@@ -27,6 +27,7 @@ public class NinLogger
     static
     {
         terminal = ((CraftServer) Bukkit.getServer()).getReader().getTerminal();
+        Bukkit.getServer().getLogger().setLevel(Level.ALL);
 
         replacements.put(ChatColor.BLACK, Ansi.ansi().a(Attribute.RESET).fg(Ansi.Color.BLACK).boldOff().toString());
         replacements.put(ChatColor.DARK_BLUE, Ansi.ansi().a(Attribute.RESET).fg(Ansi.Color.BLUE).boldOff().toString());

@@ -1,7 +1,34 @@
 package me.ninjoh.nincore.api;
 
-
-public interface KillableRunnable extends Runnable
+/**
+ * This loops infinitely over the runInner() method until it is killed.
+ */
+public abstract class KillableRunnable implements Runnable
 {
-    void kill();
+    private volatile boolean isRunning = true;
+
+
+    public synchronized void kill()
+    {
+        this.isRunning = false;
+    }
+
+
+    public synchronized boolean isRunning()
+    {
+        return this.isRunning;
+    }
+
+
+    @Override
+    public final void run()
+    {
+        while(this.isRunning)
+        {
+            this.runInner();
+        }
+    }
+
+
+    public abstract void runInner();
 }

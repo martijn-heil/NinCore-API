@@ -2,13 +2,15 @@ package me.ninjoh.nincore.api;
 
 
 import me.ninjoh.nincore.api.logging.LogColor;
-import me.ninjoh.nincore.api.logging.NinLogger;
+import me.ninjoh.nincore.api.logging.NinPluginLogger;
 import me.ninjoh.nincore.api.util.DataManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.logging.Logger;
+
 public abstract class NinCorePlugin extends JavaPlugin
 {
-    private NinLogger logger = new NinLogger(this);
+    private NinPluginLogger logger;
     private DataManager dataManager = new DataManager(this);
     private boolean silentDisable = false;
 
@@ -16,6 +18,24 @@ public abstract class NinCorePlugin extends JavaPlugin
     @Override
     public final void onEnable()
     {
+        this.logger = new NinPluginLogger(this);
+
+//        try
+//        {
+//            Class<?> javaplugin = this.getClass().getSuperclass();
+//
+//            Field loggerF = javaplugin.getDeclaredField("logger");
+//            loggerF.setAccessible(true);
+//
+//
+//            loggerF.set(this, this.logger);
+//        }
+//        catch (IllegalAccessException | NoSuchFieldException e)
+//        {
+//            e.printStackTrace();
+//        }
+
+
         this.getNinLogger().info("");
         this.getNinLogger().info("===== ENABLING " + LogColor.HIGHLIGHT + this.getName() + " v" +
                 this.getDescription().getVersion() + LogColor.RESET + " =====");
@@ -69,7 +89,7 @@ public abstract class NinCorePlugin extends JavaPlugin
     }
 
 
-    public NinLogger getNinLogger()
+    public Logger getNinLogger()
     {
         return logger;
     }
