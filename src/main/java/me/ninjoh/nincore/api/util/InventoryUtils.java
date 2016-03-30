@@ -35,7 +35,7 @@ public class InventoryUtils
         }
         catch (Exception e)
         {
-            throw new IllegalStateException("Unable to save item stacks.", e);
+            throw new RuntimeException("Unable to save item stacks.", e);
         }
     }
 

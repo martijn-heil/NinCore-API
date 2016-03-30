@@ -55,5 +55,6 @@ public interface NinServer
     @Nullable
     Entity getEntityById(int id);
 
+    @NotNull
     World getDefaultWorld();
 }

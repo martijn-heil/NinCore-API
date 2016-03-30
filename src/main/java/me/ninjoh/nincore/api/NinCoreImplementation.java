@@ -12,6 +12,8 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -28,14 +30,19 @@ public interface NinCoreImplementation
 
     NinSubCommand constructSubCommand(String name, boolean useStaticDescription, String staticDescription, String descriptionKey, String descriptionBundleBaseName, String requiredPermission, String usage, List<String> aliases, NinSubCommandExecutor executor, NinCommand parentCommand);
 
+    @NotNull
     NinCommandSender getNinCommandSender(CommandSender commandSender);
 
+    @NotNull
     NinConsoleCommandSender getNinConsoleCommandSender();
 
+    @Nullable
     NinPlayer getNinPlayer(Player player);
 
+    @Nullable
     NinOfflinePlayer getNinOfflinePlayer(OfflinePlayer offlinePlayer);
 
+    @NotNull
     MinecraftLocale getDefaultMinecraftLocale();
 
 
@@ -44,12 +51,13 @@ public interface NinCoreImplementation
      *
      * @param minecraftLocale The {@link MinecraftLocale} to set default.
      */
-    void setDefaultMinecraftLocale(MinecraftLocale minecraftLocale);
+    void setDefaultMinecraftLocale(@NotNull MinecraftLocale minecraftLocale);
 
     void setLocalized(boolean value);
 
     boolean isLocalized();
 
+    @NotNull
     JavaPlugin getImplementingPlugin();
 
 

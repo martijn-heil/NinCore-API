@@ -1,8 +1,10 @@
 package me.ninjoh.nincore.api;
 
 
+import com.google.common.base.Preconditions;
 import me.ninjoh.nincore.api.logging.LogColor;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
 public final class NinCore
 {
@@ -17,6 +19,8 @@ public final class NinCore
      */
     public static JavaPlugin getImplementingPlugin()
     {
+        if(implementation == null) throw new IllegalStateException("The NinCore implementation is not set.");
+
         return implementation.getImplementingPlugin();
     }
 
@@ -27,8 +31,10 @@ public final class NinCore
      *
      * @param implementation The current NinCore implementation.
      */
-    public static void setImplementation(NinCoreImplementation implementation)
+    public static void setImplementation(@NotNull NinCoreImplementation implementation)
     {
+        Preconditions.checkNotNull(implementation);
+
         if (NinCore.implementation != null)
         {
             getApiLogger().warning(LogColor.HIGHLIGHT + implementation.getImplementingPlugin().getName() + LogColor.RESET +
@@ -38,8 +44,8 @@ public final class NinCore
         {
             NinCore.implementation = implementation;
             getApiLogger().info("NinCore implementation set to: " + LogColor.HIGHLIGHT +
-                    NinCore.getImplementation().getImplementingPlugin().getName() + " v" +
-                    NinCore.getImplementation().getImplementingPlugin().getDescription().getVersion());
+                    implementation.getImplementingPlugin().getName() + " v" +
+                    implementation.getImplementingPlugin().getDescription().getVersion());
         }
     }
 
@@ -49,9 +55,18 @@ public final class NinCore
      *
      * @return The current {@link NinCoreImplementation}
      */
+    @NotNull
     public static NinCoreImplementation getImplementation()
     {
+        if(implementation == null) throw new IllegalStateException("The NinCore implementation is not set.");
+
         return implementation;
+    }
+
+
+    public static boolean isImplementationSet()
+    {
+        return implementation != null;
     }
 
 
@@ -60,6 +75,7 @@ public final class NinCore
      *
      * @return The current {@link NinCoreImplementation}
      */
+    @NotNull
     public static NinCoreImplementation get()
     {
         return implementation;

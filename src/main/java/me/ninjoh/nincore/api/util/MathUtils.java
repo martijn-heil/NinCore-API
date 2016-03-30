@@ -21,10 +21,4 @@ public class MathUtils
 
         return CardinalDirection.fromRadians(angle);
     }
-
-
-    public static void main(String[] args)
-    {
-        System.out.println(CardinalDirection.fromCompassDegrees(45).toString());
-    }
 }

@@ -1,6 +1,7 @@
 package me.ninjoh.nincore.api.util;
 
 
+import com.google.common.base.Preconditions;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.MessageFormat;
@@ -16,8 +17,13 @@ public class TranslationUtils
      * @param msg    The message key (e.g messages.hello)
      * @return the formatted message.
      */
-    public static String transWithArgs(ResourceBundle bundle, Object[] args, String msg)
+    @NotNull
+    public static String transWithArgs(@NotNull ResourceBundle bundle, @NotNull Object[] args, @NotNull String msg)
     {
+        Preconditions.checkNotNull(bundle);
+        Preconditions.checkNotNull(args);
+        Preconditions.checkNotNull(msg);
+
         MessageFormat formatter = new MessageFormat("");
         formatter.setLocale(bundle.getLocale());
 
@@ -33,6 +39,7 @@ public class TranslationUtils
      * @param msg    The message key to get (e.g messages.hello)
      * @return the message.
      */
+    @NotNull
     public static String getStaticMsg(@NotNull ResourceBundle bundle, @NotNull String msg)
     {
         return bundle.getString(msg);

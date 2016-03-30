@@ -2,6 +2,7 @@ package me.ninjoh.nincore.api;
 
 
 import org.bukkit.command.CommandSender;
+import org.jetbrains.annotations.NotNull;
 
 public interface NinCommandSender extends CanReceiveChatMessage, HasLocale
 {
@@ -10,5 +11,6 @@ public interface NinCommandSender extends CanReceiveChatMessage, HasLocale
      *
      * @return The related {@link CommandSender}
      */
+    @NotNull
     CommandSender toCommandSender();
 }

@@ -3,7 +3,10 @@ package me.ninjoh.nincore.api;
 
 import me.ninjoh.nincore.api.command.NinCommand;
 import me.ninjoh.nincore.api.command.NinSubCommand;
+import me.ninjoh.nincore.api.messaging.MessageColor;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
 public interface CanReceiveChatMessage
 {
@@ -12,7 +15,16 @@ public interface CanReceiveChatMessage
      *
      * @param error The error string to send.
      */
-    void sendError(String error);
+    void sendError(@NotNull String error);
+
+
+    void sendError(@NotNull String error, @NotNull Plugin plugin);
+
+
+    void sendMessage(@NotNull MessageColor messageColor, @NotNull String message, @NotNull Plugin plugin);
+
+
+    void sendMessage(@NotNull MessageColor messageColor, @NotNull String message, @NotNull String prefix);
 
 
     /**
@@ -20,7 +32,7 @@ public interface CanReceiveChatMessage
      *
      * @param cmd The {@link NinCommand} to send command help about.
      */
-    void sendCommandHelp(NinCommand cmd);
+    void sendCommandHelp(@NotNull NinCommand cmd);
 
 
     /**
@@ -28,7 +40,7 @@ public interface CanReceiveChatMessage
      *
      * @param subCmd The {@link NinSubCommand} to send command help about.
      */
-    void sendCommandHelp(NinSubCommand subCmd);
+    void sendCommandHelp(@NotNull NinSubCommand subCmd);
 
     /**
      * Send plugin information about the specified plugin.
@@ -36,5 +48,5 @@ public interface CanReceiveChatMessage
      *
      * @param plugin The plugin to send information about.
      */
-    void sendPluginInfo(JavaPlugin plugin);
+    void sendPluginInfo(@NotNull JavaPlugin plugin);
 }

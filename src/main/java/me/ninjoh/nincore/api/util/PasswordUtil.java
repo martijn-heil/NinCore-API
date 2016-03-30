@@ -6,9 +6,9 @@ import org.mindrot.jbcrypt.BCrypt;
 
 /**
  * @author Ian Gallagher igallagher@securityinnovation.com
- *         <p>
- *         This code utilizes jBCrypt, which you need installed to use.
- *         jBCrypt: http://www.mindrot.org/projects/jBCrypt/
+ *
+ * This code utilizes jBCrypt, which you need installed to use.
+ * jBCrypt: http://www.mindrot.org/projects/jBCrypt/
  */
 public class PasswordUtil
 {

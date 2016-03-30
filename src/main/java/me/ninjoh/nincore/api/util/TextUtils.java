@@ -114,40 +114,26 @@ public class TextUtils
     }
 
 
-    /**
-     * <p>Converts a boolean to a String returning <code>'on'</code>
-     * or <code>'off'</code>.</p>
-     *
-     * <pre>
-     *   BooleanUtils.toStringOnOff(true)   = "on"
-     *   BooleanUtils.toStringOnOff(false)  = "off"
-     * </pre>
-     *
-     * @param bool  the Boolean to check
-     * @return <code>'on'</code>, <code>'off'</code>,
-     *  or <code>null</code>
-     */
-    public static String toStringOnOff(boolean bool) {
-        return toString(bool, "on", "off");
+    public static String appendChatColorsToChatColorReset(String s, ChatColor... chatColors)
+    {
+        String s2 = "";
+        for (ChatColor color : chatColors)
+        {
+            s2 += color.toString();
+        }
+
+        return s.replaceAll(ChatColor.RESET.toString(), ChatColor.RESET.toString() + s2);
     }
 
 
-    /**
-     * <p>Converts a boolean to a String returning one of the input Strings.</p>
-     *
-     * <pre>
-     *   BooleanUtils.toString(true, "true", "false")   = "true"
-     *   BooleanUtils.toString(false, "true", "false")  = "false"
-     * </pre>
-     *
-     * @param bool  the Boolean to check
-     * @param trueString  the String to return if <code>true</code>,
-     *  may be <code>null</code>
-     * @param falseString  the String to return if <code>false</code>,
-     *  may be <code>null</code>
-     * @return one of the two input Strings
-     */
-    public static String toString(boolean bool, String trueString, String falseString) {
-        return bool ? trueString : falseString;
+    public static String replaceChatColorResetWithChatColors(String s, ChatColor... replacements)
+    {
+        String replacementString = "";
+        for (ChatColor replacement : replacements)
+        {
+            replacementString += replacement.toString();
+        }
+
+        return s.replaceAll(ChatColor.RESET.toString(), replacementString);
     }
 }

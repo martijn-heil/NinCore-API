@@ -1,6 +1,7 @@
 package me.ninjoh.nincore.api.util;
 
 
+import com.google.common.base.Preconditions;
 import me.ninjoh.nincore.api.NinCorePlugin;
 import me.ninjoh.nincore.api.Tick;
 import org.bukkit.Bukkit;
@@ -22,6 +23,8 @@ public class DataManager
 
     public DataManager(@NotNull NinCorePlugin plugin)
     {
+        Preconditions.checkNotNull(plugin);
+
         this.plugin = plugin;
         dataF = new File(plugin.getDataFolder(), "data.yml");
     }

@@ -2,6 +2,7 @@ package me.ninjoh.nincore.api;
 
 
 import org.bukkit.command.ConsoleCommandSender;
+import org.jetbrains.annotations.NotNull;
 
 public interface NinConsoleCommandSender extends CanReceiveChatMessage
 {
@@ -12,5 +13,6 @@ public interface NinConsoleCommandSender extends CanReceiveChatMessage
      *
      * @return The ConsoleCommandSender
      */
+    @NotNull
     ConsoleCommandSender getConsoleCommandSender();
 }

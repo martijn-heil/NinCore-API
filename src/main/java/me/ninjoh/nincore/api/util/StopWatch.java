@@ -23,6 +23,8 @@ SOFTWARE.
  */
 package me.ninjoh.nincore.api.util;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * A nanosecond stop watch used to measure code execution times
  *
@@ -44,6 +46,7 @@ public class StopWatch
      *
      * @return This Stop Watch
      */
+    @NotNull
     public StopWatch start()
     {
         this.prevtime = System.nanoTime();
@@ -56,6 +59,7 @@ public class StopWatch
      *
      * @return This Stop Watch
      */
+    @NotNull
     public StopWatch reset()
     {
         this.prevtime = 0;
@@ -94,6 +98,7 @@ public class StopWatch
      * @param strength        to use [0 - 1]
      * @return This Stop Watch
      */
+    @NotNull
     public StopWatch set(long elapsednanotime, double strength)
     {
         elapsednanotime += (1.0 - strength) * (this.prevdur - elapsednanotime);
@@ -164,6 +169,7 @@ public class StopWatch
      * @param name to log for
      * @return This Stop Watch
      */
+    @NotNull
     public StopWatch log(final String name)
     {
         System.out.println(name + ": " + this.get() + " ms");

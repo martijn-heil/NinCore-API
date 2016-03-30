@@ -5,14 +5,15 @@ import me.ninjoh.nincore.api.logging.LogColor;
 import me.ninjoh.nincore.api.logging.NinPluginLogger;
 import me.ninjoh.nincore.api.util.DataManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.logging.Logger;
 
 public abstract class NinCorePlugin extends JavaPlugin
 {
-    private NinPluginLogger logger;
-    private DataManager dataManager = new DataManager(this);
-    private boolean silentDisable = false;
+                private NinPluginLogger logger;
+    @NotNull    private DataManager dataManager = new DataManager(this);
+                private boolean silentDisable = false;
 
 
     @Override
@@ -95,6 +96,7 @@ public abstract class NinCorePlugin extends JavaPlugin
     }
 
 
+    @NotNull
     public DataManager getDataManager()
     {
         return dataManager;

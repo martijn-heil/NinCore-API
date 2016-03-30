@@ -25,14 +25,16 @@ public enum CardinalDirection
     NORTH_WEST(309.38, 315, 320.62, BlockFace.NORTH_WEST);
 
 
-    private float min;
-    private float max;
+    private double min;
+    private double max;
     private BlockFace blockFace;
 
 
     CardinalDirection(double min, double middle, double max, BlockFace blockFace)
     {
-
+        this.min = min;
+        this.max = max;
+        this.blockFace = blockFace;
     }
 
 

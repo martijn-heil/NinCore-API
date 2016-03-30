@@ -1,11 +1,13 @@
 package me.ninjoh.nincore.api;
 
 
+import com.google.common.base.Preconditions;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.craftbukkit.libs.jline.Terminal;
 import org.bukkit.craftbukkit.v1_9_R1.CraftServer;
 import org.fusesource.jansi.Ansi;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.EnumMap;
 import java.util.HashMap;
@@ -68,50 +70,53 @@ public class NinCoreAPILogger
     }
 
 
-    public void info(String msg)
+    public void info(@NotNull String msg)
     {
         this.log(Level.INFO, msg);
     }
 
 
-    public void warning(String msg)
+    public void warning(@NotNull String msg)
     {
         this.log(Level.WARNING, msg);
     }
 
 
-    public void severe(String msg)
+    public void severe(@NotNull String msg)
     {
         this.log(Level.SEVERE, msg);
     }
 
 
-    public void fine(String msg)
+    public void fine(@NotNull String msg)
     {
         this.log(Level.FINE, msg);
     }
 
 
-    public void finer(String msg)
+    public void finer(@NotNull String msg)
     {
         this.log(Level.FINER, msg);
     }
 
 
-    public void finest(String msg)
+    public void finest(@NotNull String msg)
     {
         this.log(Level.FINEST, msg);
     }
 
 
-    public void config(String msg)
+    public void config(@NotNull String msg)
     {
         this.log(Level.CONFIG, msg);
     }
 
 
-    public void log(Level level, String msg)
+    public void log(@NotNull Level level, @NotNull String msg)
     {
+        Preconditions.checkNotNull(level);
+        Preconditions.checkNotNull(msg);
+
         String result = msg;
 
         if (!result.equals("")) result = levelColors.get(level) + result;
