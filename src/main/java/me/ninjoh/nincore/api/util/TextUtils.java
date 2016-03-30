@@ -112,4 +112,42 @@ public class TextUtils
 
         return s;
     }
+
+
+    /**
+     * <p>Converts a boolean to a String returning <code>'on'</code>
+     * or <code>'off'</code>.</p>
+     *
+     * <pre>
+     *   BooleanUtils.toStringOnOff(true)   = "on"
+     *   BooleanUtils.toStringOnOff(false)  = "off"
+     * </pre>
+     *
+     * @param bool  the Boolean to check
+     * @return <code>'on'</code>, <code>'off'</code>,
+     *  or <code>null</code>
+     */
+    public static String toStringOnOff(boolean bool) {
+        return toString(bool, "on", "off");
+    }
+
+
+    /**
+     * <p>Converts a boolean to a String returning one of the input Strings.</p>
+     *
+     * <pre>
+     *   BooleanUtils.toString(true, "true", "false")   = "true"
+     *   BooleanUtils.toString(false, "true", "false")  = "false"
+     * </pre>
+     *
+     * @param bool  the Boolean to check
+     * @param trueString  the String to return if <code>true</code>,
+     *  may be <code>null</code>
+     * @param falseString  the String to return if <code>false</code>,
+     *  may be <code>null</code>
+     * @return one of the two input Strings
+     */
+    public static String toString(boolean bool, String trueString, String falseString) {
+        return bool ? trueString : falseString;
+    }
 }
