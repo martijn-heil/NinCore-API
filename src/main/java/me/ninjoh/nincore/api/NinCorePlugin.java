@@ -17,24 +17,16 @@ public abstract class NinCorePlugin extends JavaPlugin
 
 
     @Override
+    public final void onLoad()
+    {
+        this.onLoadInner();
+    }
+
+
+    @Override
     public final void onEnable()
     {
         this.logger = new NinPluginLogger(this);
-
-//        try
-//        {
-//            Class<?> javaplugin = this.getClass().getSuperclass();
-//
-//            Field loggerF = javaplugin.getDeclaredField("logger");
-//            loggerF.setAccessible(true);
-//
-//
-//            loggerF.set(this, this.logger);
-//        }
-//        catch (IllegalAccessException | NoSuchFieldException e)
-//        {
-//            e.printStackTrace();
-//        }
 
 
         this.getNinLogger().info("");
@@ -73,6 +65,8 @@ public abstract class NinCorePlugin extends JavaPlugin
         }
     }
 
+
+    public abstract void onLoadInner();
 
     public abstract void onEnableInner();
 
