@@ -15,10 +15,10 @@ import java.io.IOException;
 
 public class DataManager
 {
-    private NinCorePlugin plugin;
-    private FileConfiguration data;
+    private volatile NinCorePlugin plugin;
+    private volatile FileConfiguration data;
 
-    private File dataF;
+    private volatile File dataF;
 
 
     public DataManager(@NotNull NinCorePlugin plugin)
@@ -33,7 +33,7 @@ public class DataManager
     /**
      * Create the data file
      */
-    public void createDataFile()
+    public synchronized void createDataFile()
     {
         FileConfiguration dataFile = YamlConfiguration.loadConfiguration(dataF);
 
@@ -67,7 +67,7 @@ public class DataManager
      *
      * @return Does the data file exist? true/false
      */
-    public boolean dataFileExists()
+    public synchronized boolean dataFileExists()
     {
         return dataF.exists();
     }
@@ -76,7 +76,7 @@ public class DataManager
     /**
      * Save the data file.
      */
-    public void saveDataFile()
+    public synchronized void saveDataFile()
     {
         try
         {
@@ -108,7 +108,7 @@ public class DataManager
      *
      * @param interval The interval between saving.
      */
-    public void scheduleAutomaticDataFileSave(long interval)
+    public synchronized void scheduleAutomaticDataFileSave(long interval)
     {
         // Schedule automatic saving of data file.
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
@@ -130,7 +130,7 @@ public class DataManager
      *
      * @param interval The interval between saving.
      */
-    public void scheduleAutomaticDataFileSave(@NotNull Tick interval)
+    public synchronized void scheduleAutomaticDataFileSave(@NotNull Tick interval)
     {
         // Schedule automatic saving of data file.
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
@@ -150,13 +150,13 @@ public class DataManager
     /**
      * Load the data file
      */
-    public void loadDataFile()
+    public synchronized void loadDataFile()
     {
         data = YamlConfiguration.loadConfiguration(dataF);
     }
 
 
-    public FileConfiguration getData()
+    public synchronized FileConfiguration getData()
     {
         return this.data;
     }

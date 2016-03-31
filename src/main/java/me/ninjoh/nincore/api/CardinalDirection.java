@@ -27,6 +27,7 @@ public enum CardinalDirection
 
     private double min;
     private double max;
+    private double middle;
     private BlockFace blockFace;
 
 
@@ -34,6 +35,7 @@ public enum CardinalDirection
     {
         this.min = min;
         this.max = max;
+        this.middle = middle;
         this.blockFace = blockFace;
     }
 
@@ -72,6 +74,12 @@ public enum CardinalDirection
     public double getMin()
     {
         return this.min;
+    }
+
+
+    public double getMiddle()
+    {
+        return this.middle;
     }
 
 

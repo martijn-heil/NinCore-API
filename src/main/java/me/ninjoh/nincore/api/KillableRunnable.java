@@ -10,7 +10,9 @@ public abstract class KillableRunnable implements Runnable
     private volatile long delay;
 
 
-    public KillableRunnable() {}
+    public KillableRunnable()
+    {
+    }
 
 
     public KillableRunnable(long delay)
@@ -60,9 +62,9 @@ public abstract class KillableRunnable implements Runnable
     @Override
     public final void run()
     {
-        while(this.isRunning)
+        while (this.isRunning)
         {
-            if(useDelay) try
+            if (useDelay) try
             {
                 Thread.sleep(delay);
             }

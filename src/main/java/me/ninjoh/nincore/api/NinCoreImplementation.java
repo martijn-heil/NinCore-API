@@ -31,16 +31,16 @@ public interface NinCoreImplementation
     NinSubCommand constructSubCommand(String name, boolean useStaticDescription, String staticDescription, String descriptionKey, String descriptionBundleBaseName, String requiredPermission, String usage, List<String> aliases, NinSubCommandExecutor executor, NinCommand parentCommand);
 
     @NotNull
-    NinCommandSender getNinCommandSender(CommandSender commandSender);
+    NinCommandSender getNinCommandSender(@NotNull CommandSender commandSender);
 
     @NotNull
     NinConsoleCommandSender getNinConsoleCommandSender();
 
     @Nullable
-    NinPlayer getNinPlayer(Player player);
+    NinPlayer getNinPlayer(@NotNull Player player);
 
     @Nullable
-    NinOfflinePlayer getNinOfflinePlayer(OfflinePlayer offlinePlayer);
+    NinOfflinePlayer getNinOfflinePlayer(@NotNull OfflinePlayer offlinePlayer);
 
     @NotNull
     MinecraftLocale getDefaultMinecraftLocale();
