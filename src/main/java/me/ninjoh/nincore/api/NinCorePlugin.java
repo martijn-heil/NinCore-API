@@ -11,9 +11,10 @@ import java.util.logging.Logger;
 
 public abstract class NinCorePlugin extends JavaPlugin
 {
-                private NinPluginLogger logger;
-    @NotNull    private DataManager dataManager = new DataManager(this);
-                private boolean silentDisable = false;
+    private NinPluginLogger logger;
+    @NotNull
+    private DataManager dataManager = new DataManager(this);
+    private boolean silentDisable = false;
 
 
     @Override
@@ -66,11 +67,19 @@ public abstract class NinCorePlugin extends JavaPlugin
     }
 
 
-    public abstract void onLoadInner();
+    public void onLoadInner()
+    {
+    }
 
-    public abstract void onEnableInner();
 
-    public abstract void onDisableInner();
+    public void onEnableInner()
+    {
+    }
+
+
+    public void onDisableInner()
+    {
+    }
 
 
     public final void endEnable()

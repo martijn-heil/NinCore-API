@@ -22,6 +22,7 @@ public class SubCommandBuilder
     private NinCommand parentCommand;
     private String usage;
     boolean useStaticDescription = true;
+    private ClassLoader loader;
 
 
     /**
@@ -62,6 +63,13 @@ public class SubCommandBuilder
     public SubCommandBuilder setDescriptionKey(String descriptionKey) // Optional
     {
         this.descriptionKey = descriptionKey;
+        return this;
+    }
+
+
+    public SubCommandBuilder setClassLoader(ClassLoader loader)
+    {
+        this.loader = loader;
         return this;
     }
 
@@ -140,6 +148,6 @@ public class SubCommandBuilder
     @NotNull
     public NinSubCommand construct()
     {
-        return NinCore.get().constructSubCommand(this.name, this.useStaticDescription, this.staticDescription, this.descriptionKey, this.descriptionBundleBaseName, this.requiredPermission, this.usage, this.aliases, this.executor, this.parentCommand);
+        return NinCore.get().constructSubCommand(this.name, this.useStaticDescription, this.staticDescription, this.descriptionKey, this.descriptionBundleBaseName, this.requiredPermission, this.usage, this.aliases, this.executor, this.parentCommand, this.loader);
     }
 }
