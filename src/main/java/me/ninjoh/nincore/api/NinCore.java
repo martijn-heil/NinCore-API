@@ -2,6 +2,7 @@ package me.ninjoh.nincore.api;
 
 
 import com.google.common.base.Preconditions;
+import me.ninjoh.nincore.api.internals.Internals;
 import me.ninjoh.nincore.api.logging.LogColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
@@ -9,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 public final class NinCore
 {
     private static NinCoreImplementation implementation = null;
-    private static NinCoreAPILogger logger = new NinCoreAPILogger();
 
 
     /**
@@ -37,13 +37,13 @@ public final class NinCore
 
         if (NinCore.implementation != null)
         {
-            getApiLogger().warning(LogColor.HIGHLIGHT + implementation.getImplementingPlugin().getName() + LogColor.RESET +
+            Internals.getApiLogger().warning(LogColor.HIGHLIGHT + implementation.getImplementingPlugin().getName() + LogColor.RESET +
                     " tried to update the current NinCore implementation, but was prevented from doing so.");
         }
         else
         {
             NinCore.implementation = implementation;
-            getApiLogger().info("NinCore implementation set to: " + LogColor.HIGHLIGHT +
+            Internals.getApiLogger().info("NinCore implementation set to: " + LogColor.HIGHLIGHT +
                     implementation.getImplementingPlugin().getName() + " v" +
                     implementation.getImplementingPlugin().getDescription().getVersion());
         }
@@ -79,15 +79,5 @@ public final class NinCore
     public static NinCoreImplementation get()
     {
         return implementation;
-    }
-
-
-    /**
-     * <bold>Only for internal usage! Do NOT use!</bold>
-     */
-    @Deprecated
-    public static NinCoreAPILogger getApiLogger()
-    {
-        return logger;
     }
 }

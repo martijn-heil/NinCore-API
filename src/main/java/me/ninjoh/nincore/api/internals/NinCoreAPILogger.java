@@ -1,4 +1,4 @@
-package me.ninjoh.nincore.api;
+package me.ninjoh.nincore.api.internals;
 
 
 import com.google.common.base.Preconditions;
