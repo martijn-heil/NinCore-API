@@ -13,4 +13,9 @@ public interface NinCommandSender extends CanReceiveChatMessage, HasLocale
      */
     @NotNull
     CommandSender toCommandSender();
+
+    static NinCommandSender fromCommandSender(CommandSender sender)
+    {
+        return NinCore.get().getNinCommandSender(sender);
+    }
 }

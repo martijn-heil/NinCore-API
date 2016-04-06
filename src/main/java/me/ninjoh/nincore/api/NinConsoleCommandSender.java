@@ -25,4 +25,9 @@ public interface NinConsoleCommandSender extends CanReceiveChatMessage
      * @return The {@link ConsoleCommandSender}
      */
     ConsoleCommandSender toConsoleCommandSender();
+
+    static NinConsoleCommandSender get()
+    {
+        return NinCore.get().getNinConsoleCommandSender();
+    }
 }

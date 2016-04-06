@@ -57,4 +57,9 @@ public interface NinServer
 
     @NotNull
     World getDefaultWorld();
+
+    static NinServer get()
+    {
+        return NinCore.get().getNinServer();
+    }
 }
