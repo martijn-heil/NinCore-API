@@ -1,0 +1,31 @@
+-classpath
+'C:/Users/MartijnAdmin/Desktop/Java Dev/minecraft/SpigotPluginDev/Workspace/NinCoreAPI/target/classes;C:/Users/MartijnAdmin/.m2/repository/joda-time/joda-time/2.9.2/joda-time-2.9.2.jar;C:/Users/MartijnAdmin/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar;C:/Users/MartijnAdmin/.m2/repository/org/bukkit/bukkit/1.9-R0.1-SNAPSHOT/bukkit-1.9-R0.1-SNAPSHOT.jar;C:/Users/MartijnAdmin/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar;C:/Users/MartijnAdmin/.m2/repository/org/yaml/snakeyaml/1.15/snakeyaml-1.15.jar;C:/Users/MartijnAdmin/.m2/repository/net/md-5/bungeecord-chat/1.9-SNAPSHOT/bungeecord-chat-1.9-SNAPSHOT.jar;C:/Users/MartijnAdmin/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar;C:/Users/MartijnAdmin/.m2/repository/org/spigotmc/spigot/1.9-R0.1-SNAPSHOT/spigot-1.9-R0.1-SNAPSHOT.jar;C:/Users/MartijnAdmin/.m2/repository/org/avaje/ebean/2.8.1/ebean-2.8.1.jar;C:/Users/MartijnAdmin/.m2/repository/org/jetbrains/annotations-java5/15.0/annotations-java5-15.0.jar;C:/Users/MartijnAdmin/.m2/repository/org/mindrot/jbcrypt/0.3m/jbcrypt-0.3m.jar;C:/Users/MartijnAdmin/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar;C:/Users/MartijnAdmin/.m2/repository/junit/junit/4.10/junit-4.10.jar;C:/Users/MartijnAdmin/.m2/repository/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar;C:/Users/MartijnAdmin/.m2/repository/org/spigotmc/spigot-api/1.9-R0.1-SNAPSHOT/spigot-api-1.9-R0.1-SNAPSHOT.jar;C:/Users/MartijnAdmin/.m2/repository/com/google/guava/guava/17.0/guava-17.0.jar'
+-encoding
+'UTF-8'
+-public
+-sourcepath
+'C:/Users/MartijnAdmin/Desktop/Java Dev/minecraft/SpigotPluginDev/Workspace/NinCoreAPI/src/main/java;C:/Users/MartijnAdmin/Desktop/Java Dev/minecraft/SpigotPluginDev/Workspace/NinCoreAPI/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2016. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/MartijnAdmin/Desktop/Java Dev/minecraft/SpigotPluginDev/Workspace/NinCoreAPI/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'NinCore API, 1.0-SNAPSHOT'
+-footer
+'NinCore API, 1.0-SNAPSHOT'
+-header
+'NinCore API, 1.0-SNAPSHOT'
+-link
+'http://static.springsource.org/spring/docs/3.0.x/javadoc-api'
+-linkoffline
+'http://docs.oracle.com/javase/7/docs/api' 'C:/Users/MartijnAdmin/Desktop/Java Dev/minecraft/SpigotPluginDev/Workspace/NinCoreAPI/target/javadoc-bundle-options'
+-nohelp
+-use
+-version
+-windowtitle
+'NinCore-API 1.0-SNAPSHOT API'
