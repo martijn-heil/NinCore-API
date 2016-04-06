@@ -1,0 +1,13 @@
+me.ninjoh.nincore.api
+me.ninjoh.nincore.api.command.builders
+me.ninjoh.nincore.api.command
+me.ninjoh.nincore.api.command.executors
+me.ninjoh.nincore.api.entity
+me.ninjoh.nincore.api.events
+me.ninjoh.nincore.api.exceptions
+me.ninjoh.nincore.api.exceptions.technicalexceptions
+me.ninjoh.nincore.api.exceptions.validationexceptions
+me.ninjoh.nincore.api.internals
+me.ninjoh.nincore.api.logging
+me.ninjoh.nincore.api.messaging
+me.ninjoh.nincore.api.util
