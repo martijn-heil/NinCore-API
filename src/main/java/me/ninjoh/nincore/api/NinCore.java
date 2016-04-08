@@ -27,7 +27,7 @@ public final class NinCore
 
     /**
      * Set the current NinCore implementation. This can only be set once during
-     * the lifetime of this application. It will silently fail if the NinCore implementation has already been set.
+     * the lifetime of this application. It will log an warning message if the implementation is already set.
      *
      * @param implementation The current NinCore implementation.
      */
@@ -78,6 +78,8 @@ public final class NinCore
     @NotNull
     public static NinCoreImplementation get()
     {
+        if(implementation == null) throw new IllegalStateException("The NinCore implementation is not set.");
+
         return implementation;
     }
 }

@@ -5,6 +5,7 @@ import me.ninjoh.nincore.api.NinCore;
 import me.ninjoh.nincore.api.command.NinCommand;
 import me.ninjoh.nincore.api.command.NinSubCommand;
 import me.ninjoh.nincore.api.command.executors.NinSubCommandExecutor;
+import me.ninjoh.nincore.api.localization.LocalizedString;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -14,15 +15,13 @@ public class SubCommandBuilder
 {
     private String name; // Required && Always lowercase.
     private List<String> aliases = new ArrayList<>(); // Optional && All entries always lowercase.
-    private String descriptionKey; // Optional
-    private String descriptionBundleBaseName; // Optional
+    private LocalizedString localizedDescription;
     private String staticDescription;
     private String requiredPermission; // Optional.
     private NinSubCommandExecutor executor; // Required
     private NinCommand parentCommand;
     private String usage;
     boolean useStaticDescription = true;
-    private ClassLoader loader;
 
 
     /**
@@ -53,23 +52,9 @@ public class SubCommandBuilder
     }
 
 
-    /**
-     * Set this sub command's description
-     *
-     * @param descriptionKey the description key to set.
-     * @return {@link SubCommandBuilder}, for method chaining.
-     */
-    @NotNull
-    public SubCommandBuilder setDescriptionKey(String descriptionKey) // Optional
+    public SubCommandBuilder setLocalizedDescription(LocalizedString localizedDescription)
     {
-        this.descriptionKey = descriptionKey;
-        return this;
-    }
-
-
-    public SubCommandBuilder setClassLoader(ClassLoader loader)
-    {
-        this.loader = loader;
+        this.localizedDescription = localizedDescription;
         return this;
     }
 
@@ -77,14 +62,6 @@ public class SubCommandBuilder
     public SubCommandBuilder setUseStaticDescription(boolean value)
     {
         this.useStaticDescription = value;
-        return this;
-    }
-
-
-    @NotNull
-    public SubCommandBuilder setDescriptionBundleBaseName(String baseName)
-    {
-        this.descriptionBundleBaseName = baseName;
         return this;
     }
 
@@ -148,6 +125,6 @@ public class SubCommandBuilder
     @NotNull
     public NinSubCommand construct()
     {
-        return NinCore.get().constructSubCommand(this.name, this.useStaticDescription, this.staticDescription, this.descriptionKey, this.descriptionBundleBaseName, this.requiredPermission, this.usage, this.aliases, this.executor, this.parentCommand, this.loader);
+        return NinCore.get().constructSubCommand(this.name, this.useStaticDescription, this.staticDescription, this.localizedDescription, this.requiredPermission, this.usage, this.aliases, this.executor, this.parentCommand);
     }
 }

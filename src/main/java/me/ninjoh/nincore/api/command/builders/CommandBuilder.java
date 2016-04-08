@@ -5,6 +5,7 @@ import me.ninjoh.nincore.api.NinCore;
 import me.ninjoh.nincore.api.command.NinCommand;
 import me.ninjoh.nincore.api.command.NinSubCommand;
 import me.ninjoh.nincore.api.command.executors.NinCommandExecutor;
+import me.ninjoh.nincore.api.localization.LocalizedString;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -16,12 +17,10 @@ public class CommandBuilder
     private String name; // Required
     private List<NinSubCommand> subCommands = new ArrayList<>(); // Optional
     private NinCommandExecutor executor; // Required
-    private String descriptionKey;
-    private String descriptionBundleBaseName;
+    private LocalizedString localizedDescription;
     private String requiredPermission;
     boolean useStaticDescription = false;
     private JavaPlugin plugin;
-    private ClassLoader loader;
 
 
     public CommandBuilder(JavaPlugin plugin)
@@ -44,23 +43,9 @@ public class CommandBuilder
     }
 
 
-    public CommandBuilder setDescription(String descriptionKey)
+    public CommandBuilder setLocalizedDescription(LocalizedString localizedDescription)
     {
-        this.descriptionKey = descriptionKey;
-        return this;
-    }
-
-
-    public CommandBuilder setClassLoader(ClassLoader loader)
-    {
-        this.loader = loader;
-        return this;
-    }
-
-
-    public CommandBuilder setDescriptionBundleBaseName(String baseName)
-    {
-        this.descriptionBundleBaseName = baseName;
+        this.localizedDescription = localizedDescription;
         return this;
     }
 
@@ -112,6 +97,6 @@ public class CommandBuilder
      */
     public NinCommand construct()
     {
-        return NinCore.get().constructCommand(this.name, this.useStaticDescription, this.descriptionKey, this.descriptionBundleBaseName, this.requiredPermission, this.executor, this.subCommands, this.plugin, this.loader);
+        return NinCore.get().constructCommand(this.name, this.useStaticDescription, this.localizedDescription, this.requiredPermission, this.executor, this.subCommands, this.plugin);
     }
 }

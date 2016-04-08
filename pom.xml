@@ -103,6 +103,13 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>LATEST</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -114,6 +121,10 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+
+                    <annotationProcessors>
+                        <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
+                    </annotationProcessors>
                 </configuration>
             </plugin>
             
@@ -190,6 +201,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.9.1</version>
                 <configuration>
+                    <failOnError>false</failOnError>
                     <aggregate>true</aggregate>
                     <show>public</show>
                     <nohelp>true</nohelp>
@@ -205,10 +217,17 @@
                   <execution>
                     <id>generate-javadocs</id>
                     <goals>
-                      <goal>javadoc</goal>
+                        <goal>javadoc</goal>
                     </goals>
                     <phase>package</phase>
                   </execution>
+
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
             
@@ -283,13 +302,46 @@
                             <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
                             <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
                             <branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
-                            <includes><include>**/*</include></includes>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
                             <merge>true</merge>
                         </configuration>
                     </execution>
                     
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>1.16.8.0</version>
+                <executions>
+                    <execution>
+                        <id>delombok</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>delombok</goal>
+                        </goals>
+                        <configuration>
+                            <addOutputDirectory>false</addOutputDirectory>
+                            <sourceDirectory>src/main/java</sourceDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>test-delombok</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>testDelombok</goal>
+                        </goals>
+                        <configuration>
+                            <addOutputDirectory>false</addOutputDirectory>
+                            <sourceDirectory>src/test/java</sourceDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
 
         <resources>

@@ -13,7 +13,9 @@ public enum MinecraftLocale
     ARABIC("اللغة العربية", new Locale("ar", "SA")),
     ASTURIAN("Asturianu", new Locale("ast", "ES")), // One of the official languages in Spain.
     AZERBAIJANI("Azerbaijani", new Locale("az", "AZ")), // Official language in Azerbaijan, Dagestan.
+    BELARUSIAN("TODO", new Locale("be", "BY")),
     BULGARIAN("Български", new Locale("bg", "BG")),
+    BRETON("Brezhoneg", new Locale("br_FR")),
     CATALAN("Català", new Locale("ca", "ES")), // Official language in Spain (Catalonia) & Andorra.
     CZECH("Čeština", new Locale("cs", "CZ")),
     WELSH("Cymraeg", new Locale("cy", "GB")), // Official language in Wales.
@@ -23,7 +25,8 @@ public enum MinecraftLocale
     AUSTRALIAN_ENGLISH("Australian English", new Locale("en", "AU")),
     CANADIAN_ENGLISH("Canadian English", new Locale("en", "CA")),
     BRITISH_ENGLISH("English (UK)", new Locale("en", "GB")),
-    PIRATE_ENGLISH("Pirate Speak (PIRATE)", new Locale("en", "PT")), // Mojang joke / Minecraft easter egg.
+    NEW_ZEALAND_ENGLISH("New Zealand English", new Locale("en_NZ")),
+    PIRATE_ENGLISH("Pirate Speak", new Locale("en", "PT")), // Mojang joke / Minecraft easter egg.
     AMERICAN_ENGLISH("English (US)", new Locale("en", "US")),
     ESPERANTO("Esperanto (Mondo)", new Locale("eo", "UY")), // Constructed language (International)
     ARGENTINIAN_SPANISH("Español (Ar)", new Locale("es", "AR")),
@@ -35,8 +38,10 @@ public enum MinecraftLocale
     BASQUE("Euskara", new Locale("eu", "ES")), // Spain (Basque Country) & France
     PERSIAN("فارسی", new Locale("fa", "IR")),
     FINNISH("Suomi", new Locale("fi", "FI")),
+    FAROESE("TODO", new Locale("fo_FO")),
     FRENCH("Français (Fr)", new Locale("fr", "FR")),
     CANADIAN_FRENCH("Français (Ca)", new Locale("fr", "CA")),
+    FRISIAN("Frysk", new Locale("fy", "NL")),
     IRISH("Gaeilge", new Locale("ga", "IE")),
     GALICIAN("Galician", new Locale("gl", "ES")), // Galicia (Spain)
     MANX("Gaelg", new Locale("gv", "IM")), // Isle of Man
@@ -49,14 +54,19 @@ public enum MinecraftLocale
     ICELANDIC("Íslenska", new Locale("is", "IS")),
     ITALIAN("Italiano", new Locale("it", "IT")),
     JAPANESE("日本語", new Locale("ja", "JP")),
+    LOJBAN("la .lojban.", new Locale("jbo", "EN")),
     GEORGIAN("ქართული", new Locale("ka", "GE")),
     KOREAN("한국어", new Locale("ko", "KR")), // North Korea and South Korea
+    RIPUARIAN("Kölsch/Ripoarisch", new Locale("ksh_DE")),
     CORNWALL("Kernowek", new Locale("kw", "GB")), // Cornwall
     LATIN("Lingua Latina", new Locale("la", "VA")),
     LUXEMBOURGISH("Lëtzebuergesch", new Locale("lb", "LU")),
+    LIMBURGISH("Limburgs", new Locale("li", "LI")),
+    LOLCAT("LOLCAT", new Locale("lol", "US")),
     LITHUANIAN("Lietuvių", new Locale("lt", "LT")), // Lithuania
     LATVIAN("Latviešu", new Locale("lv", "LV")), // Latvia
     MAORI("Te Reo Māori", new Locale("mi", "NZ")), // Aotearoa
+    MACEDONIAN("TODO", new Locale("mk", "MK")),
     MALAY("Bahasa Melayu", new Locale("ms", "MY")), // Malaysia, Singapore, Brunei
     MALTESE("Malti", new Locale("mt", "MT")),
     LOW_GERMAN("Platdüütsk", new Locale("nds", "DE")), // Low German, Germany
@@ -73,12 +83,15 @@ public enum MinecraftLocale
     SLOVAK("Slovenčina", new Locale("sk", "SK")),
     SLOVENIAN("Slovenščina", new Locale("sl", "SI")),
     NORTHERN_SAMI("Davvisámegiella", new Locale("sme")), // Sápmi
+    SOMALI("Af-Soomaali", new Locale("so", "SO")),
+    ALBANIAN("Shquip", new Locale("sq_AL")),
     SERBIAN("Српски", new Locale("sr", "SP")),
     SWEDISH("Svenska", new Locale("sv", "SE")),
     THAI("Svenska", new Locale("th", "TH")),
     FILLIPINO("Filipino", new Locale("tl", "PH")),
     KLINGON("tlhIngan Hol", new Locale("tlh", "AA")), // Constructed language (Star Trek: the Klingon Empire)
     TURKISH("Türkçe", new Locale("tr", "TR")),
+    TALOSSAN("Talossan", new Locale("tzl", "TZL")), // Constructed language
     UKRAINIAN("Українська", new Locale("uk", "UA")),
     VALENCIAN("Valencià", new Locale("ca-val", "ES")), // Spain.
     VIETNAMESE("Tiếng Việt", new Locale("vi", "VN")),

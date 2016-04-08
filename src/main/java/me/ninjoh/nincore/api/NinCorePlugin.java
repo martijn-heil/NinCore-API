@@ -20,6 +20,8 @@ public abstract class NinCorePlugin extends JavaPlugin
     @Override
     public final void onLoad()
     {
+        this.logger = new NinPluginLogger(this);
+
         this.onLoadInner();
     }
 
@@ -27,9 +29,6 @@ public abstract class NinCorePlugin extends JavaPlugin
     @Override
     public final void onEnable()
     {
-        this.logger = new NinPluginLogger(this);
-
-
         this.getNinLogger().info("");
         this.getNinLogger().info("===== ENABLING " + LogColor.HIGHLIGHT + this.getName() + " v" +
                 this.getDescription().getVersion() + LogColor.RESET + " =====");
