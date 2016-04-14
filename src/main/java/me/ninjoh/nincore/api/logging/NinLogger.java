@@ -15,6 +15,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
+/**
+ * Use the {@link NinPluginLogger} instead.
+ */
+@Deprecated
 public class NinLogger
 {
     private final JavaPlugin plugin;
