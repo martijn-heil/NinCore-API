@@ -56,7 +56,7 @@ public class DataManager
                 s = "An ";
             }
 
-            plugin.getNinLogger().warning(s + e.getClass().getName() + "occurred while creating data file;");
+            plugin.getNinLogger().warning(s + e.getClass().getName() + " occurred while creating data file;");
             e.printStackTrace();
         }
     }
@@ -112,14 +112,7 @@ public class DataManager
     {
         // Schedule automatic saving of data file.
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(plugin, new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                saveDataFile();
-            }
-        }, interval, interval);
+        scheduler.scheduleSyncRepeatingTask(plugin, this::saveDataFile, interval, interval);
 
         plugin.getNinLogger().info("Scheduled data saving interval is set to " + interval + " ticks(s).");
     }
@@ -134,14 +127,7 @@ public class DataManager
     {
         // Schedule automatic saving of data file.
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(plugin, new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                saveDataFile();
-            }
-        }, interval.toLong(), interval.toLong());
+        scheduler.scheduleSyncRepeatingTask(plugin, this::saveDataFile, interval.toLong(), interval.toLong());
 
         plugin.getNinLogger().info("Scheduled data saving interval is set to " + interval + " tick(s).");
     }
