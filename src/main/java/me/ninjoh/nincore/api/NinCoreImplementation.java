@@ -6,8 +6,6 @@ import me.ninjoh.nincore.api.command.NinSubCommand;
 import me.ninjoh.nincore.api.command.executors.NinCommandExecutor;
 import me.ninjoh.nincore.api.command.executors.NinSubCommandExecutor;
 import me.ninjoh.nincore.api.entity.NinPlayer;
-import me.ninjoh.nincore.api.exceptions.technicalexceptions.SubCommandAliasAlreadyRegisteredException;
-import me.ninjoh.nincore.api.exceptions.technicalexceptions.SubCommandAlreadyExistsException;
 import me.ninjoh.nincore.api.localization.LocalizedString;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
@@ -22,10 +20,6 @@ public interface NinCoreImplementation
 {
     NinServer getNinServer();
 
-    void registerNinCommand(NinCommand ninCommand, JavaPlugin plugin);
-
-    void registerNinSubCommand(NinSubCommand subCommand, JavaPlugin plugin)
-            throws SubCommandAliasAlreadyRegisteredException, SubCommandAlreadyExistsException;
 
     NinCommand constructCommand(String name, boolean useStaticDescription, LocalizedString localizedDescription, String requiredPermission, NinCommandExecutor executor, List<NinSubCommand> subCommands, JavaPlugin plugin);
 
