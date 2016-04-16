@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class InventoryUtils
 {
-    public static String toBase64(Inventory inventory)
+    public static String toBase64(Inventory inventory) throws Exception
     {
         try
         {
@@ -35,7 +35,7 @@ public class InventoryUtils
         }
         catch (Exception e)
         {
-            throw new RuntimeException("Unable to save item stacks.", e);
+            throw new Exception("Unable to save item stacks.", e);
         }
     }
 

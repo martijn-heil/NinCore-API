@@ -7,5 +7,8 @@ public interface HasLocale
 {
     MinecraftLocale getMinecraftLocale();
 
-    Locale getLocale();
+    default Locale getLocale()
+    {
+        return this.getMinecraftLocale().toLocale();
+    }
 }
