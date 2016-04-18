@@ -96,4 +96,6 @@ public interface NinCommand extends CommandBase
     void addDefaultHelpSubCmd();
 
     void addDefaultInfoSubCmd();
+
+    void addDefaultReloadSubCmd();
 }
