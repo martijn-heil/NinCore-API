@@ -1,57 +1,21 @@
 package me.ninjoh.nincore.api;
 
 
-import me.ninjoh.nincore.api.command.NinCommand;
-import me.ninjoh.nincore.api.command.NinSubCommand;
-import me.ninjoh.nincore.api.command.executors.NinCommandExecutor;
-import me.ninjoh.nincore.api.command.executors.NinSubCommandExecutor;
-import me.ninjoh.nincore.api.entity.NinPlayer;
-import me.ninjoh.nincore.api.localization.LocalizedString;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
+import me.ninjoh.nincore.api.command.CommandImplementation;
+import org.bukkit.World;
+import org.bukkit.entity.Entity;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
 public interface NinCoreImplementation
 {
-    NinServer getNinServer();
 
+    CommandImplementation getCommandImplementation();
 
-    NinCommand constructCommand(String name, boolean useStaticDescription, LocalizedString localizedDescription, String requiredPermission, NinCommandExecutor executor, List<NinSubCommand> subCommands, JavaPlugin plugin);
+    LocalizationManager getLocalizationManager();
 
-
-    NinSubCommand constructSubCommand(String name, boolean useStaticDescription, String staticDescription, LocalizedString localizedDescription, String requiredPermission, String usage, List<String> aliases, NinSubCommandExecutor executor, NinCommand parentCommand);
-
-    @NotNull
-    NinCommandSender getNinCommandSender(@NotNull CommandSender commandSender);
-
-    @NotNull
-    NinConsoleCommandSender getNinConsoleCommandSender();
-
-    @Nullable
-    NinPlayer getNinPlayer(@NotNull Player player);
-
-    @Nullable
-    NinOfflinePlayer getNinOfflinePlayer(@NotNull OfflinePlayer offlinePlayer);
-
-    @NotNull
-    MinecraftLocale getDefaultMinecraftLocale();
-
-
-    /**
-     * The standard default {@link MinecraftLocale} is {@link MinecraftLocale#BRITISH_ENGLISH}
-     *
-     * @param minecraftLocale The {@link MinecraftLocale} to set default.
-     */
-    void setDefaultMinecraftLocale(@NotNull MinecraftLocale minecraftLocale);
-
-    void setLocalized(boolean value);
-
-    boolean isLocalized();
+    EntityManager getEntityManager();
 
     @NotNull
     JavaPlugin getImplementingPlugin();
@@ -67,4 +31,29 @@ public interface NinCoreImplementation
 
 
     boolean consoleIsAnsiSupported();
+
+
+    /**
+     * Dispatch a command from console. A pre command slash should NOT be included.
+     *
+     * @param command The command string to send.
+     */
+    void dispatchCommand(String command);
+
+    /**
+     * Get an entity by it's entity ID. Searches in all worlds.
+     *
+     * @param id The entity ID to search the related entity for.
+     * @return The entity, if no entity was found, null will be returned.
+     */
+    @Nullable
+    Entity getEntityById(int id);
+
+    /**
+     * @deprecated Use <pre>Bukkit.getWorlds().get(0)</pre> instead.
+     * @return The default world.
+     */
+    @Deprecated
+    @NotNull
+    World getDefaultWorld();
 }

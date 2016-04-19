@@ -1,6 +1,8 @@
-package me.ninjoh.nincore.api;
+package me.ninjoh.nincore.api.entity;
 
 
+import me.ninjoh.nincore.api.CanReceiveChatMessage;
+import me.ninjoh.nincore.api.NinCore;
 import org.bukkit.command.ConsoleCommandSender;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,6 +30,6 @@ public interface NinConsoleCommandSender extends CanReceiveChatMessage
 
     static NinConsoleCommandSender get()
     {
-        return NinCore.get().getNinConsoleCommandSender();
+        return NinCore.get().getEntityManager().getNinConsoleCommandSender();
     }
 }

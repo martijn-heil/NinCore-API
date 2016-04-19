@@ -1,6 +1,7 @@
-package me.ninjoh.nincore.api;
+package me.ninjoh.nincore.api.entity;
 
 
+import me.ninjoh.nincore.api.NinCore;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -18,6 +19,6 @@ public interface NinOfflinePlayer
     @Nullable
     static NinOfflinePlayer fromOfflinePlayer(OfflinePlayer offlinePlayer)
     {
-        return NinCore.get().getNinOfflinePlayer(offlinePlayer);
+        return NinCore.get().getEntityManager().getNinOfflinePlayer(offlinePlayer);
     }
 }

@@ -4,6 +4,8 @@ package me.ninjoh.nincore.api.util;
 import me.ninjoh.nincore.api.NinCore;
 import me.ninjoh.nincore.api.command.NinCommand;
 import me.ninjoh.nincore.api.command.NinSubCommand;
+import me.ninjoh.nincore.api.entity.NinCommandSender;
+import me.ninjoh.nincore.api.entity.NinOnlinePlayer;
 import net.md_5.bungee.api.chat.*;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.command.CommandSender;
@@ -16,7 +18,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
- * {@link me.ninjoh.nincore.api.NinCommandSender} methods are preferred over this class.
+ * {@link NinCommandSender} methods are preferred over this class.
  * This class is mainly for internal usage, but may be used by extern developers.
  */
 public class MessageUtil // TODO: Use TranslationUtils to make this more readable.
@@ -34,12 +36,12 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         Locale locale = null;
         if (sender instanceof Player)
         {
-            locale = NinCore.getImplementation().getNinPlayer((Player) sender).getMinecraftLocale().toLocale();
+            locale = NinOnlinePlayer.fromPlayer((Player) sender).getMinecraftLocale().toLocale();
         }
 
         if (locale == null)
         {
-            locale = NinCore.getImplementation().getDefaultMinecraftLocale().toLocale();
+            locale = NinCore.get().getLocalizationManager().getDefaultMinecraftLocale().toLocale();
         }
 
         final ResourceBundle messages = ResourceBundle.getBundle("me.ninjoh.nincore.api.res.messages", locale);
@@ -68,12 +70,12 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         Locale locale = null;
         if (sender instanceof Player)
         {
-            locale = NinCore.getImplementation().getNinPlayer((Player) sender).getMinecraftLocale().toLocale();
+            locale = NinOnlinePlayer.fromPlayer((Player) sender).getMinecraftLocale().toLocale();
         }
 
         if (locale == null)
         {
-            locale = NinCore.getImplementation().getDefaultMinecraftLocale().toLocale();
+            locale = NinCore.get().getLocalizationManager().getDefaultMinecraftLocale().toLocale();
         }
 
 
@@ -177,12 +179,12 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         Locale locale = null;
         if (sender instanceof Player)
         {
-            locale = NinCore.getImplementation().getNinPlayer((Player) sender).getMinecraftLocale().toLocale();
+            locale = NinOnlinePlayer.fromPlayer((Player) sender).getMinecraftLocale().toLocale();
         }
 
         if (locale == null)
         {
-            locale = NinCore.getImplementation().getDefaultMinecraftLocale().toLocale();
+            locale = NinCore.get().getLocalizationManager().getDefaultMinecraftLocale().toLocale();
         }
 
 
@@ -330,12 +332,12 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         Locale locale = null;
         if (sender instanceof Player)
         {
-            locale = NinCore.getImplementation().getNinPlayer((Player) sender).getMinecraftLocale().toLocale();
+            locale = NinOnlinePlayer.fromPlayer((Player) sender).getMinecraftLocale().toLocale();
         }
 
         if (locale == null)
         {
-            locale = NinCore.getImplementation().getDefaultMinecraftLocale().toLocale();
+            locale = NinCore.get().getLocalizationManager().getDefaultMinecraftLocale().toLocale();
         }
 
 

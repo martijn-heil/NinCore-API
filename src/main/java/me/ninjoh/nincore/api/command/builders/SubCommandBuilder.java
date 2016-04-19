@@ -125,6 +125,6 @@ public class SubCommandBuilder
     @NotNull
     public NinSubCommand construct()
     {
-        return NinCore.get().constructSubCommand(this.name, this.useStaticDescription, this.staticDescription, this.localizedDescription, this.requiredPermission, this.usage, this.aliases, this.executor, this.parentCommand);
+        return NinCore.get().getCommandImplementation().constructSubCommand(this.name, this.useStaticDescription, this.staticDescription, this.localizedDescription, this.requiredPermission, this.usage, this.aliases, this.executor, this.parentCommand);
     }
 }

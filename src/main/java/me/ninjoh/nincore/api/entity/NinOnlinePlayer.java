@@ -1,13 +1,11 @@
 package me.ninjoh.nincore.api.entity;
 
 
-import me.ninjoh.nincore.api.NinCommandSender;
 import me.ninjoh.nincore.api.NinCore;
-import me.ninjoh.nincore.api.NinOfflinePlayer;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
 
-public interface NinPlayer extends NinOfflinePlayer, NinCommandSender
+public interface NinOnlinePlayer extends NinOfflinePlayer, NinCommandSender
 {
     /**
      * Get the bukkit player.
@@ -17,8 +15,8 @@ public interface NinPlayer extends NinOfflinePlayer, NinCommandSender
     Player toPlayer();
 
     @Nullable
-    static NinPlayer fromPlayer(Player p)
+    static NinOnlinePlayer fromPlayer(Player p)
     {
-        return NinCore.get().getNinPlayer(p);
+        return NinCore.get().getEntityManager().getNinOnlinePlayer(p);
     }
 }

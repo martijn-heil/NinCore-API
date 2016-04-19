@@ -394,12 +394,12 @@ public enum MinecraftLocale
      */
     public static MinecraftLocale getDefault()
     {
-        return NinCore.getImplementation().getDefaultMinecraftLocale();
+        return NinCore.get().getLocalizationManager().getDefaultMinecraftLocale();
     }
 
 
     public static void setDefault(MinecraftLocale minecraftLocale)
     {
-        NinCore.getImplementation().setDefaultMinecraftLocale(minecraftLocale);
+        NinCore.get().getLocalizationManager().setDefaultMinecraftLocale(minecraftLocale);
     }
 }

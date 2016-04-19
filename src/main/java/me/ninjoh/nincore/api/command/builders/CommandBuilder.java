@@ -97,6 +97,6 @@ public class CommandBuilder
      */
     public NinCommand construct()
     {
-        return NinCore.get().constructCommand(this.name, this.useStaticDescription, this.localizedDescription, this.requiredPermission, this.executor, this.subCommands, this.plugin);
+        return NinCore.get().getCommandImplementation().constructCommand(this.name, this.useStaticDescription, this.localizedDescription, this.requiredPermission, this.executor, this.subCommands, this.plugin);
     }
 }

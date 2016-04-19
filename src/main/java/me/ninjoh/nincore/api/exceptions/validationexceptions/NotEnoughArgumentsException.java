@@ -1,7 +1,7 @@
 package me.ninjoh.nincore.api.exceptions.validationexceptions;
 
 
-import me.ninjoh.nincore.api.NinCore;
+import me.ninjoh.nincore.api.entity.NinCommandSender;
 import me.ninjoh.nincore.api.exceptions.ValidationException;
 import me.ninjoh.nincore.api.util.TranslationUtils;
 import org.bukkit.command.CommandSender;
@@ -13,7 +13,7 @@ public class NotEnoughArgumentsException extends ValidationException
     public NotEnoughArgumentsException(CommandSender commandSender)
     {
         super(commandSender, TranslationUtils.getStaticMsg(ResourceBundle.getBundle("me.ninjoh.nincore.api.res.messages",
-                NinCore.getImplementation().getNinCommandSender(commandSender).getMinecraftLocale().
+                NinCommandSender.fromCommandSender(commandSender).getMinecraftLocale().
                         toLocale()), "error.NotEnoughArguments"), null);
     }
 }
