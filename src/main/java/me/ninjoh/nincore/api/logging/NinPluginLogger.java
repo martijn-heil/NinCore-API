@@ -47,7 +47,7 @@ public class NinPluginLogger extends PluginLogger
     {
         String message = logRecord.getMessage();
 
-        if(NinCore.get().consoleIsAnsiSupported())
+        if(NinCore.get().isConsoleAnsiSupported())
         {
             if(!message.equals("") && levelColors.get(logRecord.getLevel()) != null)
             {

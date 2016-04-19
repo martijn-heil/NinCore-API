@@ -30,7 +30,7 @@ public interface NinCoreImplementation
     boolean useColoredLogging();
 
 
-    boolean consoleIsAnsiSupported();
+    boolean isConsoleAnsiSupported();
 
 
     /**
