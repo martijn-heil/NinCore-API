@@ -2,7 +2,7 @@ package me.ninjoh.nincore.api.util;
 
 
 import com.google.common.base.Preconditions;
-import me.ninjoh.nincore.api.NinCorePlugin;
+import me.ninjoh.nincore.api.Core;
 import me.ninjoh.nincore.api.Tick;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -15,13 +15,13 @@ import java.io.IOException;
 
 public class DataManager
 {
-    private volatile NinCorePlugin plugin;
+    private volatile Core plugin;
     private volatile FileConfiguration data;
 
     private volatile File dataF;
 
 
-    public DataManager(@NotNull NinCorePlugin plugin)
+    public DataManager(@NotNull Core plugin)
     {
         Preconditions.checkNotNull(plugin);
 

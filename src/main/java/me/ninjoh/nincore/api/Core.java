@@ -8,8 +8,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.logging.Logger;
 
-public abstract class NinCorePlugin extends JavaPlugin
+public abstract class Core extends JavaPlugin
 {
+    private ModuleManager moduleManager = new ModuleManager();
     private NinPluginLogger logger;
 
     @NotNull
@@ -70,5 +71,10 @@ public abstract class NinCorePlugin extends JavaPlugin
     public DataManager getDataManager()
     {
         return dataManager;
+    }
+
+    public ModuleManager getModuleManager()
+    {
+        return this.moduleManager;
     }
 }
