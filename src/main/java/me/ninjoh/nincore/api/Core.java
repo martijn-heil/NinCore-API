@@ -30,12 +30,14 @@ public abstract class Core extends JavaPlugin
     public final void onEnable()
     {
         this.onEnableInner();
+        this.getModuleManager().enableAll();
     }
 
 
     @Override
     public final void onDisable()
     {
+        this.getModuleManager().disableAll();
         this.onDisableInner();
     }
 

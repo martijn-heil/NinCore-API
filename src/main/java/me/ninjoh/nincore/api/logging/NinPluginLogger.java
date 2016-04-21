@@ -5,15 +5,15 @@ import me.ninjoh.nincore.api.NinCore;
 import me.ninjoh.nincore.api.util.TextUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.PluginLogger;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 
-public class NinPluginLogger extends PluginLogger
+public class NinPluginLogger extends Logger
 {
     private String prefix;
     private static final Map<Level, ChatColor> levelColors = new HashMap<>();
@@ -33,7 +33,8 @@ public class NinPluginLogger extends PluginLogger
 
     public NinPluginLogger(Plugin context)
     {
-        super(context);
+        super(context.getName() + "NinPluginLogger", null);
+
         String prefix = context.getDescription().getPrefix();
 
         this.prefix = prefix != null ? ChatColor.DARK_AQUA + "[" + ChatColor.AQUA + prefix + ChatColor.DARK_AQUA + "] " : ChatColor.DARK_AQUA + "[" + ChatColor.AQUA + context.getDescription().getName() + ChatColor.DARK_AQUA + "] ";
@@ -62,6 +63,6 @@ public class NinPluginLogger extends PluginLogger
             logRecord.setMessage(TextUtils.removeChatColors(this.prefix) + TextUtils.removeChatColors(message));
         }
 
-        super.getParent().log(logRecord);
+        this.getParent().log(logRecord);
     }
 }

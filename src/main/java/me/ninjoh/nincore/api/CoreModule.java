@@ -6,12 +6,13 @@ import lombok.Getter;
 public class CoreModule
 {
     @Getter private Core core;
-    @Getter private ModuleLogger logger = new ModuleLogger(this);
+    @Getter private ModuleLogger logger;
 
 
     public CoreModule(Core core)
     {
         this.core = core;
+        this.logger = new ModuleLogger(this);
     }
 
     public void onEnable()

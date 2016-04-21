@@ -1,17 +1,17 @@
 package me.ninjoh.nincore.api;
 
 
-import me.ninjoh.nincore.api.logging.NinPluginLogger;
-
 import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
-public class ModuleLogger extends NinPluginLogger
+public class ModuleLogger extends Logger
 {
     private CoreModule module;
 
     public ModuleLogger(CoreModule module)
     {
-        super(module.getCore());
+        super(module.getClass().getSimpleName() + "ModuleLogger", null);
+        this.setParent(module.getCore().getNinLogger());
         this.module = module;
     }
 
@@ -23,6 +23,6 @@ public class ModuleLogger extends NinPluginLogger
         String message = logRecord.getMessage();
         message = "[" + module.getClass().getSimpleName() + "] " + message;
         logRecord.setMessage(message);
-        super.log(logRecord);
+        this.getParent().log(logRecord);
     }
 }

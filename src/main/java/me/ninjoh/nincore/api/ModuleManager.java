@@ -4,11 +4,12 @@ package me.ninjoh.nincore.api;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModuleManager
 {
-    @Getter @Setter private List<CoreModule> modules;
+    @Getter @Setter private List<CoreModule> modules = new ArrayList<>();
 
 
     public void addModule(CoreModule module)
