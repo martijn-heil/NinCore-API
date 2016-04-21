@@ -2,12 +2,19 @@ package me.ninjoh.nincore.api;
 
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 public class ModuleManager
 {
-    @Getter private List<CoreModule> modules;
+    @Getter @Setter private List<CoreModule> modules;
+
+
+    public void addModule(CoreModule module)
+    {
+        modules.add(module);
+    }
 
 
     public void enableAll()
