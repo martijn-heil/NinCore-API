@@ -1,20 +1,22 @@
 package me.ninjoh.nincore.api;
 
 
+import lombok.Getter;
+
 import java.util.List;
 
 public class ModuleManager
 {
-    private List<Module> modules;
+    @Getter private List<CoreModule> modules;
 
 
     public void enableAll()
     {
-        modules.forEach(Module::onEnable);
+        modules.forEach(CoreModule::onEnable);
     }
 
     public void disableAll()
     {
-        modules.forEach(Module::onDisable);
+        modules.forEach(CoreModule::onDisable);
     }
 }

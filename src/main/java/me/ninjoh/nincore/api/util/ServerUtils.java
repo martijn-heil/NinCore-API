@@ -7,9 +7,8 @@ import org.bukkit.entity.Entity;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * @deprecated Use {@link me.ninjoh.nincore.api.NinServer} instead.
+ * @deprecated
  */
-@Deprecated
 public class ServerUtils
 {
     /**

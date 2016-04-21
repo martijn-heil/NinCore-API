@@ -1,26 +1,26 @@
 package me.ninjoh.nincore.api;
 
 
+import lombok.Getter;
 import me.ninjoh.nincore.api.logging.NinPluginLogger;
 import me.ninjoh.nincore.api.util.DataManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.logging.Logger;
-
 public abstract class Core extends JavaPlugin
 {
-    private ModuleManager moduleManager = new ModuleManager();
-    private NinPluginLogger logger;
+    @Getter private ModuleManager moduleManager = new ModuleManager();
+    @Getter private NinPluginLogger ninLogger;
 
     @NotNull
+    @Getter
     private DataManager dataManager = new DataManager(this);
 
 
     @Override
     public final void onLoad()
     {
-        this.logger = new NinPluginLogger(this);
+        this.ninLogger = new NinPluginLogger(this);
 
         this.onLoadInner();
     }
@@ -58,23 +58,5 @@ public abstract class Core extends JavaPlugin
     public final void endEnable()
     {
         this.setEnabled(false);
-    }
-
-
-    public Logger getNinLogger()
-    {
-        return logger;
-    }
-
-
-    @NotNull
-    public DataManager getDataManager()
-    {
-        return dataManager;
-    }
-
-    public ModuleManager getModuleManager()
-    {
-        return this.moduleManager;
     }
 }
