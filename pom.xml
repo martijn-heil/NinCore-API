@@ -16,18 +16,6 @@
 
     <repositories>
 
-    <!--
-        <repository>
-            <id>local-repo</id>
-            <url>${local.maven.repository}</url>
-        </repository>
-    -->
-        
-        <!--<repository>-->
-            <!--<id>nincore-api-repo</id>-->
-            <!--<url>https://raw.github.com/martijn-heil/NinCore-API/mvn-repo/</url>-->
-        <!--</repository>-->
-
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
@@ -56,14 +44,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- CraftBukkit & NMS -->
-        <!--<dependency>-->
-        <!--<groupId>org.spigotmc</groupId>-->
-        <!--<artifactId>spigot</artifactId>-->
-        <!--<version>1.9-R0.1-SNAPSHOT</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-
         <!-- Joda Time-->
         <dependency>
             <groupId>joda-time</groupId>
@@ -76,22 +56,8 @@
             <groupId>org.fusesource.jansi</groupId>
             <artifactId>jansi</artifactId>
             <version>1.11</version>
+            <scope>provided</scope>
         </dependency>
-
-        <!-- Jbcrypt -->
-        <!--<dependency>-->
-            <!--<groupId>org.mindrot</groupId>-->
-            <!--<artifactId>jbcrypt</artifactId>-->
-            <!--<version>0.3m</version>-->
-            <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>me.ninjoh</groupId>-->
-            <!--<artifactId>nincore</artifactId>-->
-            <!--<version>2.0.0</version>-->
-            <!--<scope>provided</scope>-->
-        <!--</dependency>-->
 
         <!-- Jbcrypt -->
         <dependency>
@@ -155,7 +121,6 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <!--<minimizeJar>true</minimizeJar>-->
                     <artifactSet>
 
                         <includes>
@@ -355,50 +320,6 @@
             </plugin>
 
         </plugins>
-
-        <resources>
-
-            <!-- include plugin.yml -->
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>plugin.yml</include>
-                </includes>
-            </resource>
-
-            <!-- exclude everything else from filtering -->
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>false</filtering>
-                <excludes>
-                    <exclude>plugin.yml</exclude>
-                </excludes>
-            </resource>
-
-        </resources>
     </build>
-
-    <!--<distributionManagement>-->
-        <!---->
-        <!--&lt;!&ndash;-->
-        <!--<repository>-->
-            <!--<id>local-repository</id>-->
-            <!--<url>${local.maven.repository}</url>-->
-        <!--</repository>-->
-        <!--&ndash;&gt;-->
-        <!---->
-        <!--<repository>-->
-            <!--<id>internal-repo</id>-->
-            <!--<name>Temporary Staging Repository</name>-->
-            <!--<url>file://${project.build.directory}/mvn-repo</url>-->
-        <!--</repository>-->
-        <!---->
-        <!--<site>-->
-            <!--<id>github</id>-->
-            <!--<url>https://github.com/martijn-heil/NinCore-API</url>-->
-        <!--</site>-->
-    <!---->
-    <!--</distributionManagement>-->
 
 </project>
