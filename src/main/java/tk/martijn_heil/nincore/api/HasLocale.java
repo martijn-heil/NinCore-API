@@ -5,7 +5,7 @@ import java.util.Locale;
 
 public interface HasLocale
 {
-    MinecraftLocale getMinecraftLocale();
+    tk.martijn_heil.nincore.api.localization.MinecraftLocale getMinecraftLocale();
 
     default Locale getLocale()
     {

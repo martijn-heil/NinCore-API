@@ -1,4 +1,6 @@
-package tk.martijn_heil.nincore.api;
+package tk.martijn_heil.nincore.api.localization;
+
+import tk.martijn_heil.nincore.api.NinCore;
 
 import java.util.Locale;
 import java.util.MissingResourceException;
@@ -115,7 +117,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#toString()}
+     * @see Locale#toString()
      */
     @Override
     public String toString()
@@ -125,7 +127,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getISOCountries()}
+     * @see Locale#getISOCountries()
      */
     public static String[] getISOCountries()
     {
@@ -134,7 +136,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getDisplayCountry()}
+     * @see Locale#getDisplayCountry()
      */
     public String getDisplayCountry(Locale inLocale)
     {
@@ -143,7 +145,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getLanguage()}
+     * @see Locale#getLanguage()
      */
     public String getLanguage()
     {
@@ -152,7 +154,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getUnicodeLocaleKeys()}
+     * @see Locale#getUnicodeLocaleKeys()
      */
     public Set<String> getUnicodeLocaleKeys()
     {
@@ -161,7 +163,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getISO3Country()}
+     * @see Locale#getISO3Country()
      */
     public String getISO3Country() throws MissingResourceException
     {
@@ -170,7 +172,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getDisplayLanguage()}
+     * @see Locale#getDisplayLanguage()
      */
     public String getDisplayLanguage()
     {
@@ -179,7 +181,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getExtension(char)}
+     * @see Locale#getExtension(char)
      */
     public String getExtension(char key)
     {
@@ -188,7 +190,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getDisplayVariant()}
+     * @see Locale#getDisplayVariant()
      */
     public String getDisplayVariant()
     {
@@ -197,7 +199,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getISO3Language()}
+     * @see Locale#getISO3Language()
      */
     public String getISO3Language() throws MissingResourceException
     {
@@ -206,7 +208,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getUnicodeLocaleType(String)}
+     * @see Locale#getUnicodeLocaleType(String)
      */
     public String getUnicodeLocaleType(String key)
     {
@@ -215,7 +217,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getDisplayScript(Locale)}
+     * @see Locale#getDisplayScript(Locale)
      */
     public String getDisplayScript(Locale inLocale)
     {
@@ -224,7 +226,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getScript()}
+     * @see Locale#getScript()
      */
     public String getScript()
     {
@@ -233,7 +235,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getExtensionKeys()}
+     * @see Locale#getExtensionKeys()
      */
     public Set<Character> getExtensionKeys()
     {
@@ -242,7 +244,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getDisplayName(Locale)}
+     * @see Locale#getDisplayName(Locale)
      */
     public String getDisplayName(Locale inLocale)
     {
@@ -257,7 +259,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#toLanguageTag()}
+     * @see Locale#toLanguageTag()
      */
     public String toLanguageTag()
     {
@@ -266,7 +268,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getDisplayScript()}
+     * @see Locale#getDisplayScript()
      */
     public String getDisplayScript()
     {
@@ -275,7 +277,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getISOLanguages()}
+     * @see Locale#getISOLanguages()
      */
     public static String[] getISOLanguages()
     {
@@ -284,7 +286,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getDisplayLanguage()}
+     * @see Locale#getDisplayLanguage()
      */
     public String getDisplayLanguage(Locale inLocale)
     {
@@ -293,7 +295,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getCountry()}
+     * @see Locale#getCountry()
      */
     public String getCountry()
     {
@@ -302,7 +304,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getDisplayName()}
+     * @see Locale#getDisplayName()
      */
     public String getDisplayName()
     {
@@ -311,7 +313,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getVariant()}
+     * @see Locale#getVariant()
      */
     public String getVariant()
     {
@@ -320,7 +322,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getUnicodeLocaleAttributes()}
+     * @see Locale#getUnicodeLocaleAttributes()
      */
     public Set<String> getUnicodeLocaleAttributes()
     {
@@ -329,7 +331,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getDisplayVariant(Locale)}
+     * @see Locale#getDisplayVariant(Locale)
      */
     public String getDisplayVariant(Locale inLocale)
     {
@@ -338,7 +340,7 @@ public enum MinecraftLocale
 
 
     /**
-     * @see {@link Locale#getDisplayCountry()}
+     * @see Locale#getDisplayCountry()
      */
     public String getDisplayCountry()
     {

@@ -14,7 +14,7 @@ public interface NinCoreImplementation
 
     CommandImplementation getCommandImplementation();
 
-    LocalizationManager getLocalizationManager();
+    tk.martijn_heil.nincore.api.localization.LocalizationManager getLocalizationManager();
 
     EntityManager getEntityManager();
 

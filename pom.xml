@@ -179,14 +179,6 @@
                 </configuration>
                 
                 <executions>
-                  <execution>
-                    <id>generate-javadocs</id>
-                    <goals>
-                        <goal>javadoc</goal>
-                    </goals>
-                    <phase>package</phase>
-                  </execution>
-
                     <execution>
                         <id>attach-javadocs</id>
                         <goals>
