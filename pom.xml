@@ -167,7 +167,7 @@
                 <version>2.9.1</version>
                 <configuration>
                     <failOnError>false</failOnError>
-                    <aggregate>true</aggregate>
+                    <aggregate>false</aggregate>
                     <show>public</show>
                     <nohelp>true</nohelp>
                     <header>NinCore API, ${project.version}</header>
@@ -193,64 +193,6 @@
                             <goal>jar</goal>
                         </goals>
                     </execution>
-                </executions>
-            </plugin>
-            
-            <plugin>
-                <!-- Deploy the javadocs -->
-                <groupId>com.github.github</groupId>
-                <artifactId>site-maven-plugin</artifactId>
-                <version>0.12</version>
-                <executions>
-
-                    <!-- Deploy the javadocs -->
-                    <execution>
-                        <id>deploy-javadocs</id>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <!-- select the Maven phase in which the plugin will be executed -->
-                        <phase>deploy</phase>
-
-
-                        <configuration>
-                            <!-- Plugin configuration goes here -->
-
-                            <server>github</server>
-
-                            <!-- The commit message -->
-                            <message>Update javadocs for version ${project.version}</message>
-                            <!-- The location where the site is uploaded -->
-                            <path>javadocs/${project.version}</path>
-                            <!-- Use merge or override the content -->
-                            <merge>true</merge>
-                        </configuration>
-                    </execution>
-
-                    <!-- Update the latest javadocs -->
-                    <execution>
-                        <id>deploy-latest-javadocs</id>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <!-- select the Maven phase in which the plugin will be executed -->
-                        <phase>deploy</phase>
-
-
-                        <configuration>
-                            <!-- Plugin configuration goes here -->
-
-                            <server>github</server>
-
-                            <!-- The commit message -->
-                            <message>Update latest javadocs</message>
-                            <!-- The location where the site is uploaded -->
-                            <path>javadocs/latest</path>
-                            <!-- Use merge or override the content -->
-                            <merge>true</merge>
-                        </configuration>
-                    </execution>
-                    
                 </executions>
             </plugin>
 
