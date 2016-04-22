@@ -1,5 +1,7 @@
-package tk.martijn_heil.nincore.api;
+package tk.martijn_heil.nincore.api.logging;
 
+
+import tk.martijn_heil.nincore.api.CoreModule;
 
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
@@ -21,7 +23,7 @@ public class ModuleLogger extends Logger
     public void log(LogRecord logRecord)
     {
         String message = logRecord.getMessage();
-        message = "[" + module.getClass().getSimpleName() + "] " + message;
+        message = "(" + module.getClass().getSimpleName() + ") " + message;
         logRecord.setMessage(message);
         this.getParent().log(logRecord);
     }

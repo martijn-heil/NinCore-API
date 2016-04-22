@@ -2,6 +2,7 @@ package tk.martijn_heil.nincore.api;
 
 
 import lombok.Getter;
+import tk.martijn_heil.nincore.api.logging.ModuleLogger;
 
 public class CoreModule
 {
