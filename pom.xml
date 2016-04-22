@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.ninjoh</groupId>
+    <groupId>tk.martijn-heil</groupId>
     <artifactId>nincore-api</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -126,7 +126,6 @@
                         <includes>
                             <include>joda-time:joda-time</include>
                             <include>org.jetbrains:annotations-java5</include>
-                            <include>me.ninjoh.nincore.api</include>
                         </includes>
 
                     </artifactSet>
@@ -134,17 +133,17 @@
 
                         <relocation>
                             <pattern>org.joda</pattern>
-                            <shadedPattern>me.ninjoh.nincore.api.common.org.joda</shadedPattern>
+                            <shadedPattern>tk.martijn_heil.nincore.api.common.org.joda</shadedPattern>
                         </relocation>
 
                         <relocation>
                             <pattern>org.jetbrains.annotations</pattern>
-                            <shadedPattern>me.ninjoh.nincore.api.common.org.jetbrains.annotations</shadedPattern>
+                            <shadedPattern>tk.martijn_heil.nincore.api.common.org.jetbrains.annotations</shadedPattern>
                         </relocation>
 
                         <relocation>
                             <pattern>org.mindrot</pattern>
-                            <shadedPattern>me.ninjoh.nincore.api.common.org.mindrot</shadedPattern>
+                            <shadedPattern>tk.martijn_heil.nincore.api.common.org.mindrot</shadedPattern>
                         </relocation>
 
                     </relocations>
