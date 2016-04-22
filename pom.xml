@@ -256,29 +256,6 @@
                         </configuration>
                     </execution>
                     
-                    <!-- Deploy the maven repository -->
-                    <execution>
-                        <id>deploy-maven-artifacts</id>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <!-- select the Maven phase in which the plugin will be executed -->
-                        <phase>deploy</phase>
-                        <configuration>
-                            <!-- Plugin configuration goes here -->
-                            <server>github</server>
-                            
-                            <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
-                            <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-                            <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
-                            <branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
-                            <includes>
-                                <include>**/*</include>
-                            </includes>
-                            <merge>true</merge>
-                        </configuration>
-                    </execution>
-                    
                 </executions>
             </plugin>
 
