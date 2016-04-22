@@ -23,7 +23,7 @@ public interface NinCoreImplementation
 
     /**
      * If colored logging is enabled and the console is ANSI supported, the {@link me.ninjoh.nincore.api.logging.NinPluginLogger}
-     * and the {@link me.ninjoh.nincore.api.logging.NinLogger} send messages in color.
+     *  sends messages in color.
      *
      * @return Is colored logging enabled?
      */

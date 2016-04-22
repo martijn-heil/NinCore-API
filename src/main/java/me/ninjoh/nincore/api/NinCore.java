@@ -2,8 +2,6 @@ package me.ninjoh.nincore.api;
 
 
 import com.google.common.base.Preconditions;
-import me.ninjoh.nincore.api.internals.Internals;
-import me.ninjoh.nincore.api.logging.LogColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -35,17 +33,9 @@ public final class NinCore
     {
         Preconditions.checkNotNull(implementation);
 
-        if (NinCore.implementation != null)
-        {
-            Internals.getApiLogger().warning(LogColor.HIGHLIGHT + implementation.getImplementingPlugin().getName() + LogColor.RESET +
-                    " tried to update the current NinCore implementation, but was prevented from doing so.");
-        }
-        else
+        if (NinCore.implementation == null)
         {
             NinCore.implementation = implementation;
-            Internals.getApiLogger().info("NinCore implementation set to: " + LogColor.HIGHLIGHT +
-                    implementation.getImplementingPlugin().getName() + " v" +
-                    implementation.getImplementingPlugin().getDescription().getVersion());
         }
     }
 
