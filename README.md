@@ -5,3 +5,4 @@
 
 ### Links:
    - [Latest Javadocs](http://martijn-heil.github.io/NinCore-API/javadocs/latest/apidocs/)
+   - [Dependency information](https://jitpack.io/#tk.martijn-heil/NinCore-API/-SNAPSHOT)
