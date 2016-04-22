@@ -23,10 +23,10 @@
         </repository>
     -->
         
-        <repository>
-            <id>nincore-api-repo</id>
-            <url>https://raw.github.com/martijn-heil/NinCore-API/mvn-repo/</url>
-        </repository>
+        <!--<repository>-->
+            <!--<id>nincore-api-repo</id>-->
+            <!--<url>https://raw.github.com/martijn-heil/NinCore-API/mvn-repo/</url>-->
+        <!--</repository>-->
 
         <repository>
             <id>spigot-repo</id>
@@ -373,26 +373,26 @@
         </resources>
     </build>
 
-    <distributionManagement>
-        
-        <!--
-        <repository>
-            <id>local-repository</id>
-            <url>${local.maven.repository}</url>
-        </repository>
-        -->
-        
-        <repository>
-            <id>internal-repo</id>
-            <name>Temporary Staging Repository</name>
-            <url>file://${project.build.directory}/mvn-repo</url>
-        </repository>
-        
-        <site>
-            <id>github</id>
-            <url>https://github.com/martijn-heil/NinCore-API</url>
-        </site>
-    
-    </distributionManagement>
+    <!--<distributionManagement>-->
+        <!---->
+        <!--&lt;!&ndash;-->
+        <!--<repository>-->
+            <!--<id>local-repository</id>-->
+            <!--<url>${local.maven.repository}</url>-->
+        <!--</repository>-->
+        <!--&ndash;&gt;-->
+        <!---->
+        <!--<repository>-->
+            <!--<id>internal-repo</id>-->
+            <!--<name>Temporary Staging Repository</name>-->
+            <!--<url>file://${project.build.directory}/mvn-repo</url>-->
+        <!--</repository>-->
+        <!---->
+        <!--<site>-->
+            <!--<id>github</id>-->
+            <!--<url>https://github.com/martijn-heil/NinCore-API</url>-->
+        <!--</site>-->
+    <!---->
+    <!--</distributionManagement>-->
 
 </project>
