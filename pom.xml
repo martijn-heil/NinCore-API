@@ -72,6 +72,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.fusesource.jansi</groupId>
+            <artifactId>jansi</artifactId>
+            <version>1.11</version>
+        </dependency>
+
         <!-- Jbcrypt -->
         <!--<dependency>-->
             <!--<groupId>org.mindrot</groupId>-->
