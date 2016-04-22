@@ -137,11 +137,6 @@
                         </relocation>
 
                         <relocation>
-                            <pattern>org.jetbrains.annotations</pattern>
-                            <shadedPattern>tk.martijn_heil.nincore.api.common.org.jetbrains.annotations</shadedPattern>
-                        </relocation>
-
-                        <relocation>
                             <pattern>org.mindrot</pattern>
                             <shadedPattern>tk.martijn_heil.nincore.api.common.org.mindrot</shadedPattern>
                         </relocation>
