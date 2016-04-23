@@ -15,6 +15,7 @@ public final class NinCore
      *
      * @return The plugin which implements the NinCore API.
      */
+    @NotNull
     public static JavaPlugin getImplementingPlugin()
     {
         if(implementation == null) throw new IllegalStateException("The NinCore implementation is not set.");

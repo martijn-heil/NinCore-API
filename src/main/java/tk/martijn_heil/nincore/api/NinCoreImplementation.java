@@ -1,12 +1,13 @@
 package tk.martijn_heil.nincore.api;
 
 
-import tk.martijn_heil.nincore.api.command.CommandImplementation;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import tk.martijn_heil.nincore.api.command.CommandImplementation;
+import tk.martijn_heil.nincore.api.localization.LocalizationManager;
 import tk.martijn_heil.nincore.api.logging.NinPluginLogger;
 
 public interface NinCoreImplementation
@@ -14,7 +15,7 @@ public interface NinCoreImplementation
 
     CommandImplementation getCommandImplementation();
 
-    tk.martijn_heil.nincore.api.localization.LocalizationManager getLocalizationManager();
+    LocalizationManager getLocalizationManager();
 
     EntityManager getEntityManager();
 
