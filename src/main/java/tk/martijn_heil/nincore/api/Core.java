@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 public abstract class Core extends JavaPlugin
 {
-    @Getter private ModuleManager moduleManager = new ModuleManager();
+    @Getter private ModuleManager moduleManager = new ModuleManager(this);
     @Getter private NinPluginLogger ninLogger;
 
     @NotNull
