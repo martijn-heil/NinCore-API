@@ -10,6 +10,13 @@ import java.util.List;
 public class ModuleManager
 {
     @Getter @Setter private List<CoreModule> modules = new ArrayList<>();
+                    private final Core core;
+
+
+    public ModuleManager(Core core)
+    {
+        this.core = core;
+    }
 
 
     public void addModule(CoreModule module)
@@ -20,11 +27,34 @@ public class ModuleManager
 
     public void enableAll()
     {
-        modules.forEach(CoreModule::onEnable);
+        for (CoreModule mod : this.modules)
+        {
+            try
+            {
+                mod.onEnable();
+            }
+            catch(Exception e)
+            {
+                this.core.getNinLogger().info("An uncaught exception whilst enabling the " + mod.getClass().getSimpleName() + " module;");
+                e.printStackTrace();
+            }
+        }
     }
+
 
     public void disableAll()
     {
-        modules.forEach(CoreModule::onDisable);
+        for (CoreModule mod : this.modules)
+        {
+            try
+            {
+                mod.onDisable();
+            }
+            catch(Exception e)
+            {
+                this.core.getNinLogger().info("An uncaught exception occurred whilst disabling the " + mod.getClass().getSimpleName() + " module;");
+                e.printStackTrace();
+            }
+        }
     }
 }
