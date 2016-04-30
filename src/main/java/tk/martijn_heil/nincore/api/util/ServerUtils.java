@@ -6,9 +6,6 @@ import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * @deprecated
- */
 public class ServerUtils
 {
     /**

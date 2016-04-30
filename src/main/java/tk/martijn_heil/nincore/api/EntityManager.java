@@ -31,7 +31,6 @@ public interface EntityManager
      * @param player The related {@link Player}
      * @return The {@link NinOnlinePlayer} which was found, will return null if no NinOnlinePlayer was found, this should not (but may) ever happen though.
      */
-    @Nullable
     NinOnlinePlayer getNinOnlinePlayer(@NotNull Player player);
 
 
