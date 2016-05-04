@@ -1,5 +1,8 @@
 package tk.martijn_heil.nincore.api.localization;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import tk.martijn_heil.nincore.api.NinCore;
 
 import java.util.Locale;
@@ -119,6 +122,7 @@ public enum MinecraftLocale
     /**
      * @see Locale#toString()
      */
+    @NotNull
     @Override
     public String toString()
     {
@@ -129,6 +133,7 @@ public enum MinecraftLocale
     /**
      * @see Locale#getISOCountries()
      */
+    @NotNull
     public static String[] getISOCountries()
     {
         return Locale.getISOCountries();
@@ -138,6 +143,7 @@ public enum MinecraftLocale
     /**
      * @see Locale#getDisplayCountry()
      */
+    @Contract("null -> !null")
     public String getDisplayCountry(Locale inLocale)
     {
         return locale.getDisplayCountry(inLocale);
@@ -147,6 +153,7 @@ public enum MinecraftLocale
     /**
      * @see Locale#getLanguage()
      */
+    @Contract(pure = true)
     public String getLanguage()
     {
         return locale.getLanguage();
@@ -219,6 +226,7 @@ public enum MinecraftLocale
     /**
      * @see Locale#getDisplayScript(Locale)
      */
+    @Contract("null -> !null")
     public String getDisplayScript(Locale inLocale)
     {
         return locale.getDisplayScript(inLocale);
@@ -228,6 +236,7 @@ public enum MinecraftLocale
     /**
      * @see Locale#getScript()
      */
+    @Contract(pure = true)
     public String getScript()
     {
         return locale.getScript();
@@ -279,6 +288,7 @@ public enum MinecraftLocale
     /**
      * @see Locale#getISOLanguages()
      */
+    @NotNull
     public static String[] getISOLanguages()
     {
         return Locale.getISOLanguages();
@@ -288,6 +298,7 @@ public enum MinecraftLocale
     /**
      * @see Locale#getDisplayLanguage()
      */
+    @Contract("null -> !null")
     public String getDisplayLanguage(Locale inLocale)
     {
         return locale.getDisplayLanguage(inLocale);
@@ -297,6 +308,7 @@ public enum MinecraftLocale
     /**
      * @see Locale#getCountry()
      */
+    @Contract(pure = true)
     public String getCountry()
     {
         return locale.getCountry();
@@ -315,6 +327,7 @@ public enum MinecraftLocale
     /**
      * @see Locale#getVariant()
      */
+    @Contract(pure = true)
     public String getVariant()
     {
         return locale.getVariant();
@@ -353,6 +366,7 @@ public enum MinecraftLocale
      *
      * @return The related {@link Locale}
      */
+    @Contract(pure = true)
     public Locale toLocale()
     {
         return this.locale;
@@ -367,6 +381,7 @@ public enum MinecraftLocale
      * @return The {@link MinecraftLocale} if a {@link MinecraftLocale} was found, else it returns null.
      */
     // One can not override valueOf(), so use this.
+    @Nullable
     public static MinecraftLocale fromLanguageTag(String languageTag)
     {
         for (MinecraftLocale minecraftLocale : MinecraftLocale.values())
@@ -378,6 +393,7 @@ public enum MinecraftLocale
     }
 
 
+    @Nullable
     public static MinecraftLocale fromLocale(Locale locale)
     {
         for (MinecraftLocale minecraftLocale : MinecraftLocale.values())
@@ -394,6 +410,7 @@ public enum MinecraftLocale
      *
      * @return The default {@link MinecraftLocale}.
      */
+    @NotNull
     public static MinecraftLocale getDefault()
     {
         return NinCore.get().getLocalizationManager().getDefaultMinecraftLocale();
