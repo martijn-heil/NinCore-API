@@ -12,7 +12,7 @@ public class NotEnoughArgumentsException extends ValidationException
 {
     public NotEnoughArgumentsException(CommandSender commandSender)
     {
-        super(commandSender, TranslationUtils.getStaticMsg(ResourceBundle.getBundle("me.ninjoh.nincore.api.res.messages",
+        super(commandSender, TranslationUtils.getStaticMsg(ResourceBundle.getBundle("tk.martijn_heil.nincore.api.res.messages",
                 NinCommandSender.fromCommandSender(commandSender).getMinecraftLocale().
                         toLocale()), "error.NotEnoughArguments"), null);
     }

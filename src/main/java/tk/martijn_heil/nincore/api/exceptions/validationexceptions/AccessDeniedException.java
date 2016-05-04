@@ -11,7 +11,7 @@ public class AccessDeniedException extends ValidationException
 {
     public AccessDeniedException(CommandSender commandSender)
     {
-        super(commandSender, TranslationUtils.getStaticMsg(ResourceBundle.getBundle("me.ninjoh.nincore.api.res.messages",
+        super(commandSender, TranslationUtils.getStaticMsg(ResourceBundle.getBundle("tk.martijn_heil.nincore.api.res.messages",
                 NinCommandSender.fromCommandSender(commandSender).getMinecraftLocale().
                         toLocale()), "error.AccessDenied"), null);
     }
