@@ -11,7 +11,7 @@ public class InvalidCommandSenderException extends ValidationException
 {
     public InvalidCommandSenderException(CommandSender commandSender)
     {
-        super(commandSender, TranslationUtils.getStaticMsg(ResourceBundle.getBundle("tk.martijn_heil.api.res.messages",
+        super(commandSender, TranslationUtils.getStaticMsg(ResourceBundle.getBundle("tk.martijn_heil.nincore.api.res.messages",
                 NinCommandSender.fromCommandSender(commandSender).getMinecraftLocale().
                         toLocale()), "error.InvalidCommandSender"), null);
     }
