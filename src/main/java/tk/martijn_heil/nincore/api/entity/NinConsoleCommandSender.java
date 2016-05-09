@@ -1,12 +1,12 @@
 package tk.martijn_heil.nincore.api.entity;
 
 
-import tk.martijn_heil.nincore.api.CanReceiveChatMessage;
+import tk.martijn_heil.nincore.api.MessageRecipient;
 import tk.martijn_heil.nincore.api.NinCore;
 import org.bukkit.command.ConsoleCommandSender;
 import org.jetbrains.annotations.NotNull;
 
-public interface NinConsoleCommandSender extends CanReceiveChatMessage
+public interface NinConsoleCommandSender extends MessageRecipient
 {
 
 

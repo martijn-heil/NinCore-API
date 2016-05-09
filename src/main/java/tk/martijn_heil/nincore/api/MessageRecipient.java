@@ -8,7 +8,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
-public interface CanReceiveChatMessage
+public interface MessageRecipient
 {
     /**
      * Send an error.
