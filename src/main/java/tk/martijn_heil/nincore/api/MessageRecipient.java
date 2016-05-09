@@ -27,6 +27,8 @@ public interface MessageRecipient
     void sendMessage(@NotNull MessageColor messageColor, @NotNull String message, @NotNull String prefix);
 
 
+    void sendMessage(@NotNull String message);
+
     /**
      * Send command help for a {@link NinCommand}.
      *
