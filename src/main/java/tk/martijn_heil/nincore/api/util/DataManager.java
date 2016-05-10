@@ -3,7 +3,6 @@ package tk.martijn_heil.nincore.api.util;
 
 import com.google.common.base.Preconditions;
 import tk.martijn_heil.nincore.api.Core;
-import tk.martijn_heil.nincore.api.Tick;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

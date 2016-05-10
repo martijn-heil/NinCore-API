@@ -1,4 +1,4 @@
-package tk.martijn_heil.nincore.api;
+package tk.martijn_heil.nincore.api.util;
 
 
 import org.jetbrains.annotations.NotNull;

@@ -29,6 +29,7 @@ package tk.martijn_heil.nincore.api.util;
 
 import org.bukkit.ChatColor;
 import org.fusesource.jansi.Ansi;
+import org.jetbrains.annotations.Contract;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -48,6 +49,7 @@ public class TextUtils
      * @param start the index to start at
      * @return the array as a String
      */
+    @Contract(pure = true)
     public static String consolidateStrings(String[] args, int start)
     {
         String ret = args[start];

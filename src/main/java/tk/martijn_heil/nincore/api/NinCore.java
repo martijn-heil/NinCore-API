@@ -3,6 +3,7 @@ package tk.martijn_heil.nincore.api;
 
 import com.google.common.base.Preconditions;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 public final class NinCore
@@ -55,6 +56,7 @@ public final class NinCore
     }
 
 
+    @Contract(pure = true)
     public static boolean isImplementationSet()
     {
         return implementation != null;
