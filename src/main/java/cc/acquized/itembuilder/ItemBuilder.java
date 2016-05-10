@@ -238,7 +238,7 @@ public class ItemBuilder {
 
     /**
      * Sets the lore of the builded ItemStack
-     * @param lore (List<String>)
+     * @param lore {@literal (List<String>)}
      */
     public ItemBuilder lore(List<String> lore) {
         Validate.notNull(lore, "The Lores are null.");
