@@ -348,7 +348,7 @@ public class ItemBuilder {
     }
 
     /**
-     * Enables / disables the replace of the ampersand (&) symbol to the section sign (§) symbol
+     * {@literal Enables / disables the replace of the ampersand (&) symbol to the section sign (§) symbol}
      * @author Kev575
      */
     public ItemBuilder replaceAndSymbol(boolean replace) {
