@@ -1,26 +1,28 @@
 package tk.martijn_heil.nincore.api.util;
 
 
-import tk.martijn_heil.nincore.api.NinCore;
-import tk.martijn_heil.nincore.api.command.NinCommand;
-import tk.martijn_heil.nincore.api.command.NinSubCommand;
-import tk.martijn_heil.nincore.api.entity.NinCommandSender;
-import tk.martijn_heil.nincore.api.entity.NinOnlinePlayer;
 import net.md_5.bungee.api.chat.*;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import tk.martijn_heil.nincore.api.NinCore;
+import tk.martijn_heil.nincore.api.command.NinCommand;
+import tk.martijn_heil.nincore.api.command.NinSubCommand;
+import tk.martijn_heil.nincore.api.entity.NinOnlinePlayer;
 
 import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
- * {@link NinCommandSender} methods are preferred over this class.
+ * {@link tk.martijn_heil.nincore.api.MessageRecipient} methods are preferred over this class.
  * This class is mainly for internal usage, but may be used by extern developers.
+ *
+ * @deprecated Use {@link tk.martijn_heil.nincore.api.MessageRecipient} methods instead.
  */
+@Deprecated
 public class MessageUtil // TODO: Use TranslationUtils to make this more readable.
 {
     /**
