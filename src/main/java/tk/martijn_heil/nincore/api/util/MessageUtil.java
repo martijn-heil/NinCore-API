@@ -11,16 +11,17 @@ import tk.martijn_heil.nincore.api.NinCore;
 import tk.martijn_heil.nincore.api.command.NinCommand;
 import tk.martijn_heil.nincore.api.command.NinSubCommand;
 import tk.martijn_heil.nincore.api.entity.NinOnlinePlayer;
+import tk.martijn_heil.nincore.api.messaging.MessageRecipient;
 
 import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
- * {@link tk.martijn_heil.nincore.api.MessageRecipient} methods are preferred over this class.
- * This class is mainly for internal usage, but may be used by extern developers.
+ * {@link MessageRecipient} methods are preferred over this class.
+ * This class is mainly for internal usage. This class may be removed soon however.
  *
- * @deprecated Use {@link tk.martijn_heil.nincore.api.MessageRecipient} methods instead.
+ * @deprecated Use {@link MessageRecipient} methods instead.
  */
 @Deprecated
 public class MessageUtil // TODO: Use TranslationUtils to make this more readable.

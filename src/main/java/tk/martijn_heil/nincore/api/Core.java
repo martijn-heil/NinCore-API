@@ -7,6 +7,9 @@ import tk.martijn_heil.nincore.api.util.DataManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * A wrapper for {@link JavaPlugin}, which provides some more structure like a data manager, and a module system.
+ */
 public abstract class Core extends JavaPlugin
 {
     @Getter private ModuleManager moduleManager = new ModuleManager(this);

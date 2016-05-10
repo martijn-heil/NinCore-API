@@ -38,6 +38,7 @@ import java.util.Map;
  * Utilities for String manipulation.
  *
  * @author rylinaux
+ * @author Ninjoh
  */
 public class TextUtils
 {

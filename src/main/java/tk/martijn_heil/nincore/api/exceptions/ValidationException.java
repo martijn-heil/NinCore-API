@@ -4,7 +4,7 @@ package tk.martijn_heil.nincore.api.exceptions;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import tk.martijn_heil.nincore.api.MessageRecipient;
+import tk.martijn_heil.nincore.api.messaging.MessageRecipient;
 import tk.martijn_heil.nincore.api.entity.NinCommandSender;
 
 public class ValidationException extends Exception

@@ -1,20 +1,18 @@
-package tk.martijn_heil.nincore.api;
+package tk.martijn_heil.nincore.api.messaging;
 
 
-import tk.martijn_heil.nincore.api.command.NinCommand;
-import tk.martijn_heil.nincore.api.command.NinSubCommand;
-import tk.martijn_heil.nincore.api.messaging.MessageColor;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import tk.martijn_heil.nincore.api.HasLocale;
+import tk.martijn_heil.nincore.api.command.NinCommand;
+import tk.martijn_heil.nincore.api.command.NinSubCommand;
 
+/**
+ * Represents something which can receive messages.
+ */
 public interface MessageRecipient extends HasLocale
 {
-    /**
-     * Send an error.
-     *
-     * @param error The error string to send.
-     */
     void sendError(@NotNull String error);
 
 

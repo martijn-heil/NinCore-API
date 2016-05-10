@@ -12,6 +12,9 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * A class for managing data storage through a <pre>data.yml</pre> file.
+ */
 public class DataManager
 {
     private volatile Core plugin;

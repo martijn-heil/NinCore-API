@@ -1,7 +1,7 @@
 package tk.martijn_heil.nincore.api.exceptions.validationexceptions;
 
 
-import tk.martijn_heil.nincore.api.MessageRecipient;
+import tk.martijn_heil.nincore.api.messaging.MessageRecipient;
 import tk.martijn_heil.nincore.api.entity.NinCommandSender;
 import tk.martijn_heil.nincore.api.exceptions.ValidationException;
 import tk.martijn_heil.nincore.api.util.TranslationUtils;

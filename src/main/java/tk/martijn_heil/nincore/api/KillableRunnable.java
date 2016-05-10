@@ -1,13 +1,15 @@
 package tk.martijn_heil.nincore.api;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * This loops infinitely over the runInner() method until it is killed.
  */
 public abstract class KillableRunnable implements Runnable
 {
-    private volatile boolean isRunning = true;
-    private volatile boolean useDelay = false;
-    private volatile long delay;
+    @Getter         private volatile boolean isRunning = true;
+    @Getter @Setter private volatile long interval;
 
 
     public KillableRunnable()
@@ -15,36 +17,11 @@ public abstract class KillableRunnable implements Runnable
     }
 
 
-    public KillableRunnable(long delay)
+    public KillableRunnable(long interval)
     {
-        this.useDelay = true;
-        this.delay = delay;
+        this.interval = interval;
     }
 
-
-    public synchronized boolean useDelay()
-    {
-        return useDelay;
-    }
-
-
-    public synchronized long getDelay()
-    {
-        return delay;
-    }
-
-
-    public synchronized void setDelay(long delay)
-    {
-        this.delay = delay;
-        this.useDelay = true;
-    }
-
-
-    public synchronized void setUseDelay(boolean bool)
-    {
-        this.useDelay = bool;
-    }
 
 
     public synchronized void kill()
@@ -53,20 +30,14 @@ public abstract class KillableRunnable implements Runnable
     }
 
 
-    public synchronized boolean isRunning()
-    {
-        return this.isRunning;
-    }
-
-
     @Override
     public final void run()
     {
         while (this.isRunning)
         {
-            if (useDelay) try
+            if (interval > 0) try
             {
-                Thread.sleep(delay);
+                Thread.sleep(interval);
             }
             catch (InterruptedException e)
             {

@@ -12,7 +12,12 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
-
+/**
+ * An alternative for the {@link org.bukkit.plugin.PluginLogger}.
+ * This logger supports {@link ChatColor} and {@link LogColor} in log messages.
+ *
+ * @author Ninjoh
+ */
 public class NinPluginLogger extends Logger
 {
     private String prefix;

@@ -7,6 +7,9 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This manages modules in a {@link Core}
+ */
 public class ModuleManager
 {
     @Getter @Setter private List<CoreModule> modules = new ArrayList<>();

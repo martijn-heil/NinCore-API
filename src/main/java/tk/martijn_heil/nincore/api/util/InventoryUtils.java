@@ -11,8 +11,17 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+/**
+ * All inventory related utilities.
+ */
 public class InventoryUtils
 {
+    /**
+     * Encode an inventory to base64.
+     * @param inventory The inventory to serialize.
+     * @return The base64 encoded string.
+     * @throws Exception If it was unable to encode the inventory
+     */
     public static String toBase64(Inventory inventory) throws Exception
     {
         try
@@ -40,6 +49,13 @@ public class InventoryUtils
     }
 
 
+    /**
+     * Decodes an inventory from base64
+     *
+     * @param data The base64 encoded inventory.
+     * @return The decoded inventory.
+     * @throws IOException If it was unable to decode.
+     */
     public static Inventory fromBase64(String data) throws IOException
     {
         try

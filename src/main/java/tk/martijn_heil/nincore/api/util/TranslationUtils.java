@@ -7,6 +7,9 @@ import org.jetbrains.annotations.NotNull;
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
 
+/**
+ * All language, localization, and translation related utilities.
+ */
 public class TranslationUtils
 {
     /**

@@ -3,6 +3,11 @@ package tk.martijn_heil.nincore.api.util;
 
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * All reflection related utilities.
+ *
+ * @author Ninjoh
+ */
 public class ReflectionUtils
 {
     /**

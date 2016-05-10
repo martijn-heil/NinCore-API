@@ -5,6 +5,9 @@ import tk.martijn_heil.nincore.api.CardinalDirection;
 import org.bukkit.Location;
 import org.bukkit.util.Vector;
 
+/**
+ * All math related utilities.
+ */
 public class MathUtils
 {
     public static float radiansToCompassDegrees(float radians)

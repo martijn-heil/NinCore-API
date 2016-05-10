@@ -6,6 +6,9 @@ import tk.martijn_heil.nincore.api.CoreModule;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
+/**
+ * The logger for a {@link CoreModule}
+ */
 public class ModuleLogger extends Logger
 {
     private CoreModule module;

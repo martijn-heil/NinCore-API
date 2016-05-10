@@ -32,6 +32,9 @@ public interface NinCoreImplementation
     boolean useColoredLogging();
 
 
+    /**
+     * @return Does the current console support ANSI escape sequences?
+     */
     boolean isConsoleAnsiSupported();
 
 

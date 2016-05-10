@@ -3,6 +3,10 @@ package tk.martijn_heil.nincore.api.logging;
 
 import org.bukkit.ChatColor;
 
+/**
+ * A semantic representations of colours which may be used in a {@link NinPluginLogger} or {@link ModuleLogger}.
+ * This essentially is a wrapper for {@link ChatColor}.
+ */
 public enum LogColor
 {
     HIGHLIGHT(ChatColor.LIGHT_PURPLE),

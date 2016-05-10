@@ -31,6 +31,7 @@ public enum MinecraftLocale
     CANADIAN_ENGLISH("Canadian English", new Locale("en", "CA")),
     BRITISH_ENGLISH("English (UK)", new Locale("en", "GB")),
     NEW_ZEALAND_ENGLISH("New Zealand English", new Locale("en_NZ")),
+    ENGLISH_UPSIDE_DOWN("English (upside down)", new Locale("en", "GB")),
     PIRATE_ENGLISH("Pirate Speak", new Locale("en", "PT")), // Mojang joke / Minecraft easter egg.
     AMERICAN_ENGLISH("English (US)", new Locale("en", "US")),
     ESPERANTO("Esperanto (Mondo)", new Locale("eo", "UY")), // Constructed language (International)
@@ -48,6 +49,7 @@ public enum MinecraftLocale
     CANADIAN_FRENCH("Français (Ca)", new Locale("fr", "CA")),
     FRISIAN("Frysk", new Locale("fy", "NL")),
     IRISH("Gaeilge", new Locale("ga", "IE")),
+    SCOTTISH_GAELIC("Gàdhlig", new Locale("gd", "GB")),
     GALICIAN("Galician", new Locale("gl", "ES")), // Galicia (Spain)
     MANX("Gaelg", new Locale("gv", "IM")), // Isle of Man
     HEBREW("עברית", new Locale("he", "IL")), // Israel
