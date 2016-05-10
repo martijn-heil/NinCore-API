@@ -1,7 +1,7 @@
 package tk.martijn_heil.nincore.api.exceptions;
 
 
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.logging.Level;
 
@@ -16,7 +16,7 @@ public class TechnicalException extends RuntimeException
     }
 
 
-    public TechnicalException(String logMessage, Level logLevel)
+    public TechnicalException(@NotNull String logMessage, @NotNull Level logLevel)
     {
         super(logMessage);
         this.logLevel = logLevel;
@@ -28,7 +28,6 @@ public class TechnicalException extends RuntimeException
     }
 
 
-    @Nullable
     public Level getLogLevel()
     {
         return this.logLevel;

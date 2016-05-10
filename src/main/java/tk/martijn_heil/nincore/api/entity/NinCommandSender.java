@@ -1,13 +1,12 @@
 package tk.martijn_heil.nincore.api.entity;
 
 
-import tk.martijn_heil.nincore.api.MessageRecipient;
-import tk.martijn_heil.nincore.api.HasLocale;
-import tk.martijn_heil.nincore.api.NinCore;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
+import tk.martijn_heil.nincore.api.MessageRecipient;
+import tk.martijn_heil.nincore.api.NinCore;
 
-public interface NinCommandSender extends MessageRecipient, HasLocale
+public interface NinCommandSender extends MessageRecipient
 {
     /**
      * Get the related {@link CommandSender}.
