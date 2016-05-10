@@ -17,8 +17,8 @@ import java.util.*;
 
 /**
  * ItemBuilder API for creating ItemStacks easy with just 1 line of code
- * @author Acquized (Main Methods & NBT)
- * @author Kev575 (More Constructors & a few Methods)
+ * @author Acquized
+ * @author Kev575
  * @see ItemStack
  * @version 1.7.1
  */
