@@ -202,7 +202,7 @@ public class ItemBuilder {
 
     /**
      * Sets the Enchantments of the builded ItemStack
-     * @param enchantments (Map<Enchantment, Integer> )
+     * @param enchantments {@literal (Map<Enchantment, Integer> )}
      */
     public ItemBuilder enchant(Map<Enchantment, Integer> enchantments) {
         Validate.notNull(enchantments, "The Enchantments are null.");
@@ -290,7 +290,7 @@ public class ItemBuilder {
 
     /**
      * Sets the ItemFlags of the builded ItemStack
-     * @param flags (List<ItemFlag>)
+     * @param flags {@literal (List<ItemFlag>)}
      */
     public ItemBuilder flag(List<ItemFlag> flags) {
         Validate.notNull(flags, "The Flags are null.");
@@ -339,7 +339,7 @@ public class ItemBuilder {
     }
 
     /**
-     * Toggles the replace of the ampersand (&) symbol to the section sign (§) symbol
+     * Toggles the replace of the ampersand {@literal (&)} symbol to the section sign (§) symbol
      * @author Kev575
      */
     public ItemBuilder replaceAndSymbol() {
