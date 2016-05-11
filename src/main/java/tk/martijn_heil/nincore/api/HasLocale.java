@@ -11,7 +11,7 @@ public interface HasLocale
 
     /**
      * A shortcut for {@link MinecraftLocale#toLocale()}
-     * @see {@link MinecraftLocale#toLocale()}
+     * see {@link MinecraftLocale#toLocale()}
      */
     default Locale getLocale()
     {
