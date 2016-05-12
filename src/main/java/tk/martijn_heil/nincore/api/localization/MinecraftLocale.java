@@ -376,7 +376,7 @@ public enum MinecraftLocale
 
 
     /**
-     * Get a {@link MinecraftLocale} from i's language languageTag.
+     * Get a {@link MinecraftLocale} from it's language languageTag.
      * Returns null if no {@link MinecraftLocale} with the provided language languageTag could be found.
      *
      * @param languageTag The language languageTag to query for.
@@ -388,7 +388,7 @@ public enum MinecraftLocale
     {
         for (MinecraftLocale minecraftLocale : MinecraftLocale.values())
         {
-            if (minecraftLocale.toLanguageTag().equals(languageTag)) return minecraftLocale;
+            if (minecraftLocale.toLanguageTag().equals(languageTag.replace('_', '-'))) return minecraftLocale;
         }
 
         return null;

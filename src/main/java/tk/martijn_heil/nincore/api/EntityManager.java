@@ -17,11 +17,14 @@ public interface EntityManager
 {
     /**
      * Get all online {@link NinOnlinePlayer}s.
-     * Returns an empty list if there ar eno online {@link NinOnlinePlayer}s.
+     * Returns an empty list if there are no online {@link NinOnlinePlayer}s.
+     *
+     * @deprecated this is subject to removal.
      *
      * @return All online {@link NinOnlinePlayer}s, will return an empty list if there are no online NinPlayers.
      */
     @NotNull
+    @Deprecated
     List<NinOnlinePlayer> getNinOnlinePlayers();
 
 
