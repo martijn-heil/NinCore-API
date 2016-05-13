@@ -211,7 +211,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         {
             if(sender instanceof Player)
             {
-                sender.sendMessage(TranslationUtils.getStaticMsg(ResourceBundle.getBundle("tk.martijn_heil.nincore.api.res.messages"), "hoverOverCommandsForMore"));
+                sender.sendMessage(TranslationUtils.getStaticMsg(ResourceBundle.getBundle("tk.martijn_heil.nincore.api.res.messages", locale), "hoverOverCommandsForMore"));
                 sender.sendMessage("");
             }
 
