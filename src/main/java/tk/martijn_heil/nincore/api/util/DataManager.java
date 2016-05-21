@@ -13,7 +13,8 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * A class for managing data storage through a <pre>data.yml</pre> file.
+ * A class for managing data storage with a single <pre>data.yml</pre> file.
+ * This class is thread safe
  */
 public class DataManager
 {

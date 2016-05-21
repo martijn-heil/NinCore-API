@@ -11,9 +11,9 @@ import org.jetbrains.annotations.Nullable;
 public class ReflectionUtils
 {
     /**
-     * Please note that this is really performance heavy!
+     * Please note that this is quite performance heavy! (it iterates through all packages)
      *
-     * @return OBC (org.bukkit.craftbukkit) base package or null.
+     * @return OBC (org.bukkit.craftbukkit.XXX) base package or null if OBC could not be found.
      */
     @Nullable
     public static Package getOBC()
@@ -28,9 +28,9 @@ public class ReflectionUtils
 
 
     /**
-     * Please note that this is really performance heavy!
+     * Please note that this is quite performance heavy! (it iterates through all packages)
      *
-     * @return NMS base package or null.
+     * @return NMS base package (net.minecraft.server.XXX) or null if NMS could not be found.
      */
     @Nullable
     public static Package getNMS()

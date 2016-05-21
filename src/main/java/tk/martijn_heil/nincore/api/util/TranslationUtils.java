@@ -41,8 +41,11 @@ public class TranslationUtils
      * @param bundle The resource bundle to query.
      * @param msg    The message key to get (e.g messages.hello)
      * @return the message.
+     *
+     * @deprecated Use {@link ResourceBundle#getString(String)}
      */
     @NotNull
+    @Deprecated
     public static String getStaticMsg(@NotNull ResourceBundle bundle, @NotNull String msg)
     {
         return bundle.getString(msg);

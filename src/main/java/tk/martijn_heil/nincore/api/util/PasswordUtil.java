@@ -45,17 +45,15 @@ public class PasswordUtil
      * @param password_plaintext The account's plaintext password, as provided during a login request
      * @param stored_hash        The account's stored password hash, retrieved from the authorization database
      * @return boolean - true if the password matches the password of the stored hash, false otherwise
+     *
+     * @throws IllegalArgumentException If an invalid hash was supplied. (if hash doesn't start with '$2a$')
      */
     public static boolean checkPassword(String password_plaintext, @Nullable String stored_hash)
     {
-        boolean password_verified = false;
-
         if (null == stored_hash || !stored_hash.startsWith("$2a$"))
             throw new IllegalArgumentException("Invalid hash provided for comparison");
 
-        password_verified = BCrypt.checkpw(password_plaintext, stored_hash);
-
-        return (password_verified);
+        return (BCrypt.checkpw(password_plaintext, stored_hash));
     }
 
 //    /**

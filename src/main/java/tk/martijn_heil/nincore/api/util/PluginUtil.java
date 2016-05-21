@@ -26,13 +26,13 @@ package tk.martijn_heil.nincore.api.util;
  * #L%
  */
 
-import tk.martijn_heil.nincore.api.NinCore;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.event.Event;
 import org.bukkit.plugin.*;
+import tk.martijn_heil.nincore.api.NinCore;
 
 import java.io.File;
 import java.io.IOException;
@@ -106,7 +106,7 @@ public class PluginUtil
      * @param plugin plugin to load
      * @return status message
      */
-    private static boolean load(Plugin plugin)
+    private static boolean load(Plugin plugin) throws Exception
     {
         return load(plugin.getName());
     }
@@ -118,20 +118,20 @@ public class PluginUtil
      * @param name plugin's name
      * @return status message
      */
-    public static boolean load(String name)
+    public static boolean load(String name) throws Exception
     {
-
-        Plugin target = null;
-
-        File pluginDir = new File("plugins");
-
-        if (!pluginDir.isDirectory())
-            return false;
-
-        File pluginFile = new File(pluginDir, name + ".jar");
 
         try
         {
+            Plugin target;
+
+            File pluginDir = new File("plugins");
+
+            if (!pluginDir.isDirectory())
+                return false;
+
+            File pluginFile = new File(pluginDir, name + ".jar");
+
             for (File f : pluginDir.listFiles())
             {
                 if (f.getName().endsWith(".jar"))
@@ -151,37 +151,25 @@ public class PluginUtil
                     }
                 }
             }
-        }
-        catch (NullPointerException e)
-        {
-            return false;
-        }
 
-        if (!pluginFile.isFile())
-        {
+            if (!pluginFile.isFile())
+            {
 
-        }
+            }
 
-        try
-        {
+
             target = Bukkit.getPluginManager().loadPlugin(pluginFile);
-        }
-        catch (InvalidDescriptionException e)
-        {
-            e.printStackTrace();
+
+
+            target.onLoad();
+            Bukkit.getPluginManager().enablePlugin(target);
+
             return false;
         }
-        catch (InvalidPluginException e)
+        catch(Exception e)
         {
-            e.printStackTrace();
-            return false;
+            throw new Exception(String.format("Could not load plugin '%s'", name), e);
         }
-
-        target.onLoad();
-        Bukkit.getPluginManager().enablePlugin(target);
-
-        return false;
-
     }
 
 
@@ -190,12 +178,19 @@ public class PluginUtil
      *
      * @param plugin the plugin to reload
      */
-    public static void reload(Plugin plugin)
+    public static void reload(Plugin plugin) throws Exception
     {
-        if (plugin != null)
+        try
         {
-            unload(plugin);
-            load(plugin);
+            if (plugin != null)
+            {
+                unload(plugin);
+                load(plugin);
+            }
+        }
+        catch(Exception e)
+        {
+            throw new Exception(String.format("Could not reload plugin '%s'", plugin.getName()), e);
         }
     }
 
@@ -203,11 +198,18 @@ public class PluginUtil
     /**
      * Reload all plugins.
      */
-    public static void reloadAll()
+    public static void reloadAll() throws Exception
     {
-        for (Plugin plugin : Bukkit.getPluginManager().getPlugins())
+        try
         {
-            reload(plugin);
+            for (Plugin plugin : Bukkit.getPluginManager().getPlugins())
+            {
+                reload(plugin);
+            }
+        }
+        catch(Exception e)
+        {
+            throw new Exception("Could not reload all plugins", e);
         }
     }
 
@@ -242,7 +244,6 @@ public class PluginUtil
 
             try
             {
-
                 Field pluginsField = Bukkit.getPluginManager().getClass().getDeclaredField("plugins");
                 pluginsField.setAccessible(true);
                 plugins = (List<Plugin>) pluginsField.get(pluginManager);

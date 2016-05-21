@@ -41,43 +41,57 @@ public class Tick
     }
 
 
-    @NotNull
-    public Tick toMilliseconds()
+    public double toMilliseconds()
     {
-        value = value / 20 / 1000;
-        return this;
+        return value / 20 / 1000;
     }
 
 
-    @NotNull
-    public Tick toSeconds()
+    public double toSeconds()
     {
-        value = value / 20;
-        return this;
+        return value / 20;
     }
 
 
-    @NotNull
-    public Tick toMinutes()
+    public double toMinutes()
     {
-        value = value / 20 / 60;
-        return this;
+        return value / 20 / 60;
     }
 
 
-    @NotNull
-    public Tick toHours()
+    public double toHours()
     {
-        value = value / 20 / 60 / 60;
-        return this;
+        return value / 20 / 60 / 60;
     }
 
 
-    @NotNull
-    public Tick toDays()
+    public Tick fromSeconds(int seconds)
     {
-        value = value / 20 / 60 / 60 / 24;
-        return this;
+        return new Tick(seconds * 20);
+    }
+
+
+    public Tick fromMilliseconds(int milliseconds)
+    {
+        return new Tick(milliseconds * 1000 * 20);
+    }
+
+
+    public Tick fromMinutes(int minutes)
+    {
+        return new Tick(minutes * 5200);
+    }
+
+
+    public Tick fromHours(int hours)
+    {
+        return new Tick(hours * 312000);
+    }
+
+
+    public double toDays()
+    {
+        return value / 20 / 60 / 60 / 24;
     }
 
 
