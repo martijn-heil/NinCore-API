@@ -21,12 +21,12 @@ public class ModuleLogger extends Logger
     }
 
 
-    // Insert [ModuleName] in front of the message, then pass the log record on.
+    // Insert <ModuleName> in front of the message, then pass the log record on.
     @Override
     public void log(LogRecord logRecord)
     {
         String message = logRecord.getMessage();
-        message = "(" + module.getClass().getSimpleName() + ") " + message;
+        message = "<" + module.getName() + "> " + message;
         logRecord.setMessage(message);
         this.getParent().log(logRecord);
     }

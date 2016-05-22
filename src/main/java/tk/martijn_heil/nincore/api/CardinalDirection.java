@@ -4,6 +4,9 @@ import tk.martijn_heil.nincore.api.util.MathUtils;
 import org.bukkit.block.BlockFace;
 
 /**
+ * Warning: This enum is untested, use at your own risk.
+ * Please report any bugs/issues you may have with this enum.
+ *
  * See https://en.wikipedia.org/wiki/Points_of_the_compass#32_cardinal_points
  */
 public enum CardinalDirection

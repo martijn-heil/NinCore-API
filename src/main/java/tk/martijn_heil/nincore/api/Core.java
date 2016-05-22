@@ -2,10 +2,10 @@ package tk.martijn_heil.nincore.api;
 
 
 import lombok.Getter;
-import tk.martijn_heil.nincore.api.logging.NinPluginLogger;
-import tk.martijn_heil.nincore.api.util.DataManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import tk.martijn_heil.nincore.api.logging.NinPluginLogger;
+import tk.martijn_heil.nincore.api.util.DataManager;
 
 /**
  * A wrapper for {@link JavaPlugin}, which provides some more structure like a data manager, and a module system.
