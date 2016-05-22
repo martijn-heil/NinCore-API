@@ -47,16 +47,19 @@ public abstract class Core extends JavaPlugin
 
     public void onLoadInner()
     {
+
     }
 
 
     public void onEnableInner()
     {
+
     }
 
 
     public void onDisableInner()
     {
+
     }
 
 

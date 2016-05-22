@@ -1,6 +1,7 @@
 package tk.martijn_heil.nincore.api.util;
 
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -65,25 +66,29 @@ public class Tick
     }
 
 
-    public Tick fromSeconds(int seconds)
+    @Contract("_ -> !null")
+    public static Tick fromSeconds(int seconds)
     {
         return new Tick(seconds * 20);
     }
 
 
-    public Tick fromMilliseconds(int milliseconds)
+    @Contract("_ -> !null")
+    public static Tick fromMilliseconds(int milliseconds)
     {
         return new Tick(milliseconds * 1000 * 20);
     }
 
 
-    public Tick fromMinutes(int minutes)
+    @Contract("_ -> !null")
+    public static Tick fromMinutes(int minutes)
     {
         return new Tick(minutes * 5200);
     }
 
 
-    public Tick fromHours(int hours)
+    @Contract("_ -> !null")
+    public static Tick fromHours(int hours)
     {
         return new Tick(hours * 312000);
     }
