@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 import tk.martijn_heil.nincore.api.NinCore;
 import tk.martijn_heil.nincore.api.command.NinCommand;
 import tk.martijn_heil.nincore.api.command.NinSubCommand;
-import tk.martijn_heil.nincore.api.entity.NinOnlinePlayer;
 import tk.martijn_heil.nincore.api.messaging.MessageRecipient;
 
 import java.text.MessageFormat;
@@ -39,7 +38,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         Locale locale = null;
         if (sender instanceof Player)
         {
-            locale = NinOnlinePlayer.fromPlayer((Player) sender).getMinecraftLocale().toLocale();
+            locale = NinCore.get().getEntityManager().getNinOnlinePlayer((Player) sender).getMinecraftLocale().toLocale();
         }
 
         if (locale == null)
@@ -73,7 +72,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         Locale locale = null;
         if (sender instanceof Player)
         {
-            locale = NinOnlinePlayer.fromPlayer((Player) sender).getMinecraftLocale().toLocale();
+            locale = NinCore.get().getEntityManager().getNinOnlinePlayer((Player) sender).getMinecraftLocale().toLocale();
         }
 
         if (locale == null)
@@ -182,7 +181,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         Locale locale = null;
         if (sender instanceof Player)
         {
-            locale = NinOnlinePlayer.fromPlayer((Player) sender).getMinecraftLocale().toLocale();
+            locale = NinCore.get().getEntityManager().getNinOnlinePlayer((Player) sender).getMinecraftLocale().toLocale();
         }
 
         if (locale == null)
@@ -335,7 +334,7 @@ public class MessageUtil // TODO: Use TranslationUtils to make this more readabl
         Locale locale = null;
         if (sender instanceof Player)
         {
-            locale = NinOnlinePlayer.fromPlayer((Player) sender).getMinecraftLocale().toLocale();
+            locale = NinCore.get().getEntityManager().getNinOnlinePlayer((Player) sender).getMinecraftLocale().toLocale();
         }
 
         if (locale == null)

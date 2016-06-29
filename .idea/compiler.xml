@@ -27,7 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="nincore-api" target="1.8" />
+      <module name="nincore-api" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

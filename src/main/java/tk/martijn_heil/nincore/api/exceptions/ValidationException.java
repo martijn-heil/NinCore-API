@@ -4,8 +4,8 @@ package tk.martijn_heil.nincore.api.exceptions;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import tk.martijn_heil.nincore.api.NinCore;
 import tk.martijn_heil.nincore.api.messaging.MessageRecipient;
-import tk.martijn_heil.nincore.api.entity.NinCommandSender;
 
 public class ValidationException extends Exception
 {
@@ -19,7 +19,7 @@ public class ValidationException extends Exception
         super(logMessage); // The technical internal log message will be sent up the chain.
         this.logMessage = logMessage;
         this.playerMessage = playerMessage;
-        this.target = NinCommandSender.fromCommandSender(target);
+        this.target = NinCore.get().getEntityManager().getNinCommandSender(target);
     }
 
 

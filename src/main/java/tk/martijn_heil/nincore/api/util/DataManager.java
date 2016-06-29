@@ -115,7 +115,14 @@ public class DataManager
     {
         // Schedule automatic saving of data file.
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(plugin, this::saveDataFile, interval, interval);
+        scheduler.scheduleSyncRepeatingTask(plugin, new Runnable()
+        {
+            @Override
+            public void run()
+            {
+
+            }
+        }, interval, interval);
 
         plugin.getNinLogger().info("Scheduled data saving interval is set to " + interval + " ticks(s).");
     }
@@ -130,7 +137,14 @@ public class DataManager
     {
         // Schedule automatic saving of data file.
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(plugin, this::saveDataFile, interval.toLong(), interval.toLong());
+        scheduler.scheduleSyncRepeatingTask(plugin, new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                saveDataFile();
+            }
+        }, interval.toLong(), interval.toLong());
 
         plugin.getNinLogger().info("Scheduled data saving interval is set to " + interval + " tick(s).");
     }

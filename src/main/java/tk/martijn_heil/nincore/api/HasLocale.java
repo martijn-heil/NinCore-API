@@ -8,13 +8,5 @@ import java.util.Locale;
 public interface HasLocale
 {
     MinecraftLocale getMinecraftLocale();
-
-    /**
-     * A shortcut for {@link MinecraftLocale#toLocale()}
-     * see {@link MinecraftLocale#toLocale()}
-     */
-    default Locale getLocale()
-    {
-        return this.getMinecraftLocale().toLocale();
-    }
+    Locale getLocale();
 }

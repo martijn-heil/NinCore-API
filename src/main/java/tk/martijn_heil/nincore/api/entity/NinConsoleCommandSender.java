@@ -1,10 +1,9 @@
 package tk.martijn_heil.nincore.api.entity;
 
 
-import tk.martijn_heil.nincore.api.messaging.MessageRecipient;
-import tk.martijn_heil.nincore.api.NinCore;
 import org.bukkit.command.ConsoleCommandSender;
 import org.jetbrains.annotations.NotNull;
+import tk.martijn_heil.nincore.api.messaging.MessageRecipient;
 
 public interface NinConsoleCommandSender extends MessageRecipient
 {
@@ -27,9 +26,4 @@ public interface NinConsoleCommandSender extends MessageRecipient
      * @return The {@link ConsoleCommandSender}
      */
     ConsoleCommandSender toConsoleCommandSender();
-
-    static NinConsoleCommandSender get()
-    {
-        return NinCore.get().getEntityManager().getNinConsoleCommandSender();
-    }
 }
